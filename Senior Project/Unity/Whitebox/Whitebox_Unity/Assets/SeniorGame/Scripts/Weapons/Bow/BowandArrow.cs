@@ -24,6 +24,8 @@ public class BowandArrow : WeaponBase
     private Vector3 rotDirection, initRotation;
     public GameObject WeaponObj;
     public CameraSwitch currentCam;
+    public CameraBase bowCamera;
+    public CameraBase thirdPersonCamera;
     public PlayerMovement playermove;
     public CharacterRotate bowRotate;
     private CharacterRotate originalRotate;
@@ -59,10 +61,10 @@ public class BowandArrow : WeaponBase
                 ArrowRB = currArrow.GetComponent<Rigidbody>();
                 while (Input.GetButton(useButton))
                 {
-                    if (!currentCam.bowCam)
+                    if (currentCam.cameraScript != bowCamera)
                     {
-                        currentCam.SetBowCam();
-                        playermove.SwapMovement(bowRotate, playermove.translate);
+                        currentCam.SwapCamera(bowCamera);
+                        playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                     }
                     if (targetObj.transform != null)
                     {
@@ -89,7 +91,7 @@ public class BowandArrow : WeaponBase
                 currArrow.transform.parent = null;
                 ArrowRB.AddForce(transform.forward * currPower, ForceMode.Impulse);
                 inUse = false;
-                if (currentCam.bowCam)
+                if (currentCam == bowCamera)
                 {
                     //currentCam.SetThirdPerson();
                     //playermove.SwapMovement(originalRotate, playermove.translate);

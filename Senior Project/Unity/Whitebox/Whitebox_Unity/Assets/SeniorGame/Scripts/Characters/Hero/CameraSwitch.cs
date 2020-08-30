@@ -2,61 +2,50 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using Cinemachine;
+using TMPro;
 using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 public class CameraSwitch : MonoBehaviour
 {
-    public CameraBase ThirdPersonCam;
-    public CameraBase BowCam;
-
-    [HideInInspector]
-    public bool bowCam = false;
-    public string CameraSwitchButton;
+    public CameraBase cameraScript;
+    private Coroutine moveFunc;
+    private Coroutine tempMoveFunc;
 
     private void Start()
     {
-        SetThirdPerson();
-        bowCam = false;
+        //yield return new WaitForSeconds(.1f);
+        StartMove();
     }
 
-    public void SetBowCam()
+    public void StartMove()
     {
-        if (!bowCam)
-        {
-            Debug.Log("Bow Cam");
-            BowCam.gameObject.SetActive(true);
-            ThirdPersonCam.gameObject.SetActive(false);
-            BowCam.StartMove();
-            ThirdPersonCam.StopMove();
-            bowCam = true;
-        }
+        cameraScript.canMove = true;
+        moveFunc = StartCoroutine(cameraScript.Move());
     }
 
-    public void SetThirdPerson()
+    public void SwapCamera(CameraBase newCam)
     {
-        if (bowCam)
-        {
-            Debug.Log("Third Person Cam");
-            ThirdPersonCam.gameObject.SetActive(true);
-            BowCam.gameObject.SetActive(false);
-            ThirdPersonCam.StartMove();
-            BowCam.StopMove();
-            bowCam = false;
-        }
+        Debug.Log(newCam.cameraTransform.gameObject.name);
+        Debug.Log(cameraScript.cameraTransform.gameObject.name);
+
+        newCam.cameraTransform.gameObject.SetActive(true);
+        cameraScript.cameraTransform.gameObject.SetActive(false);
+        newCam.canMove = true;
+        tempMoveFunc = StartCoroutine(newCam.Move());
+        cameraScript.canMove = false;
+        if (moveFunc != null)
+            StopCoroutine(moveFunc);
+        moveFunc = tempMoveFunc;
+        cameraScript = newCam;
     }
 
-    public void SwitchCam()
+    public void StopMove()
     {
-        if (bowCam)
-        {
-            SetThirdPerson();
-        }
-        else
-        {
-            SetBowCam();
-        }
+        cameraScript.canMove = false;
+        if(moveFunc != null)
+            StopCoroutine(moveFunc);
     }
     
 }

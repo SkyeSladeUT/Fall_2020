@@ -8,11 +8,15 @@ public class PlayerMovement : MonoBehaviour
 
         public CharacterTranslate translate;
 
+        public List<CharacterControlExtraBase> extraControls = new List<CharacterControlExtraBase>();
+
         public Targeting targetScript;
 
         private Coroutine rotateFunc, moveFunc, runFunc;
 
         private CharacterController _cc;
+
+        public Transform CharacterScalar;
 
         private void Start()
         {
@@ -24,14 +28,22 @@ public class PlayerMovement : MonoBehaviour
         {
                 rotate.Init(this.transform, Camera.main.transform, targetScript);
                 translate.Init(_cc, Camera.main.transform, targetScript);
+                if (extraControls != null)
+                {
+                        foreach (var extra in extraControls)
+                        {
+                                extra.Init(CharacterScalar, _cc);
+                        }
+                }
                 StartAll();
         }
 
-        public void SwapMovement(CharacterRotate newRot, CharacterTranslate newTrans)
+        public void SwapMovement(CharacterRotate newRot, CharacterTranslate newTrans, List<CharacterControlExtraBase> extras = null)
         {
                 StopAll();
                 rotate = newRot;
                 translate = newTrans;
+                extraControls = extras;
                 Init();
         }
 
@@ -39,12 +51,14 @@ public class PlayerMovement : MonoBehaviour
         {
                 StopMove();
                 StopRotate();
+                StopExtras();
         }
 
         public void StartAll()
         {
                 StartMove();
                 StartRotate();
+                StartExtras();
         }
 
         public void StopMove()
@@ -76,5 +90,28 @@ public class PlayerMovement : MonoBehaviour
         {
                 rotate.canRotate = true;
                 rotateFunc = StartCoroutine(rotate.Rotate());
+        }
+
+        public void StartExtras()
+        {
+                if (extraControls != null)
+                {
+                        foreach (CharacterControlExtraBase extra in extraControls)
+                        {
+                                extra.canMove = true;
+                                StartCoroutine(extra.Move());
+                        }
+                }
+        }
+
+        public void StopExtras()
+        {
+                if (extraControls != null)
+                {
+                        foreach (CharacterControlExtraBase extra in extraControls)
+                        {
+                                extra.canMove = false;
+                        }
+                }  
         }
 }
