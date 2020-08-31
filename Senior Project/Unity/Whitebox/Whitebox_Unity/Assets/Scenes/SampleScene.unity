@@ -938,6 +938,7 @@ MonoBehaviour:
   cameraMove: {fileID: 11400000, guid: cfd3ac1d84dded04fa845b1a242490de, type: 2}
   followObj: {fileID: 1658461061}
   rotateObj: {fileID: 1608011105}
+  active: 1
 --- !u!114 &346492943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +987,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &357960460
 Transform:
   m_ObjectHideFlags: 0
@@ -1017,6 +1018,7 @@ MonoBehaviour:
   cameraMove: {fileID: 11400000, guid: 94b6d44126a6b7745a4356cff44eb516, type: 2}
   followObj: {fileID: 1139605736}
   rotateObj: {fileID: 539861844}
+  active: 0
 --- !u!114 &357960462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1402,7 +1404,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 539861843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14af835b668a8b241b46d8db76bcc8e3, type: 3}
+  m_Script: {fileID: 11500000, guid: a6f895fa633ae014bb5129ac1b6d4d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FollowObj: {fileID: 1104060882}
@@ -2279,8 +2281,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.066273294, y: -0.20692693, z: 0.014050836, w: 0.97600806}
-  m_LocalPosition: {x: 33.56, y: 5.445973, z: -56.23}
+  m_LocalRotation: {x: -0.0053157755, y: -0.17866002, z: -0.00096526113, w: 0.9838961}
+  m_LocalPosition: {x: 32.120003, y: 3.695973, z: -51.920002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4370,7 +4372,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1608011104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14af835b668a8b241b46d8db76bcc8e3, type: 3}
+  m_Script: {fileID: 11500000, guid: a6f895fa633ae014bb5129ac1b6d4d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FollowObj: {fileID: 1104060882}
@@ -5098,7 +5100,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1856176024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa877e5940e6cc845860a8e156cc75c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d1ddf08e011a6945ae875b50858849d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 963194228}

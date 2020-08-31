@@ -1,165 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a052cc-2da7-4286-8ba8-718493ce6991" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Whitebox_Unity/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Whitebox_Unity/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Whitebox_Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Whitebox_Unity/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SeniorGame/CharacterMovement/Scripts/ThirdPersonMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SeniorGame/CharacterMovement/Scripts/ThirdPersonMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SeniorGame/Melee/MeleeWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SeniorGame/Melee/MeleeWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SeniorGame/Melee/MeleeWeapon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SeniorGame/Melee/MeleeWeapon.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="36a052cc-2da7-4286-8ba8-718493ce6991" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerMovement.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/PlayerMovement.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-              <folding>
-                <marker date="1598810778791" expanded="false" signature="6:78" ph="..." />
-                <marker date="1598810778791" expanded="true" signature="170:3383" ph="{...}" />
-                <marker date="1598810778791" expanded="false" signature="573:676" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="705:1167" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="914:1129" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="993:1111" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="1301:1483" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="1514:1622" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="1654:1765" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="1797:2071" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="2104:2327" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="2361:2513" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="2548:2671" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="2706:3056" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="2759:3046" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="2860:3028" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="3090:3381" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="3143:3369" ph="{...}" />
-                <marker date="1598810778791" expanded="true" signature="3244:3351" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CharacterTranslate.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/CharacterTranslate.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1598750778152" expanded="false" signature="6:78" ph="..." />
-                <marker date="1598750778152" expanded="true" signature="138:899" ph="{...}" />
-                <marker date="1598750778152" expanded="true" signature="705:808" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FirstPersonTranslate.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/FirstPersonTranslate.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1598738065686" expanded="false" signature="6:78" ph="..." />
-                <marker date="1598738065686" expanded="true" signature="129:138" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ThirdPersonTranslate.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/ThirdPersonTranslate.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-              <folding>
-                <marker date="1598810426313" expanded="true" signature="6:78" ph="..." />
-                <marker date="1598810426313" expanded="true" signature="197:3207" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="480:672" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="713:1980" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="743:1973" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="800:1512" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="895:1357" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="1542:1684" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="1701:1912" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2019:2358" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2046:2352" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2080:2291" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2392:3204" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2619:3080" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2734:2785" ph="{...}" />
-                <marker date="1598810426313" expanded="true" signature="2940:3070" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BowCharacterRotation.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/BowCharacterRotation.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <marker date="1598810426735" expanded="false" signature="6:78" ph="..." />
-                <marker date="1598810426735" expanded="true" signature="192:704" ph="{...}" />
-                <marker date="1598810426735" expanded="true" signature="313:702" ph="{...}" />
-                <marker date="1598810426735" expanded="true" signature="345:695" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BowandArrow.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/BowandArrow.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="66" column="105" selection-start-line="66" selection-start-column="105" selection-end-line="66" selection-end-column="105" />
-              <folding>
-                <marker date="1598811312049" expanded="false" signature="6:114" ph="..." />
-                <marker date="1598811312049" expanded="true" signature="153:4055" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="160:253" ph="/* hold e to increase power ... */" />
-                <marker date="1598811312049" expanded="true" signature="1087:1404" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="1446:3645" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="1479:3639" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="1753:3628" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="2018:3165" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="2098:2308" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="2361:2468" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="2493:2827" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="2602:2805" ph="/* rotDirection = transform.rotation.eulerAngles; ... */" />
-                <marker date="1598811312049" expanded="true" signature="3009:3099" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="3441:3614" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="3480:3595" ph="/* currentCam.SetThirdPerson(); ... */" />
-                <marker date="1598811312049" expanded="true" signature="3682:3843" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="3878:4053" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="3943:3988" ph="{...}" />
-                <marker date="1598811312049" expanded="true" signature="4001:4047" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CharacterRotate.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/CharacterRotate.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1598750639264" expanded="false" signature="6:121" ph="..." />
-                <marker date="1598750639264" expanded="true" signature="226:723" ph="{...}" />
-                <marker date="1598750639264" expanded="true" signature="569:677" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -173,49 +20,47 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Magic/ScalingScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Extra/Crouch.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/Arrow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/BowandArrow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/WeaponBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/BoolData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/IntData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/ThirdPersonCamera.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/Vector3List.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/CameraBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/Vector3Data.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/Camera_Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/LimitFloatData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/TransformData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/ObjectList.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/FloatData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/LimitIntData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/ThirdPersonCamera.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/ListBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ScreenCenter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/FirstPersonTranslate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Follow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/ThirdPersonTranslate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/CharacterTranslate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/CameraBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/ObjectList.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/WeaponBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/BowCharacterRotation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/CharacterRotate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/FirstPlayerRotation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/CharacterRotate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/ThirdPersonRotation.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/In_Camera_View.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/Targeting.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/TargetObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/Enemy_Visible.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/FirstPersonTranslate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/CharacterTranslate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/ThirdPersonTranslate.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/BowandArrow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/Arrow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Magic/ScalingMagic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Magic/ScalingScript.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrol.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrolRandom.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrol.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrolDestsTimed.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraSwitch.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrolDestsPosition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/EnemyManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Inventory/WeaponSwap.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/Enemy_Visible.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/Targeting.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/TargetObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/In_Camera_View.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraSwitch.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/TransformData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/Vector3Data.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/PlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/LimitIntData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/IntData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/Vector3List.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/BoolData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Extra/CharacterControlExtraBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Magic/ScalingMagic.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -259,10 +104,8 @@
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/ThirdPersonRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/ScreenCenter.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/FirstPersonCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/Camera_Manager.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/CameraBase.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/ThirdPersonCamera.cs" />
-        <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/ThirdPersonTranslate.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/BowCharacterRotation.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/FirstPlayerRotation.cs" />
@@ -271,113 +114,16 @@
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Extra/CharacterControlExtraBase.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Extra/Crouch.cs" />
         <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/BowandArrow.cs" />
+        <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraSwitch.cs" />
+        <option value="$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/Camera_Manager.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1359" />
-    <option name="height" value="1040" />
-  </component>
+  <component name="ProjectId" id="1gsMaT3hMgMdLUuyiI2gfYCEzEg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator currentView="UnityExplorer" proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
-      <pane id="Scratches" />
-      <pane id="UnityExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Whitebox_Unity" type="483dac07:UnityExplorerNode$Root" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-              <item name="" type="1045f7f1:UnityExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-hidden-items" value="false" />
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
@@ -393,10 +139,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="userSelectedPid" value="false" />
+      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -428,50 +184,28 @@
       <workItem from="1598552193558" duration="25129000" />
       <workItem from="1598719834489" duration="29991000" />
       <workItem from="1598803536114" duration="7878000" />
+      <workItem from="1598898916132" duration="1057000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142991000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3294964" />
-      <window_info anchor="bottom" id="Unit Tests" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19395973" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="NuGet" order="7" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-    </layout>
-  </component>
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -481,485 +215,11 @@
           <line>21</line>
           <properties documentPath="$PROJECT_DIR$/Assets/SeniorGame/Inventory/WeaponSwap.cs" initialLine="22" />
         </line-breakpoint>
+        <breakpoint enabled="true" suspend="NONE" type="DotNet Exception Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
     </breakpoint-manager>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/Vector3List.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrol.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="52" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrolRandom.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrolDestsTimed.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/EnemyManager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Enemy/Movement/EnemyPatrolDestsPosition.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Data/ListBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/TargetObject.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/Targeting.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/Arrow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="73" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/In_Camera_View.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ZTargeting/Enemy_Visible.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/FirstPersonCamera.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/ThirdPersonMovement.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/FirstPersonMovement.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/ThridPersonCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Magic/ScalingScript.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Camera_01.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Magic/ScalingMagic.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="98" column="28" selection-start-line="98" selection-start-column="28" selection-end-line="98" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/FirstPersonTranslate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Follow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/WeaponBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Inventory/WeaponSwap.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1090">
-          <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ThirdPersonCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/CameraBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ThirdPersonCameraControl.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="29" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CharacterRotate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CharacterTranslate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="41" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/ThirdPersonTranslate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/FirstPlayerRotation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="71" selection-start-line="3" selection-start-column="71" selection-end-line="3" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/BowCharacterRotation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="65" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/ThirdPersonRotation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="65" selection-start-line="3" selection-start-column="65" selection-end-line="3" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/ScreenCenter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <marker date="1598752331711" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598752331711" expanded="true" signature="121:447" ph="{...}" />
-            <marker date="1598752331711" expanded="true" signature="281:445" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/FirstPersonCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" column="46" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/CameraBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <marker date="1598806444763" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598806444763" expanded="true" signature="131:796" ph="{...}" />
-            <marker date="1598806444763" expanded="true" signature="647:749" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/ThirdPersonCamera.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <marker date="1598806899413" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598806899413" expanded="true" signature="179:902" ph="{...}" />
-            <marker date="1598806899413" expanded="true" signature="268:376" ph="{...}" />
-            <marker date="1598806899413" expanded="true" signature="416:900" ph="{...}" />
-            <marker date="1598806899413" expanded="true" signature="446:894" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/CameraSwitch.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
-          <folding>
-            <marker date="1598807174419" expanded="false" signature="6:218" ph="..." />
-            <marker date="1598807174419" expanded="true" signature="261:1322" ph="{...}" />
-            <marker date="1598807174419" expanded="true" signature="393:474" ph="{...}" />
-            <marker date="1598807174419" expanded="true" signature="503:608" ph="{...}" />
-            <marker date="1598807174419" expanded="true" signature="655:1171" ph="{...}" />
-            <marker date="1598807174419" expanded="true" signature="1199:1315" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Camera/Camera_Manager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-          <folding>
-            <marker date="1598806187988" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598806187988" expanded="true" signature="123:633" ph="{...}" />
-            <marker date="1598806187988" expanded="true" signature="285:355" ph="{...}" />
-            <marker date="1598806187988" expanded="true" signature="384:485" ph="{...}" />
-            <marker date="1598806187988" expanded="true" signature="517:631" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/CharacterTranslate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1598750778152" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598750778152" expanded="true" signature="138:899" ph="{...}" />
-            <marker date="1598750778152" expanded="true" signature="705:808" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/FirstPersonTranslate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1598738065686" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598738065686" expanded="true" signature="129:138" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Translate/ThirdPersonTranslate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding>
-            <marker date="1598810426313" expanded="true" signature="6:78" ph="..." />
-            <marker date="1598810426313" expanded="true" signature="197:3207" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="480:672" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="713:1980" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="743:1973" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="800:1512" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="895:1357" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="1542:1684" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="1701:1912" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2019:2358" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2046:2352" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2080:2291" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2392:3204" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2619:3080" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2734:2785" ph="{...}" />
-            <marker date="1598810426313" expanded="true" signature="2940:3070" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/CharacterRotate.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1598750639264" expanded="false" signature="6:121" ph="..." />
-            <marker date="1598750639264" expanded="true" signature="226:723" ph="{...}" />
-            <marker date="1598750639264" expanded="true" signature="569:677" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/FirstPlayerRotation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding>
-            <marker date="1598810426645" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598810426645" expanded="true" signature="197:847" ph="{...}" />
-            <marker date="1598810426645" expanded="true" signature="390:491" ph="{...}" />
-            <marker date="1598810426645" expanded="true" signature="533:835" ph="{...}" />
-            <marker date="1598810426645" expanded="true" signature="565:829" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/ThirdPersonRotation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding>
-            <marker date="1598810426696" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598810426696" expanded="true" signature="190:1381" ph="{...}" />
-            <marker date="1598810426696" expanded="true" signature="362:525" ph="{...}" />
-            <marker date="1598810426696" expanded="true" signature="567:1366" ph="{...}" />
-            <marker date="1598810426696" expanded="true" signature="599:1359" ph="{...}" />
-            <marker date="1598810426696" expanded="true" signature="916:1297" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/PlayerMovement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-          <folding>
-            <marker date="1598810778791" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598810778791" expanded="true" signature="170:3383" ph="{...}" />
-            <marker date="1598810778791" expanded="false" signature="573:676" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="705:1167" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="914:1129" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="993:1111" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="1301:1483" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="1514:1622" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="1654:1765" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="1797:2071" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="2104:2327" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="2361:2513" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="2548:2671" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="2706:3056" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="2759:3046" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="2860:3028" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="3090:3381" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="3143:3369" ph="{...}" />
-            <marker date="1598810778791" expanded="true" signature="3244:3351" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Extra/CharacterControlExtraBase.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <marker date="1598810722236" expanded="false" signature="6:149" ph="..." />
-            <marker date="1598810722236" expanded="true" signature="217:531" ph="{...}" />
-            <marker date="1598810722236" expanded="true" signature="412:484" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Extra/Crouch.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="43" lean-forward="true" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
-          <folding>
-            <marker date="1598811198512" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598811198512" expanded="true" signature="181:1700" ph="{...}" />
-            <marker date="1598811198512" expanded="true" signature="563:1011" ph="{...}" />
-            <marker date="1598811198512" expanded="true" signature="1051:1698" ph="{...}" />
-            <marker date="1598811198512" expanded="true" signature="1081:1692" ph="{...}" />
-            <marker date="1598811198512" expanded="true" signature="1151:1356" ph="{...}" />
-            <marker date="1598811198512" expanded="true" signature="1418:1618" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Characters/Hero/Rotate/BowCharacterRotation.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <marker date="1598810426735" expanded="false" signature="6:78" ph="..." />
-            <marker date="1598810426735" expanded="true" signature="192:704" ph="{...}" />
-            <marker date="1598810426735" expanded="true" signature="313:702" ph="{...}" />
-            <marker date="1598810426735" expanded="true" signature="345:695" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/SeniorGame/Scripts/Weapons/Bow/BowandArrow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="66" column="105" selection-start-line="66" selection-start-column="105" selection-end-line="66" selection-end-column="105" />
-          <folding>
-            <marker date="1598811312049" expanded="false" signature="6:114" ph="..." />
-            <marker date="1598811312049" expanded="true" signature="153:4055" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="160:253" ph="/* hold e to increase power ... */" />
-            <marker date="1598811312049" expanded="true" signature="1087:1404" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="1446:3645" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="1479:3639" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="1753:3628" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="2018:3165" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="2098:2308" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="2361:2468" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="2493:2827" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="2602:2805" ph="/* rotDirection = transform.rotation.eulerAngles; ... */" />
-            <marker date="1598811312049" expanded="true" signature="3009:3099" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="3441:3614" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="3480:3595" ph="/* currentCam.SetThirdPerson(); ... */" />
-            <marker date="1598811312049" expanded="true" signature="3682:3843" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="3878:4053" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="3943:3988" ph="{...}" />
-            <marker date="1598811312049" expanded="true" signature="4001:4047" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

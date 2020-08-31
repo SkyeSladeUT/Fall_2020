@@ -8,10 +8,12 @@ public class Camera_Manager : MonoBehaviour
     private Coroutine moveFunc;
     public Transform followObj;
     public Transform rotateObj;
+    public bool active = false;
     
     private void Awake()
     {
         cameraMove.Init(transform, followObj, rotateObj);
+        gameObject.SetActive(active);
     }
 
     public void StartMove()

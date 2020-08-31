@@ -27,9 +27,6 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwapCamera(CameraBase newCam)
     {
-        Debug.Log(newCam.cameraTransform.gameObject.name);
-        Debug.Log(cameraScript.cameraTransform.gameObject.name);
-
         newCam.cameraTransform.gameObject.SetActive(true);
         cameraScript.cameraTransform.gameObject.SetActive(false);
         newCam.canMove = true;
