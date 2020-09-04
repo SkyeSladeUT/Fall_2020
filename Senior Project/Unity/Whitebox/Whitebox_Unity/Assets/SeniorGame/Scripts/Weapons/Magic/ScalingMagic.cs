@@ -26,6 +26,7 @@ public class ScalingMagic : MonoBehaviour
     public BoolData MagicInUse;
     public float decreaseSpeed;
     public ScalingScript scalescript;
+    public GameObject VFX;
 
     private void Start()
     {

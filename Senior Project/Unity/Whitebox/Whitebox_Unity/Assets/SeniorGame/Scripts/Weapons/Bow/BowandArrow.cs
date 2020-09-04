@@ -19,8 +19,6 @@ public class BowandArrow : WeaponBase
     public float MaxPower, PowerIncreaseScale;
     private GameObject currArrow;
     private Vector3 direction;
-    public TransformData targetObj;
-    public Transform camTrans;
     private Vector3 rotDirection, initRotation;
     public GameObject WeaponObj;
     public CameraSwitch currentCam;
@@ -29,7 +27,8 @@ public class BowandArrow : WeaponBase
     public PlayerMovement playermove;
     public CharacterRotate bowRotate;
     private CharacterRotate originalRotate;
-    public Transform TargetObj;
+
+    public Object_Aim_Script AimScript;
     
     public override void Initialize()
     {
@@ -66,19 +65,7 @@ public class BowandArrow : WeaponBase
                         currentCam.SwapCamera(bowCamera);
                         playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                     }
-                    if (targetObj.transform != null)
-                    {
-                        transform.LookAt(targetObj.transform);
-                    }
-                    else
-                    {
-                        transform.LookAt(TargetObj.position);
-                        //rotDirection = transform.rotation.eulerAngles;
-                        //rotDirection.x = camTrans.rotation.eulerAngles.x;
-                        //transform.rotation = Quaternion.Euler(rotDirection);
-                    }
-
-                    //Debug.Log("Current Power: " + currPower);
+                    AimScript.StartAim();
                     currPower += Time.deltaTime * PowerIncreaseScale;
                     if (currPower >= MaxPower)
                     {
@@ -95,10 +82,15 @@ public class BowandArrow : WeaponBase
                 {
                     //currentCam.SetThirdPerson();
                     //playermove.SwapMovement(originalRotate, playermove.translate);
-
                 }
+                AimScript.StopAim();
             }
 
+        }
+        if (currentCam == bowCamera)
+        {
+            currentCam.SwapCamera(thirdPersonCamera);
+            playermove.SwapMovement(originalRotate, playermove.translate);
         }
     }
     

@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
+
 public class Arrow : MonoBehaviour
 {
     public Rigidbody arrowRigid;
     private GameObject stickyObj;
     private Stickable stickable;
+    public UnityEvent onCollision;
 
     private void Start()
     {
@@ -26,6 +29,7 @@ public class Arrow : MonoBehaviour
             arrowRigid.constraints = RigidbodyConstraints.FreezeAll;
             arrowRigid.gameObject.transform.parent = stickyObj.transform;
         }
+        onCollision.Invoke();
         
     }
 }

@@ -12,15 +12,23 @@ public class ScalingScript : WeaponBase
     public string useButton;
     private float currPower;
     public float MaxPower, PowerIncreaseScale, ScaleIncreaseAmount, ScaleDecreaseAmount;
-    private GameObject currArrow;
+    private GameObject currSpell;
     private Vector3 direction, finalScale, increaseScale, newScale, decreaseScale;
-    public TransformData targetObj;
-    public Transform camTrans;
     private Vector3 rotDirection, initRotation;
     public LimitFloatData MagicAmount;
     public BoolData MagicInUse;
     public float decreaseSpeed;
     public GameObject MagicObj;
+    public CameraSwitch currentCam;
+    public CameraBase bowCamera;
+    public CameraBase thirdPersonCamera;
+    public PlayerMovement playermove;
+    public CharacterRotate bowRotate;
+    private CharacterRotate originalRotate;
+    public float maxSpellDuration;
+    private float currentSpellDuration;
+
+    public Object_Aim_Script AimScript;
     
     
     public override void Initialize()
@@ -35,6 +43,7 @@ public class ScalingScript : WeaponBase
         currWeapon = true;
         attack = Attack();
         MagicInUse.value = false;
+        originalRotate = playermove.rotate;
         StartCoroutine(attack);
 
     }
@@ -54,60 +63,60 @@ public class ScalingScript : WeaponBase
                 if (currWeapon && MagicAmount.value > 0)
                 {
                     currPower = 0;
-                    currArrow = Instantiate(MagicPrefab, InitPos);
-                    currArrow.transform.localScale = Vector3.zero;
-                    currArrow.SetActive(true);
-                    SpellBall = currArrow.GetComponent<Rigidbody>();
+                    currSpell = Instantiate(MagicPrefab, InitPos);
+                    currSpell.transform.localScale = Vector3.zero;
+                    currSpell.SetActive(true);
+                    SpellBall = currSpell.GetComponent<Rigidbody>();
                     while (Input.GetButton(useButton) && MagicAmount.value > 0)
                     {
-                        if (targetObj.transform != null)
+                        if (currentCam.cameraScript != bowCamera)
                         {
-                            transform.LookAt(targetObj.transform);
+                            currentCam.SwapCamera(bowCamera);
+                            playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                         }
-                        else
-                        {
-                            rotDirection = transform.rotation.eulerAngles;
-                            rotDirection.x = camTrans.rotation.eulerAngles.x;
-                            transform.rotation = Quaternion.Euler(rotDirection);
-                        }
-
+                        AimScript.StartAim();
                         //Debug.Log("Current Power: " + currPower);
-                        currPower += Time.deltaTime * PowerIncreaseScale;
-                        MagicAmount.SubFloat(decreaseSpeed * Time.deltaTime);
                         if (currPower >= MaxPower)
                         {
                             currPower = MaxPower;
                         }
-
-                        if (currArrow.transform.localScale.x <= finalScale.x)
+                        else
                         {
-                            newScale = currArrow.transform.localScale + increaseScale * Time.deltaTime;
-                            currArrow.transform.localScale = newScale;
+                            currPower += Time.deltaTime * PowerIncreaseScale;
+                            MagicAmount.SubFloat(decreaseSpeed * Time.deltaTime);
+                        }
+
+                        if (currSpell.transform.localScale.x <= finalScale.x)
+                        {
+                            newScale = currSpell.transform.localScale + increaseScale * Time.deltaTime;
+                            currSpell.transform.localScale = newScale;
                         }
 
                         yield return _fixedUpdate;
                     }
 
                     SpellBall.constraints = RigidbodyConstraints.None;
-                    currArrow.transform.parent = null;
+                    currSpell.transform.parent = null;
+                    currSpell.GetComponent<ScalingMagic>().VFX.SetActive(true);
                     SpellBall.AddForce(transform.forward * currPower, ForceMode.Impulse);
-                    while (currArrow.transform.localScale.x > 0)
+                    currentSpellDuration = maxSpellDuration * (currPower / MaxPower);
+                    while (currentSpellDuration > 0)
                     {
-                        newScale = currArrow.transform.localScale - decreaseScale * Time.deltaTime;
-                        currArrow.transform.localScale = newScale;
+                        currentSpellDuration -= Time.deltaTime;
                         yield return _fixedUpdate;
                     }
 
-                    if (!currArrow.GetComponent<ScalingMagic>().hitObj)
+                    if (!currSpell.GetComponent<ScalingMagic>().hitObj)
                     {
                         inUse = false;
                         MagicInUse.value = false;
-                        Destroy(currArrow);
+                        Destroy(currSpell);
                     }
+                    AimScript.StopAim();
 
                 }
             }
-
+            
             yield return _fixedUpdate;
 
         }
