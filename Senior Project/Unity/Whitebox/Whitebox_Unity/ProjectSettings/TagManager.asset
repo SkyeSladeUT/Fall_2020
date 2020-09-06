@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Scalable
+  - Back_Off
+  - Approach
+  - Alert
   layers:
   - Default
   - TransparentFX
