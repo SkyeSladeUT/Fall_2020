@@ -9,6 +9,10 @@
           <e p="Scripts" t="Include">
             <e p="Characters" t="Include">
               <e p="Enemy" t="Include">
+                <e p="Attack" t="Include">
+                  <e p="Enemy_Attack_Base.cs" t="Include" />
+                  <e p="Enemy_Attack_Melee.cs" t="Include" />
+                </e>
                 <e p="Character" t="Include">
                   <e p="Enemy_Character.cs" t="Include" />
                 </e>
@@ -30,6 +34,7 @@
                     <e p="Enemy_Idle.cs" t="Include" />
                   </e>
                   <e p="OtherMovements" t="Include">
+                    <e p="Enemy_Back_Step.cs" t="Include" />
                     <e p="Enemy_Side_Step.cs" t="Include" />
                   </e>
                   <e p="Patrol" t="Include">

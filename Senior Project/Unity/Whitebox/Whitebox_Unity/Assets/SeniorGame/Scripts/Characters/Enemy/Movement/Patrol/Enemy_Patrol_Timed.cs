@@ -26,6 +26,7 @@ public class Enemy_Patrol_Timed : Enemy_Patrol
 
     public override IEnumerator Move()
     {
+        agent.updateRotation = true;
         timeleft = Random.Range(MinTime, MaxTime);
         while (moving && timeleft > 0)
         {

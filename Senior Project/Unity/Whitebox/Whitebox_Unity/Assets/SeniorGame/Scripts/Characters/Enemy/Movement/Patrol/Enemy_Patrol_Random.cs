@@ -84,6 +84,7 @@ public class Enemy_Patrol_Random : Enemy_Patrol
     public override IEnumerator Move()
     {
         agent.speed = Speed;
+        agent.updateRotation = true;
         while (moving)
         {
             //Debug.Log("Random Vector: " + randomVector);

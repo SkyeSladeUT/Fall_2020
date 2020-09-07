@@ -16,6 +16,11 @@ public class Enemy_Manager : MonoBehaviour
     public List<Transform> Destinations;
     private NavMeshAgent agent;
 
+    public bool AttackWhileMoving;
+    public GameObject KnockbackObj;
+    public Enemy_Attack_Base Attack;
+    private Enemy_Attack_Base _attackTemp;
+
     public Transform Player;
 
     private void Start()
@@ -24,10 +29,13 @@ public class Enemy_Manager : MonoBehaviour
         Init();
     }
 
+    #region INIT FUNCTIONS
+
     public void Init()
     {
         InitCharacter();
         InitMovement();
+        InitAttack();
     }
 
     public void InitCharacter()
@@ -45,6 +53,16 @@ public class Enemy_Manager : MonoBehaviour
         Movement_Version.StartMove();
     }
 
+    public void InitAttack()
+    {
+        _attackTemp = Attack.getClone();
+        Attack = _attackTemp;
+        Attack.Init(this, KnockbackObj);
+    }
+    #endregion
+
+    #region SETTER FUNCTIONS
+
     public void SetNewCharacter(Enemy_Character character)
     {
         Character = character;
@@ -57,6 +75,57 @@ public class Enemy_Manager : MonoBehaviour
         Movement_Version = movement;
         InitMovement();
     }
+
+    public void SetNewAttack(Enemy_Attack_Base attack)
+    {
+        Attack.StopAttack();
+        Attack = attack;
+        InitAttack();
+    }
     
+    #endregion
+
+    #region START FUNCTIONS
+
+    public void StartMove()
+    {
+        Movement_Version.StartMove();
+    }
+
+    public void StartAttack()
+    {
+        if (!AttackWhileMoving)
+        {
+            StartCoroutine(PauseMove());
+        }
+        Attack.StartAttack();
+    }
+
+    private IEnumerator PauseMove()
+    {
+        Movement_Version.StopMove();
+        yield return new WaitForSeconds(Attack.CoolDownTime + Attack.AttackActiveTime);
+        Movement_Version.StartMove();
+    }
+
+    #endregion
+
+    #region STOP FUNCTIONS
+
+    public void StopMove()
+    {
+        Movement_Version.StopMove();
+    }
+
+    public void StopAttack()
+    {
+        if (!AttackWhileMoving)
+        {
+            Movement_Version.StartMove();
+        }
+        Attack.StopAttack();
+    }
+
+    #endregion
     
 }

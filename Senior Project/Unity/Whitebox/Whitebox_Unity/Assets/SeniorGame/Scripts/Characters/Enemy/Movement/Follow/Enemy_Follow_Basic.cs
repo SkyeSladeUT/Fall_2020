@@ -7,6 +7,7 @@ public class Enemy_Follow_Basic : Enemy_Follow_Base
     public override IEnumerator Move()
     {
         //agent.speed = Speed;
+        agent.updateRotation = true;
         while (moving)
         {
             agent.destination = followObj.transform.position;

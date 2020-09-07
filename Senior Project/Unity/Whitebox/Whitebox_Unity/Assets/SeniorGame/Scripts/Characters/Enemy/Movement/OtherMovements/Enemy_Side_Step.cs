@@ -14,7 +14,6 @@ public class Enemy_Side_Step : Enemy_Movement
     protected override void Init(NavMeshAgent agent, MonoBehaviour caller)
     {
         base.Init(agent, caller);
-        agent.updateRotation = false;
         right_dest = enemy.transform.position;
         right_dest += enemy.transform.right * sideAmount;
         left_dest = enemy.transform.position;
@@ -26,6 +25,7 @@ public class Enemy_Side_Step : Enemy_Movement
 
     public override IEnumerator Move()
     {
+        agent.updateRotation = false;
         while (moving)
         {
             if (CheckPosition(_currDest))

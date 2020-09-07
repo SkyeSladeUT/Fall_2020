@@ -25,6 +25,7 @@ public class Enemy_Patrol_Destination : Enemy_Patrol
     
     public override IEnumerator Move()
     {
+        agent.updateRotation = true;
         while (moving)
         {
             if (CheckPosition(destinations[currentDestIndex].position))
