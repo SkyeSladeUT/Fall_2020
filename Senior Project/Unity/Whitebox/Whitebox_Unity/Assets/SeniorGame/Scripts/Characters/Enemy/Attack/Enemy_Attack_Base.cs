@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Enemy_Attack_Base : ScriptableObject
 {
     public float DamageAmount;
+    public float AttackStartTime;
     public float CoolDownTime;
     protected bool attacking;
     public float AttackActiveTime;

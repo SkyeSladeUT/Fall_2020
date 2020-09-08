@@ -6,10 +6,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy_Manager : MonoBehaviour
 {
-    
-    public Enemy_Character Character;
-    private Enemy_Character _characterTemp;
-
     public Enemy_Movement Movement_Version;
     private Enemy_Movement _movementTemp;
     
@@ -33,16 +29,8 @@ public class Enemy_Manager : MonoBehaviour
 
     public void Init()
     {
-        InitCharacter();
         InitMovement();
         InitAttack();
-    }
-
-    public void InitCharacter()
-    {
-        _characterTemp = Character.GetClone();
-        Character = _characterTemp;
-        Character.Init(this, transform);
     }
 
     public void InitMovement()
@@ -50,7 +38,6 @@ public class Enemy_Manager : MonoBehaviour
         _movementTemp = Movement_Version.GetClone();
         Movement_Version = _movementTemp;
         Movement_Version.Init(agent, this, Player, Destinations);
-        Movement_Version.StartMove();
     }
 
     public void InitAttack()
@@ -62,12 +49,6 @@ public class Enemy_Manager : MonoBehaviour
     #endregion
 
     #region SETTER FUNCTIONS
-
-    public void SetNewCharacter(Enemy_Character character)
-    {
-        Character = character;
-        InitCharacter();
-    }
 
     public void SetNewMovement(Enemy_Movement movement)
     {
@@ -104,7 +85,7 @@ public class Enemy_Manager : MonoBehaviour
     private IEnumerator PauseMove()
     {
         Movement_Version.StopMove();
-        yield return new WaitForSeconds(Attack.CoolDownTime + Attack.AttackActiveTime);
+        yield return new WaitForSeconds(Attack.CoolDownTime + Attack.AttackActiveTime + Attack.AttackStartTime);
         Movement_Version.StartMove();
     }
 

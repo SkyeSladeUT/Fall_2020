@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b97d1e087e169f46a3aa44cac11a38e, type: 3}
   m_Name: Enemy_Backstep
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 2
   distanceAway: 10
   turnAway: 0

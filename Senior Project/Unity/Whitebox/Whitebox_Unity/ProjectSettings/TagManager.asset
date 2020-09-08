@@ -21,8 +21,8 @@ TagManager:
   - KnockBackObj
   - Floor
   - Center
-  - 
-  - 
+  - EnemyDamage
+  - PlayerDamage
   - 
   - 
   - 

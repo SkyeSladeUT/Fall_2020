@@ -17,7 +17,7 @@ public abstract class Trigger_Event_Base : MonoBehaviour
     
 
 
-    public IEnumerator CheckTrigger(Collider coll)
+    public virtual IEnumerator CheckTrigger(Collider coll)
     {
         switch (checksFor)
         {

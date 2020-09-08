@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Enemy/Attack/Melee")]
+[CreateAssetMenu(menuName = "Character/Enemy/Attack/Melee")]
 public class Enemy_Attack_Melee : Enemy_Attack_Base
 {
     public override IEnumerator Attack()
     {
+        yield return new WaitForSeconds(AttackStartTime);
         meleeAttackObj.SetActive(true);
         yield return new WaitForSeconds(AttackActiveTime);
         meleeAttackObj.SetActive(false);
@@ -19,6 +20,7 @@ public class Enemy_Attack_Melee : Enemy_Attack_Base
         temp.AttackActiveTime = AttackActiveTime;
         temp.CoolDownTime = CoolDownTime;
         temp.DamageAmount = DamageAmount;
+        temp.AttackStartTime = AttackStartTime;
         return temp;
     }
 }

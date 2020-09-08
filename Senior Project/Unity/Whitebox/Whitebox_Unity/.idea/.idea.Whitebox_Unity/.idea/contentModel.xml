@@ -8,22 +8,19 @@
         <e p="SeniorGame" t="Include">
           <e p="Scripts" t="Include">
             <e p="Characters" t="Include">
+              <e p="Common" t="Include">
+                <e p="Character_Base.cs" t="Include" />
+                <e p="Character_Manager.cs" t="Include" />
+                <e p="Death_Base.cs" t="Include" />
+                <e p="Destroy_Death.cs" t="Include" />
+                <e p="Health_Base.cs" t="Include" />
+              </e>
               <e p="Enemy" t="Include">
                 <e p="Attack" t="Include">
                   <e p="Enemy_Attack_Base.cs" t="Include" />
                   <e p="Enemy_Attack_Melee.cs" t="Include" />
                 </e>
-                <e p="Character" t="Include">
-                  <e p="Enemy_Character.cs" t="Include" />
-                </e>
-                <e p="Death" t="Include">
-                  <e p="Enemy_Death_Base.cs" t="Include" />
-                  <e p="Enemy_Death_Destroy.cs" t="Include" />
-                </e>
                 <e p="Enemy_Manager.cs" t="Include" />
-                <e p="Health" t="Include">
-                  <e p="Enemy_Health.cs" t="Include" />
-                </e>
                 <e p="Movement" t="Include">
                   <e p="Enemy_Movement.cs" t="Include" />
                   <e p="Follow" t="Include">
@@ -75,6 +72,7 @@
             </e>
             <e p="Data" t="Include">
               <e p="BoolData.cs" t="Include" />
+              <e p="DebugObject.cs" t="Include" />
               <e p="FloatData.cs" t="Include" />
               <e p="IntData.cs" t="Include" />
               <e p="LimitFloatData.cs" t="Include" />
@@ -91,11 +89,16 @@
             <e p="SimpleGameScripts" t="Include">
               <e p="Center_Screen.cs" t="Include" />
               <e p="Destroy_Object_Timed.cs" t="Include" />
+              <e p="Events" t="Include">
+                <e p="Distance_Event.cs" t="Include" />
+                <e p="Random_Timed_Event.cs" t="Include" />
+                <e p="Timed_Event.cs" t="Include" />
+              </e>
               <e p="Follow_Object.cs" t="Include" />
               <e p="PS_Callback.cs" t="Include" />
-              <e p="Timed_Event.cs" t="Include" />
               <e p="Toggle_Active.cs" t="Include" />
               <e p="TriggerEvents" t="Include">
+                <e p="Trigger_Enter_Damage.cs" t="Include" />
                 <e p="Trigger_Enter_Event.cs" t="Include" />
                 <e p="Trigger_Event_Base.cs" t="Include" />
                 <e p="Trigger_Exit_Event.cs" t="Include" />

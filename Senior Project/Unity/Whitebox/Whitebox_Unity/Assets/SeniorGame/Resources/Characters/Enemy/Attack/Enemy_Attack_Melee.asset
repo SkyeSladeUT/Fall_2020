@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Enemy_Attack_Melee
   m_EditorClassIdentifier: 
   DamageAmount: 1
+  AttackStartTime: 1
   CoolDownTime: 1
   AttackActiveTime: 0.1
