@@ -25,7 +25,6 @@ public class Enemy_Visible : MonoBehaviour
                 {
                     if (hit.collider.gameObject.CompareTag("Player"))
                     {
-                        //Debug.Log("Raycast Hit: " + hit.collider.gameObject);
                         TargetScript.EnemiesInRange.Add(gameObject);
                     }
                 }

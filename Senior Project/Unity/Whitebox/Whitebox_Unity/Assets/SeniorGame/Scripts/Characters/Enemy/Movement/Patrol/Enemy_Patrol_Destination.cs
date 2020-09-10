@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName = "Enemy/Movement/Patrol/Destination")]
+[CreateAssetMenu(menuName = "Character/Enemy/Movement/Patrol/Destination")]
 public class Enemy_Patrol_Destination : Enemy_Patrol
 {
     public bool PingPongMovement;
@@ -64,7 +64,7 @@ public class Enemy_Patrol_Destination : Enemy_Patrol
             if (positive)
             {
                 currentDestIndex++;
-                if (currentDestIndex > destinations.Count)
+                if (currentDestIndex > destinations.Count-1)
                 {
                     if (PingPongMovement)
                     {

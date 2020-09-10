@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-[CreateAssetMenu(menuName = "Enemy/Movement/Patrol/Timed")]
+[CreateAssetMenu(menuName = "Character/Enemy/Movement/Patrol/Timed")]
 public class Enemy_Patrol_Timed : Enemy_Patrol
 {
     public float MinTime, MaxTime;
@@ -73,7 +73,7 @@ public class Enemy_Patrol_Timed : Enemy_Patrol
             if (positive)
             {
                 currentDestIndex++;
-                if (currentDestIndex > destinations.Count)
+                if (currentDestIndex > destinations.Count-1)
                 {
                     if (PingPongMovement)
                     {

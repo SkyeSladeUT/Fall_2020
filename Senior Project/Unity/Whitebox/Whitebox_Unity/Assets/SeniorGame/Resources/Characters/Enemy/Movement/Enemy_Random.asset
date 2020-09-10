@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a4f52bcdc87cf4697143f91fb30a0d, type: 3}
   m_Name: Enemy_Random
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 1.5
   minChangeDestTime: 1
   maxChangeDestTime: 2
   DestinationOffset: 0.01

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-[CreateAssetMenu(menuName = "Enemy/Movement/SideStep")]
+[CreateAssetMenu(menuName = "Character/Enemy/Movement/SideStep")]
 public class Enemy_Side_Step : Enemy_Movement
 {
     public float sideAmount;

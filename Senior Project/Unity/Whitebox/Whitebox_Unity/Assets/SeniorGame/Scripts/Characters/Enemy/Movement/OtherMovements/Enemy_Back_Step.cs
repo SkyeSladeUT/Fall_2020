@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-[CreateAssetMenu(menuName = "Enemy/Movement/BackStep")]
+[CreateAssetMenu(menuName = "Character/Enemy/Movement/BackStep")]
 public class Enemy_Back_Step : Enemy_Movement
 {
     public float distanceAway;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName = "Enemy/Movement/Patrol/Random")]
+[CreateAssetMenu(menuName = "Character/Enemy/Movement/Patrol/Random")]
 public class Enemy_Patrol_Random : Enemy_Patrol
 {
     public bool useX, useY, useZ;
