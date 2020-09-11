@@ -42,9 +42,7 @@ public class WeaponSwap : MonoBehaviour
                 {
                     currentIndex = weapons.Count - 1;
                 }
-                wm.currentWeapon.End();
-                wm.currentWeapon = weapons[currentIndex];
-                wm.currentWeapon.Initialize();
+                wm.SwapWeapon(weapons[currentIndex]);
                 UpdateDisplay();
             }
             else if (scrollWheel > .05f)
@@ -54,9 +52,7 @@ public class WeaponSwap : MonoBehaviour
                 {
                     currentIndex = 0;
                 }
-                wm.currentWeapon.End();
-                wm.currentWeapon = weapons[currentIndex];
-                wm.currentWeapon.Initialize();
+                wm.SwapWeapon(weapons[currentIndex]);
                 UpdateDisplay();
             }
             else
@@ -66,9 +62,7 @@ public class WeaponSwap : MonoBehaviour
                     if (Input.GetKeyDown(WeaponKeys[i]))
                     {
                         currentIndex = i;
-                        wm.currentWeapon.End();
-                        wm.currentWeapon = weapons[i];
-                        wm.currentWeapon.Initialize();
+                        wm.SwapWeapon(weapons[i]);
                     }
                 }
                 UpdateDisplay();

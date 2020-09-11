@@ -15,6 +15,13 @@ public class WeaponManager : MonoBehaviour
     {
         currentWeapon.Initialize();
     }
+
+    public void SwapWeapon(WeaponBase weapon)
+    {
+        WeaponDisable();
+        currentWeapon = weapon;
+        WeaponEnable();
+    }
     
     
 }

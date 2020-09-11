@@ -11,6 +11,8 @@ public class Magic_Burst : MonoBehaviour
     private Vector3 position;
     private Quaternion rotation;
 
+    public UnityEvent onHit;
+
     
     private void OnTriggerEnter(Collider other)
     {
@@ -20,6 +22,7 @@ public class Magic_Burst : MonoBehaviour
             rotation = ProjectilePrefab.transform.rotation;
             ProjectilePrefab.SetActive(false);
             Instantiate(BurstPrefab, position, rotation).SetActive(true);
+            onHit.Invoke();
         }
     }
 }

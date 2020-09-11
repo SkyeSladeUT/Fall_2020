@@ -11,9 +11,9 @@ public class ScalingScript : WeaponBase
     private Rigidbody SpellBall;
     public string useButton;
     private float currPower;
-    public float MaxPower, PowerIncreaseScale, ScaleIncreaseAmount, ScaleDecreaseAmount;
+    public float MaxPower, PowerIncreaseScale, ScaleIncreaseAmount;
     private GameObject currSpell;
-    private Vector3 direction, finalScale, increaseScale, newScale, decreaseScale;
+    private Vector3 direction, finalScale, increaseScale, newScale;
     private Vector3 rotDirection, initRotation;
     public LimitFloatData MagicAmount;
     public BoolData MagicInUse;
@@ -27,6 +27,7 @@ public class ScalingScript : WeaponBase
     private CharacterRotate originalRotate;
     public float maxSpellDuration;
     private float currentSpellDuration;
+    public float CameraSwapTime;
 
     public Object_Aim_Script AimScript;
     
@@ -38,7 +39,6 @@ public class ScalingScript : WeaponBase
         initRotation = transform.rotation.eulerAngles;
         finalScale = MagicPrefab.transform.localScale;
         increaseScale = new Vector3(ScaleIncreaseAmount, ScaleIncreaseAmount, ScaleIncreaseAmount);
-        decreaseScale = new Vector3(ScaleDecreaseAmount, ScaleDecreaseAmount, ScaleDecreaseAmount);
         _waitforbutton = new WaitUntil(CheckInput);
         currWeapon = true;
         attack = Attack();
@@ -69,9 +69,9 @@ public class ScalingScript : WeaponBase
                     SpellBall = currSpell.GetComponent<Rigidbody>();
                     while (Input.GetButton(useButton) && MagicAmount.value > 0)
                     {
+                        currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                         if (currentCam.cameraScript != bowCamera)
                         {
-                            currentCam.SwapCamera(bowCamera);
                             playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                         }
                         AimScript.StartAim();
@@ -129,7 +129,17 @@ public class ScalingScript : WeaponBase
         MagicObj.SetActive(false);
         inUse = false;
         currWeapon = false;
+        if (currentCam.cameraScript != thirdPersonCamera)
+        {
+            currentCam.StopTimeSwap(thirdPersonCamera);
+            playermove.SwapMovement(originalRotate, playermove.translate);
+        }
         StopCoroutine(attack);
+    }
+
+    public void SpellHit()
+    {
+        currentSpellDuration = 0;
     }
     
     private bool CheckInput()

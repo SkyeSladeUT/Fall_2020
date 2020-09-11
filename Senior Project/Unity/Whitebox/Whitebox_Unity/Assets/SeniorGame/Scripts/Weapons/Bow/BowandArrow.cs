@@ -29,6 +29,7 @@ public class BowandArrow : WeaponBase
     private CharacterRotate originalRotate;
 
     public Object_Aim_Script AimScript;
+    public float CameraSwapTime;
     
     public override void Initialize()
     {
@@ -60,9 +61,9 @@ public class BowandArrow : WeaponBase
                 ArrowRB = currArrow.GetComponent<Rigidbody>();
                 while (Input.GetButton(useButton))
                 {
+                    currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                     if (currentCam.cameraScript != bowCamera)
                     {
-                        currentCam.SwapCamera(bowCamera);
                         playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                     }
                     AimScript.StartAim();
@@ -78,20 +79,11 @@ public class BowandArrow : WeaponBase
                 currArrow.transform.parent = null;
                 ArrowRB.AddForce(transform.forward * currPower, ForceMode.Impulse);
                 inUse = false;
-                if (currentCam == bowCamera)
-                {
-                    //currentCam.SetThirdPerson();
-                    //playermove.SwapMovement(originalRotate, playermove.translate);
-                }
                 AimScript.StopAim();
             }
 
         }
-        if (currentCam == bowCamera)
-        {
-            currentCam.SwapCamera(thirdPersonCamera);
-            playermove.SwapMovement(originalRotate, playermove.translate);
-        }
+
     }
     
 
@@ -101,6 +93,11 @@ public class BowandArrow : WeaponBase
         WeaponObj.SetActive(false);
         currWeapon = false;
         inUse = false;
+        if (currentCam.cameraScript != thirdPersonCamera)
+        {
+            currentCam.StopTimeSwap(thirdPersonCamera);
+            playermove.SwapMovement(originalRotate, playermove.translate);
+        }
         StopCoroutine(attack);
     }
     

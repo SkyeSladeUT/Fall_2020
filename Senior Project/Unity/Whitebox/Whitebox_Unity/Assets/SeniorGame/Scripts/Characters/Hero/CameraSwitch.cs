@@ -12,6 +12,8 @@ public class CameraSwitch : MonoBehaviour
     public CameraBase cameraScript;
     private Coroutine moveFunc;
     private Coroutine tempMoveFunc;
+    private float currentTime;
+    private Coroutine swapFunc;
 
     private void Start()
     {
@@ -36,6 +38,47 @@ public class CameraSwitch : MonoBehaviour
             StopCoroutine(moveFunc);
         moveFunc = tempMoveFunc;
         cameraScript = newCam;
+    }
+
+    public void StartTimeSwap(float time, CameraBase origCamera, CameraBase newCamera)
+    {
+        if (swapFunc == null)
+        {
+            currentTime = time;
+            SwapCamera(newCamera);
+            swapFunc = StartCoroutine(TimedSwap(origCamera));
+        }
+        else
+        {
+            currentTime = time;
+        }
+        
+    }
+    
+
+    private IEnumerator TimedSwap(CameraBase origCamera)
+    {
+        while (currentTime > 0)
+        {
+            currentTime -= .1f;
+            yield return new WaitForSeconds(.1f);
+        }
+        StopTimeSwap(origCamera);
+    }
+
+    public void StopTimeSwap(CameraBase origCamera)
+    {
+        if (swapFunc != null)
+        {
+            SwapCamera(origCamera);
+            StopCoroutine(swapFunc);
+        }
+        else if(origCamera != cameraScript)
+        {
+            SwapCamera(origCamera);
+        }
+        swapFunc = null;
+
     }
 
     public void StopMove()
