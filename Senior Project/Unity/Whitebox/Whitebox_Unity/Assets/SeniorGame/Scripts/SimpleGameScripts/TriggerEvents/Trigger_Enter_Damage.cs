@@ -12,7 +12,7 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
         StartCoroutine(CheckTrigger(other));
     }
 
-    public virtual IEnumerator CheckTrigger(Collider coll)
+    public override IEnumerator CheckTrigger(Collider coll)
     {
         switch (checksFor)
         {
@@ -26,7 +26,7 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
                 }
                 break;
             case Check.Name:
-                if (coll.gameObject.name.Contains(name))
+                if (coll.gameObject.name.Contains(objName))
                 {
                     yield return new WaitForSeconds(waitTime);
                     RunDamageScript(coll);

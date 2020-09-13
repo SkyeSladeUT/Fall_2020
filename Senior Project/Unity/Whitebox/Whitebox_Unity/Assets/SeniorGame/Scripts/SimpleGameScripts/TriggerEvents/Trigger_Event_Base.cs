@@ -11,7 +11,7 @@ public abstract class Trigger_Event_Base : MonoBehaviour
     public Check checksFor;
     public float waitTime;
 
-    public string name;
+    public string objName;
     public LayerMask layer;
     public string tagName;
     
@@ -29,7 +29,7 @@ public abstract class Trigger_Event_Base : MonoBehaviour
                     }
                     break;
                 case Check.Name:
-                    if (coll.gameObject.name.Contains(name))
+                    if (coll.gameObject.name.Contains(objName))
                     {
                         yield return new WaitForSeconds(waitTime);
                         Event.Invoke();

@@ -5,9 +5,33 @@
     <e p="E:\School\College\Fall2020\Fall_2020\Senior Project\Unity\Whitebox\Whitebox_Unity" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Navmesh" t="Include">
+          <e p="NavMeshComponents" t="Include">
+            <e p="Editor" t="Include">
+              <e p="NavMeshAssetManager.cs" t="Include" />
+              <e p="NavMeshComponentsEditor.asmdef" t="Include" />
+              <e p="NavMeshComponentsGUIUtility.cs" t="Include" />
+              <e p="NavMeshLinkEditor.cs" t="Include" />
+              <e p="NavMeshModifierEditor.cs" t="Include" />
+              <e p="NavMeshModifierVolumeEditor.cs" t="Include" />
+              <e p="NavMeshSurfaceEditor.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="NavMeshComponents.asmdef" t="Include" />
+              <e p="NavMeshLink.cs" t="Include" />
+              <e p="NavMeshModifier.cs" t="Include" />
+              <e p="NavMeshModifierVolume.cs" t="Include" />
+              <e p="NavMeshSurface.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="SeniorGame" t="Include">
           <e p="Scripts" t="Include">
             <e p="Characters" t="Include">
+              <e p="Bosses" t="Include">
+                <e p="Boss_Base.cs" t="Include" />
+                <e p="Rib_Cage_Wall.cs" t="Include" />
+              </e>
               <e p="Common" t="Include">
                 <e p="Character_Base.cs" t="Include" />
                 <e p="Character_Manager.cs" t="Include" />
@@ -107,6 +131,9 @@
                 <e p="Trigger_Stay_Event.cs" t="Include" />
               </e>
             </e>
+            <e p="Tests" t="Include">
+              <e p="NavmeshTest.cs" t="Include" />
+            </e>
             <e p="VFX" t="Include">
               <e p="Magic_Burst.cs" t="Include" />
             </e>
@@ -170,6 +197,8 @@
         </e>
       </e>
       <e p="Library" t="ExcludeRecursive" />
+      <e p="NavMeshComponents.csproj" t="IncludeRecursive" />
+      <e p="NavMeshComponentsEditor.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="Temp" t="ExcludeRecursive">
