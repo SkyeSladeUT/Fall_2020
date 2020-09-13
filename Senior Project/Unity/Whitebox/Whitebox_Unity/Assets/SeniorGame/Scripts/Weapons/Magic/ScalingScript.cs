@@ -69,11 +69,11 @@ public class ScalingScript : WeaponBase
                     SpellBall = currSpell.GetComponent<Rigidbody>();
                     while (Input.GetButton(useButton) && MagicAmount.value > 0)
                     {
-                        currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                         if (currentCam.cameraScript != bowCamera)
                         {
                             playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                         }
+                        currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                         AimScript.StartAim();
                         //Debug.Log("Current Power: " + currPower);
                         if (currPower >= MaxPower)

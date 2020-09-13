@@ -61,11 +61,11 @@ public class BowandArrow : WeaponBase
                 ArrowRB = currArrow.GetComponent<Rigidbody>();
                 while (Input.GetButton(useButton))
                 {
-                    currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                     if (currentCam.cameraScript != bowCamera)
                     {
                         playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                     }
+                    currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                     AimScript.StartAim();
                     currPower += Time.deltaTime * PowerIncreaseScale;
                     if (currPower >= MaxPower)

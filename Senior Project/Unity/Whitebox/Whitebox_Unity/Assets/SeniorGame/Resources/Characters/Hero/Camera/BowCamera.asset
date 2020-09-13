@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: BowCamera
   m_EditorClassIdentifier: 
   canMove: 1
-  rotationSpeed: 20
+  rotationSpeed: 100
   CameraHorizontal: Mouse X
   CameraVertical: Mouse Y
   cameraTransform: {fileID: 0}
+  minCamAngle: -90
+  maxCamAngle: 90
