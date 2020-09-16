@@ -68,6 +68,9 @@
                 </e>
               </e>
               <e p="Hero" t="Include">
+                <e p="Animation" t="Include">
+                  <e p="Movement_Animation.cs" t="Include" />
+                </e>
                 <e p="Camera" t="Include">
                   <e p="Camera_Manager.cs" t="Include" />
                   <e p="CameraBase.cs" t="Include" />

@@ -76,6 +76,35 @@ public class ThirdPersonTranslate : CharacterTranslate
         }
     }
 
+    public override float getMoveAngle()
+    {
+        return GetDirection(_cc.transform, _moveVec);
+    }
+    
+    public virtual float GetDirection(Transform player, Vector3 moveDirection)
+    {
+        Vector3 collisionposition = moveDirection;
+        collisionposition.y = 0;
+        Vector3 transformposition = player.position;
+        transformposition.y = 0;
+        Vector3 target = collisionposition - transformposition;
+        float angle = Vector3.Angle(target, player.forward);
+        Vector3 crossProduct = Vector3.Cross(target, player.forward);
+        if (crossProduct.y < 0)
+        {
+            angle = -angle;
+        }
+
+        angle /= 360;
+        angle += .5f;
+        return angle;
+    }
+
+    public override float getSpeed()
+    {
+        return _cc.velocity.magnitude;
+    }
+
     public virtual void Invoke()
     {
         _moveVec = Camera.forward * currentForwardSpeed * Input.GetAxis("Vertical") +

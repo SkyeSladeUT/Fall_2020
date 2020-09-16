@@ -27,6 +27,9 @@ public abstract class CharacterTranslate : ScriptableObject
 
     public abstract IEnumerator Run();
 
+    public abstract float getMoveAngle();
+
+    public abstract float getSpeed();
 
 
 }
