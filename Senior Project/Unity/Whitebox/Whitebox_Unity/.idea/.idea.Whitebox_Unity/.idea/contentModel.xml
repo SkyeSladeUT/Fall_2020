@@ -132,6 +132,8 @@
               </e>
             </e>
             <e p="Tests" t="Include">
+              <e p="DirectionalHit.cs" t="Include" />
+              <e p="GetDirection.cs" t="Include" />
               <e p="NavmeshTest.cs" t="Include" />
             </e>
             <e p="VFX" t="Include">
