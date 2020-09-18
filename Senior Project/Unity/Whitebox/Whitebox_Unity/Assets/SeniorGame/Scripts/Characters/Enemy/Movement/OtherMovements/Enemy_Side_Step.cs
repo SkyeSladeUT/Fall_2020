@@ -10,6 +10,7 @@ public class Enemy_Side_Step : Enemy_Movement
     private Vector3 right_dest, left_dest, _currDest;
     private bool _right = true;
     public float minTimeWait, maxTimeWait;
+    public bool RotateToPlayer;
 
     protected override void Init(NavMeshAgent agent, MonoBehaviour caller)
     {
@@ -31,6 +32,11 @@ public class Enemy_Side_Step : Enemy_Movement
             if (CheckPosition(_currDest))
             {
                 caller.StartCoroutine(ChangeDest());
+            }
+
+            if (RotateToPlayer)
+            {
+                agent.gameObject.transform.LookAt(followObj);
             }
             yield return new WaitForSeconds(.1f);
         }
@@ -83,5 +89,7 @@ public class Enemy_Side_Step : Enemy_Movement
     {
         return Random.Range(minTimeWait, maxTimeWait);
     }
+
+    
     
 }

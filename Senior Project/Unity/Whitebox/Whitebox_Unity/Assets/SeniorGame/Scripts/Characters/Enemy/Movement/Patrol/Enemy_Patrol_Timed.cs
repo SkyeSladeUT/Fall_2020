@@ -40,8 +40,8 @@ public class Enemy_Patrol_Timed : Enemy_Patrol
             yield return new WaitForSeconds(.1f);
             
         }
-
-        caller.StartCoroutine(ChangeDest());
+        if(moving)
+            caller.StartCoroutine(ChangeDest());
     }
 
     public override Enemy_Movement GetClone()

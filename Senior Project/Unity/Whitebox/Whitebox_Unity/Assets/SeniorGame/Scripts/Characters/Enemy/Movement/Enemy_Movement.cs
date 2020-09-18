@@ -15,14 +15,27 @@ public abstract class Enemy_Movement : ScriptableObject
     protected Transform enemy;
     protected MonoBehaviour caller;
     protected Transform followObj;
+    private bool canMove;
 
     //Basic Init
     protected virtual void Init(NavMeshAgent agent, MonoBehaviour caller)
     {
+        canMove = true;
         this.agent = agent;
         this.agent.speed = 0;
         enemy = agent.transform;
         this.caller = caller;
+    }
+
+    public void deactiveMove()
+    {
+        canMove = false;
+        StopMove();
+    }
+
+    public void activateMove()
+    {
+        canMove = true;
     }
     
     //Patrol Init
@@ -51,10 +64,18 @@ public abstract class Enemy_Movement : ScriptableObject
 
     public virtual void StartMove()
     {
-        agent.speed = Speed;
-        moving = true;
-        moveFunc = caller.StartCoroutine(Move());
-;    }
+        if (canMove)
+        {
+            agent.speed = Speed;
+            moving = true;
+            moveFunc = caller.StartCoroutine(Move());
+        }
+        else
+        {
+            StopMove();
+        }
+
+    }
 
     public abstract IEnumerator Move();
 
@@ -66,6 +87,7 @@ public abstract class Enemy_Movement : ScriptableObject
         {
             caller.StopCoroutine(moveFunc);
         }
+        Debug.Log("Stop Move Enemy Movement");
     }
 
     public abstract Enemy_Movement GetClone();

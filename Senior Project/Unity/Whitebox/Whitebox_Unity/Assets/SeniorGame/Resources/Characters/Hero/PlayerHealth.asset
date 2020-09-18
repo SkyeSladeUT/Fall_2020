@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TotalHealth: 10
   ArmorDamageDecrease: 0
-  Death_Version: {fileID: 11400000, guid: d2adea60c1da5dd40801242123a9b44c, type: 2}
+  Death_Version: {fileID: 11400000, guid: caa5daa06999bae458010dfa20da8bef, type: 2}

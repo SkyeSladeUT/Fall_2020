@@ -19,10 +19,39 @@ public class Enemy_Manager : MonoBehaviour
 
     public Transform Player;
 
+    private bool canAttack;
+    private bool canMove;
+
     private void Start()
     {
+        canAttack = true;
+        canMove = true;
         agent = GetComponent<NavMeshAgent>();
         Init();
+    }
+
+    public void deactivateMove()
+    {
+        canMove = false;
+        Movement_Version.deactiveMove();
+        StopMove();
+    }
+
+    public void deactivateAttack()
+    {
+        canAttack = false;
+        StopAttack();
+    }
+
+    public void activateMove()
+    {
+        canMove = true;
+        Movement_Version.activateMove();
+    }
+
+    public void activateAttack()
+    {
+        canAttack = true;
     }
 
     #region INIT FUNCTIONS
@@ -70,16 +99,21 @@ public class Enemy_Manager : MonoBehaviour
 
     public void StartMove()
     {
-        Movement_Version.StartMove();
+        if(canMove)
+            Movement_Version.StartMove();
     }
 
     public void StartAttack()
     {
-        if (!AttackWhileMoving)
+        if (canAttack)
         {
-            StartCoroutine(PauseMove());
+            if (!AttackWhileMoving)
+            {
+                StartCoroutine(PauseMove());
+            }
+
+            Attack.StartAttack();
         }
-        Attack.StartAttack();
     }
 
     private IEnumerator PauseMove()

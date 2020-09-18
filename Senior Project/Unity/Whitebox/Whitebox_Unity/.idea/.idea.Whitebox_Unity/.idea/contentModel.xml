@@ -35,8 +35,13 @@
               <e p="Common" t="Include">
                 <e p="Character_Base.cs" t="Include" />
                 <e p="Character_Manager.cs" t="Include" />
-                <e p="Death_Base.cs" t="Include" />
-                <e p="Destroy_Death.cs" t="Include" />
+                <e p="Death" t="Include">
+                  <e p="Deactivate_Player_Death.cs" t="Include" />
+                  <e p="Death_Base.cs" t="Include" />
+                  <e p="Death_Event.cs" t="Include" />
+                  <e p="Death_Event_Setup.cs" t="Include" />
+                  <e p="Destroy_Death.cs" t="Include" />
+                </e>
                 <e p="Health_Base.cs" t="Include" />
               </e>
               <e p="Enemy" t="Include">
@@ -45,6 +50,7 @@
                   <e p="Enemy_Attack_Melee.cs" t="Include" />
                   <e p="Enemy_Attack_None.cs" t="Include" />
                 </e>
+                <e p="Enemy_List.cs" t="Include" />
                 <e p="Enemy_Manager.cs" t="Include" />
                 <e p="Movement" t="Include">
                   <e p="Enemy_Movement.cs" t="Include" />

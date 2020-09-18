@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Movement_Animation : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Movement_Animation : MonoBehaviour
     public string angleTrigger;
     private bool updating;
     public CharacterTranslate translate;
+    private Coroutine updateFunc;
     
 
     private IEnumerator AnimateUpdate()
@@ -30,5 +32,21 @@ public class Movement_Animation : MonoBehaviour
     {
         return translate.getSpeed();
     }
+
+    public void StartAnimate()
+    {
+        updating = true;
+        updateFunc = StartCoroutine(AnimateUpdate());
+    }
+
+    public void StopAnimate()
+    {
+        updating = false;
+        if (updateFunc != null)
+        {
+            StopCoroutine(updateFunc);
+        }
+    }
+    
     
 }

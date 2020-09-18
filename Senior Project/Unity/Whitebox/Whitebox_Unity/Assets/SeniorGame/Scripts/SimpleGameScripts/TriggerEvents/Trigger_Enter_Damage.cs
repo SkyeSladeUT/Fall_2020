@@ -6,14 +6,22 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
 {
     public float Damage;
     public bool DecreasedByArmor;
+    private bool isRunning;
+
+    private void Start()
+    {
+        isRunning = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(CheckTrigger(other));
+        if(!isRunning)
+            StartCoroutine(CheckTrigger(other));
     }
 
     public override IEnumerator CheckTrigger(Collider coll)
     {
+        isRunning = true;
         switch (checksFor)
         {
             case Check.Layer:
@@ -40,6 +48,8 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
                 }
                 break;
         }
+
+        isRunning = false;
     }
 
     public virtual void RunDamageScript(Collider coll)
