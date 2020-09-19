@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Character/Rotate/BowRotation")]
+[CreateAssetMenu(menuName = "Character/Player/Rotate/BowRotation")]
 
 public class BowCharacterRotation : CharacterRotate
 {

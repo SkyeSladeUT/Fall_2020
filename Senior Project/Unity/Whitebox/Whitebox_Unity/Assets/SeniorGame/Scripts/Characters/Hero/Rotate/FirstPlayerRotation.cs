@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Character/Rotate/FirstPersonRotate")]
+[CreateAssetMenu(menuName = "Character/Player/Rotate/FirstPersonRotate")]
 
 public class FirstPlayerRotation : CharacterRotate
 {

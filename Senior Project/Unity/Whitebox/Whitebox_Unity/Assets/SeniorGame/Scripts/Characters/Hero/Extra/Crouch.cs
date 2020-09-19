@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Character/Extra/Crouch")]
+[CreateAssetMenu(menuName = "Character/Player/Extra/Crouch")]
 public class Crouch : CharacterControlExtraBase
 {
     private bool crouched;

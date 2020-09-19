@@ -30,7 +30,11 @@
             <e p="Characters" t="Include">
               <e p="Bosses" t="Include">
                 <e p="Boss_Base.cs" t="Include" />
-                <e p="Rib_Cage_Wall.cs" t="Include" />
+                <e p="Boss_Manager.cs" t="Include" />
+                <e p="RibCage" t="Include">
+                  <e p="Rib_Cage_Back_Away.cs" t="Include" />
+                  <e p="Rib_Cage_Wall.cs" t="Include" />
+                </e>
               </e>
               <e p="Common" t="Include">
                 <e p="Character_Base.cs" t="Include" />
@@ -144,6 +148,10 @@
               <e p="DirectionalHit.cs" t="Include" />
               <e p="GetDirection.cs" t="Include" />
               <e p="NavmeshTest.cs" t="Include" />
+              <e p="RibCageTransformMovment" t="Include">
+                <e p="NavOffLinkMove.cs" t="Include" />
+                <e p="RotateTest.cs" t="Include" />
+              </e>
             </e>
             <e p="VFX" t="Include">
               <e p="Magic_Burst.cs" t="Include" />

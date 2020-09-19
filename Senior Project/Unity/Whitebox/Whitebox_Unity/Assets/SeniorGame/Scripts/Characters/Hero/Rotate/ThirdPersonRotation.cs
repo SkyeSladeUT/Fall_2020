@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Character/Rotate/ThirdPerson")]
+[CreateAssetMenu(menuName = "Character/Player/Rotate/ThirdPerson")]
 public class ThirdPersonRotation : CharacterRotate
 {
     private float forwardAmount, sideAmount, headingAngle;

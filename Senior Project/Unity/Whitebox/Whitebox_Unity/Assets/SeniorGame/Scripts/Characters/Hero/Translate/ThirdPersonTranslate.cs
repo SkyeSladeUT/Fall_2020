@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Character/Translate/ThirdPerson")]
+[CreateAssetMenu(menuName = "Character/Player/Translate/ThirdPerson")]
 public class ThirdPersonTranslate : CharacterTranslate
 {
     
