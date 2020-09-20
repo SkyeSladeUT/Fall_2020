@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: RibCageWallClimb
   m_EditorClassIdentifier: 
   Speed: 10
-  CielingHeight: 20
+  HitDistance: 5
+  RotateSpeed: 180
+  TranslateAmount: 7.5
+  StartPosition: 0
+  CielingHeight: 18
