@@ -18,6 +18,7 @@ public class Enemy_Manager : MonoBehaviour
     private Enemy_Attack_Base _attackTemp;
 
     public Transform Player;
+    public Animator animator;
 
     private bool canAttack;
     private bool canMove;
@@ -73,7 +74,7 @@ public class Enemy_Manager : MonoBehaviour
     {
         _attackTemp = Attack.getClone();
         Attack = _attackTemp;
-        Attack.Init(this, KnockbackObj);
+        Attack.Init(this, KnockbackObj, Player, animator);
     }
     #endregion
 

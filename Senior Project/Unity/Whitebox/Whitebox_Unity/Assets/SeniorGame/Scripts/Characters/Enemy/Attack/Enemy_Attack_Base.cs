@@ -12,11 +12,14 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     protected GameObject meleeAttackObj;
     protected Coroutine attackFunc;
     protected MonoBehaviour caller;
+    public Animation_Base animations;
 
-    public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack)
+    public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator)
     {
         this.caller = caller;
         meleeAttackObj = MeleeAttack;
+        if(animations != null)
+            animations.Init(animator, player);
     }
 
     public virtual void StartAttack()
@@ -32,6 +35,7 @@ public abstract class Enemy_Attack_Base : ScriptableObject
         attacking = false;
         if(attackFunc!= null)
             caller.StopCoroutine(attackFunc);
+        meleeAttackObj.SetActive(false);
     }
 
     public abstract Enemy_Attack_Base getClone();
