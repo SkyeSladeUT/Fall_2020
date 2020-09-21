@@ -26,6 +26,14 @@
           </e>
         </e>
         <e p="SeniorGame" t="Include">
+          <e p="DialoguePrefab" t="Include">
+            <e p="BoolData.cs" t="Include" />
+            <e p="DialogueScripts" t="Include">
+              <e p="dialogue_lines.cs" t="Include" />
+              <e p="Dialogue_Manager.cs" t="Include" />
+              <e p="NPCObject.cs" t="Include" />
+            </e>
+          </e>
           <e p="Scripts" t="Include">
             <e p="Characters" t="Include">
               <e p="Common" t="Include">
@@ -111,7 +119,6 @@
               </e>
             </e>
             <e p="Data" t="Include">
-              <e p="BoolData.cs" t="Include" />
               <e p="DebugObject.cs" t="Include" />
               <e p="FloatData.cs" t="Include" />
               <e p="IntData.cs" t="Include" />
