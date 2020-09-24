@@ -53,10 +53,10 @@ public class Flickering_Light : MonoBehaviour
         maximumVector = FlickerLight.transform.position + maximumMoveAmount;
         while (burning)
         {
-            moveTime = Random.RandomRange(minMoveTime, maxMoveTime);
-            newMove = new Vector3(Random.RandomRange(minimumVector.x, maximumVector.x),
-                Random.RandomRange(minimumVector.y, maximumVector.y),
-                Random.RandomRange(minimumVector.z, maximumVector.z));;
+            moveTime = Random.Range(minMoveTime, maxMoveTime);
+            newMove = new Vector3(Random.Range(minimumVector.x, maximumVector.x),
+                Random.Range(minimumVector.y, maximumVector.y),
+                Random.Range(minimumVector.z, maximumVector.z));;
             origMove = FlickerLight.transform.position;
             moveScale = 0;
             float currentTime = 0;
@@ -75,8 +75,8 @@ public class Flickering_Light : MonoBehaviour
     {
         while (burning)
         {
-            intensityTime = Random.RandomRange(minIntensityTime, maxIntensityTime);
-            newIntensity = Random.RandomRange(minIntensity, maxIntensity);
+            intensityTime = Random.Range(minIntensityTime, maxIntensityTime);
+            newIntensity = Random.Range(minIntensity, maxIntensity);
             origIntensity = FlickerLight.intensity;
             intensityScale = 0;
             float currentTime = 0;
@@ -95,11 +95,11 @@ public class Flickering_Light : MonoBehaviour
     {
         while (burning)
         {
-            colortime = Random.RandomRange(minColorTime, maxColorTime);
-            newColor = new Color(Random.RandomRange(color01.r, color02.r), 
-                Random.RandomRange(color01.g, color02.g), 
-                Random.RandomRange(color01.b, color02.b),
-                Random.RandomRange(color01.a, color02.a));
+            colortime = Random.Range(minColorTime, maxColorTime);
+            newColor = new Color(Random.Range(color01.r, color02.r), 
+                Random.Range(color01.g, color02.g), 
+                Random.Range(color01.b, color02.b),
+                Random.Range(color01.a, color02.a));
             origColor = FlickerLight.color;
             colorScale = 0;
             float currentTime = 0;

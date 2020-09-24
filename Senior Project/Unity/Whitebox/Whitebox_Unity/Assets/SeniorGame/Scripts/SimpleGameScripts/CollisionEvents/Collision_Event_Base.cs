@@ -14,14 +14,21 @@ public abstract class Collision_Event_Base : MonoBehaviour
     public LayerMask layer;
     public string tagName;
     
-
+    public int ToLayer (int bitmask ) {
+        int result = bitmask>0 ? 0 : 31;
+        while( bitmask>1 ) {
+            bitmask = bitmask>>1;
+            result++;
+        }
+        return result;
+    }
 
     public virtual IEnumerator CheckCollision(Collision coll)
     {
         switch (checksFor)
         {
             case Check.Layer:
-                if (coll.gameObject.layer == layer)
+                if (coll.gameObject.layer == ToLayer(layer.value))
                 {
                     yield return new WaitForSeconds(waitTime);
                     Event.Invoke();

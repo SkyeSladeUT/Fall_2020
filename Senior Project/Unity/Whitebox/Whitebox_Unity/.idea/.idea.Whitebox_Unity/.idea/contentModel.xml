@@ -62,6 +62,7 @@
                     </e>
                     <e p="Rib_Cage_Cieling_Walk.cs" t="Include" />
                     <e p="Rib_Cage_Drop.cs" t="Include" />
+                    <e p="Rib_Cage_Drop_Attack.cs" t="Include" />
                     <e p="Rib_Cage_Melee_Attack.cs" t="Include" />
                     <e p="Rib_Cage_Wall.cs" t="Include" />
                   </e>

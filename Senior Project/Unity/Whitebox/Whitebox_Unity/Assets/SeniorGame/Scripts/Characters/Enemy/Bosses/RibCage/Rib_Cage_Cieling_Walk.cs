@@ -106,6 +106,8 @@ public class Rib_Cage_Cieling_Walk : Enemy_Follow_Base
         if (!running)
         {
             agent.enabled = true;
+            _rigidbody.isKinematic = true;
+            _rigidbody.useGravity = false;
             running = true;
             while (!CheckPosition(followObj.transform.position))
             {
