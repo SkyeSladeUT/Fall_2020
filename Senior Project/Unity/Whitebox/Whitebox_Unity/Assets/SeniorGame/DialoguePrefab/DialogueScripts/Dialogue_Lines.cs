@@ -5,7 +5,7 @@ using UnityEngine;
 public class Dialogue_Lines : ScriptableObject
 {
 
-    public string name;
+    public string characterName;
     
     [TextArea(3, 10)]
     public List<string> lines;    

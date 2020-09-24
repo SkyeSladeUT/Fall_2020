@@ -279,8 +279,6 @@ public class Rib_Cage_Wall : Enemy_Follow_Base
                     return TransformPosition.WallZ;
                 else
                     return TransformPosition.WallX;
-
-                break;
             case TransformPosition.WallX:
                 if (Mathf.Abs(agent.transform.forward.z) > Mathf.Abs(agent.transform.forward.y))
                     return TransformPosition.WallZ;
@@ -291,8 +289,6 @@ public class Rib_Cage_Wall : Enemy_Follow_Base
 
                     return TransformPosition.Floor;
                 }
-
-                break;
             case TransformPosition.WallZ:
                 if (Mathf.Abs(agent.transform.forward.x) > Mathf.Abs(agent.transform.forward.y))
                     return TransformPosition.WallX;
@@ -303,15 +299,11 @@ public class Rib_Cage_Wall : Enemy_Follow_Base
 
                     return TransformPosition.Floor;
                 }
-
-                break;
             case TransformPosition.Cieling:
                 if (Mathf.Abs(agent.transform.forward.z) > Mathf.Abs(agent.transform.forward.x))
                     return TransformPosition.WallZ;
                 else
                     return TransformPosition.WallX;
-
-                break;
         }
 
         return TransformPosition.Floor;

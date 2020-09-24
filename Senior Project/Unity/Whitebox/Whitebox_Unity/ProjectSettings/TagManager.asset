@@ -8,6 +8,7 @@ TagManager:
   - Back_Off
   - Approach
   - Alert
+  - Cieling
   layers:
   - Default
   - TransparentFX

@@ -64,7 +64,7 @@ public class Dialogue_Manager : MonoBehaviour
     
     public IEnumerator ScrollText()
     {
-        Character_Text.text = NPC.dialogue.name;
+        Character_Text.text = NPC.dialogue.characterName;
         for (int i = 0; i < NPC.dialogue.lines.Count; i++)
         {
             _text_to_display = "";

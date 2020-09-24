@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Animation/Character/Ribs")]
+[CreateAssetMenu(menuName = "Character/Animation/Ribs")]
 public class Rib_Animations : Animation_Base
 {
     public string FrontAttack, BackAttack;
