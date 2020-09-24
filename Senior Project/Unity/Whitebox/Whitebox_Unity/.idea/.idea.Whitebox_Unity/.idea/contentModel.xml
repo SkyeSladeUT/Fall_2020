@@ -171,7 +171,12 @@
               </e>
             </e>
             <e p="VFX" t="Include">
-              <e p="Magic_Burst.cs" t="Include" />
+              <e p="Fire" t="Include">
+                <e p="Flickering_Light.cs" t="Include" />
+              </e>
+              <e p="Magic" t="Include">
+                <e p="Magic_Burst.cs" t="Include" />
+              </e>
             </e>
             <e p="Weapons" t="Include">
               <e p="Aim_Camera_Switch.cs" t="Include" />
