@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
 
         public Transform CharacterScalar;
 
+        public Animator anim;
+
+        public bool MoveOnStart;
+
         private void Start()
         {
                 _cc = GetComponent<CharacterController>();
@@ -26,8 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
         private void Init()
         {
-                rotate.Init(this.transform, Camera.main.transform, targetScript);
-                translate.Init(_cc, Camera.main.transform, targetScript);
+                rotate.Init(transform, Camera.main.transform, targetScript);
+                translate.Init(this, _cc, Camera.main.transform, targetScript, anim);
                 if (extraControls != null)
                 {
                         foreach (var extra in extraControls)
@@ -35,7 +39,11 @@ public class PlayerMovement : MonoBehaviour
                                 extra.Init(CharacterScalar, _cc);
                         }
                 }
-                StartAll();
+
+                if (MoveOnStart)
+                {
+                        StartAll();
+                }
         }
 
         public void SwapMovement(CharacterRotate newRot, CharacterTranslate newTrans, List<CharacterControlExtraBase> extras = null)

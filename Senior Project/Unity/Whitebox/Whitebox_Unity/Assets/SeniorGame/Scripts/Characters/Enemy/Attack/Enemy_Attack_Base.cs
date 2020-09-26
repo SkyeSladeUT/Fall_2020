@@ -19,7 +19,7 @@ public abstract class Enemy_Attack_Base : ScriptableObject
         this.caller = caller;
         meleeAttackObj = MeleeAttack;
         if(animations != null)
-            animations.Init(animator, player);
+            animations.Init(caller, animator, player);
     }
 
     public virtual void StartAttack()

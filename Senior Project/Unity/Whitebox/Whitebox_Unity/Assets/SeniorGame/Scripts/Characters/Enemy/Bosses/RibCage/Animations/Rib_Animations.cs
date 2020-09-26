@@ -9,7 +9,7 @@ public class Rib_Animations : Animation_Base
     private float angle, tempangle;
     public float minFrontAngle, maxFrontAngle;
 
-    public override void RunAnimation()
+    public override void StartAnimation()
     {
         if (anim != null)
         {
@@ -44,9 +44,9 @@ public class Rib_Animations : Animation_Base
         }
     }
 
-    private float ConvertRange(float origMinRange, float origMaxRange, float newMinRange, float newMaxRange, float value)
+    public override void StopAnimation()
     {
-        return (value - origMinRange) * (newMaxRange - newMinRange) / (origMaxRange - origMinRange) + newMinRange;
+        //nothing
     }
 
     public virtual float GetDirection()

@@ -22,7 +22,7 @@ public class Rib_Cage_Melee_Attack : Enemy_Attack_Base
             {
                 Debug.Log("Run Anims");
                 if (animations != null)
-                    animations.RunAnimation();
+                    animations.StartAnimation();
                 currentlyattacking = true;
                 yield return new WaitForSeconds(AttackStartTime);
                 meleeAttackObj.SetActive(true);

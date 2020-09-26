@@ -20,7 +20,7 @@ public class Rib_Cage_Drop_Attack : Enemy_Attack_Base
             if (!currentlyattacking)
             {
                 if (animations != null)
-                    animations.RunAnimation();
+                    animations.StartAnimation();
                 currentlyattacking = true;
                 yield return new WaitForSeconds(AttackStartTime);
                 meleeAttackObj.SetActive(true);

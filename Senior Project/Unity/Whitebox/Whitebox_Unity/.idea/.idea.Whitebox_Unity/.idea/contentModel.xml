@@ -26,14 +26,6 @@
           </e>
         </e>
         <e p="SeniorGame" t="Include">
-          <e p="DialoguePrefab" t="Include">
-            <e p="BoolData.cs" t="Include" />
-            <e p="DialogueScripts" t="Include">
-              <e p="dialogue_lines.cs" t="Include" />
-              <e p="Dialogue_Manager.cs" t="Include" />
-              <e p="NPCObject.cs" t="Include" />
-            </e>
-          </e>
           <e p="Scripts" t="Include">
             <e p="Characters" t="Include">
               <e p="Common" t="Include">
@@ -133,10 +125,16 @@
               <e p="Vector3Data.cs" t="Include" />
               <e p="Vector3List.cs" t="Include" />
             </e>
+            <e p="DialogueScripts" t="Include">
+              <e p="dialogue_lines.cs" t="Include" />
+              <e p="Dialogue_Manager.cs" t="Include" />
+              <e p="NPCObject.cs" t="Include" />
+            </e>
             <e p="Inventory" t="Include">
               <e p="WeaponSwap.cs" t="Include" />
             </e>
             <e p="SimpleGameScripts" t="Include">
+              <e p="BoolData.cs" t="Include" />
               <e p="Center_Screen.cs" t="Include" />
               <e p="CollisionEvents" t="Include">
                 <e p="Collision_Enter_Event.cs" t="Include" />

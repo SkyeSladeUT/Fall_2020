@@ -2,24 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
-
-public class Movement_Animation : MonoBehaviour
+[CreateAssetMenu(menuName = "Character/Player/Animation/Movement")]
+public class Movement_Animation : Animation_Base
 {
-    public Animator anim;
-    public string speedTrigger;
-    public string angleTrigger;
-    private bool updating;
+    public string speedFloat;
+    public string angleFloat;
+    public string walkTrigger;
+    private bool moving;
     public CharacterTranslate translate;
     private Coroutine updateFunc;
     
 
     private IEnumerator AnimateUpdate()
     {
-        while (updating)
+        if (anim != null)
         {
-            anim.SetFloat(speedTrigger, GetSpeed());
-            anim.SetFloat(angleTrigger, GetDirection());
-            yield return new WaitForFixedUpdate();
+            anim.SetTrigger(walkTrigger);
+            while (moving)
+            {
+                anim.SetFloat(speedFloat, GetSpeed());
+                anim.SetFloat(angleFloat, GetDirection());
+                yield return new WaitForFixedUpdate();
+            }
         }
     }
 
@@ -33,20 +37,18 @@ public class Movement_Animation : MonoBehaviour
         return translate.getSpeed();
     }
 
-    public void StartAnimate()
+    public override void StartAnimation()
     {
-        updating = true;
-        updateFunc = StartCoroutine(AnimateUpdate());
+        moving = true;
+        updateFunc = caller.StartCoroutine(AnimateUpdate());
     }
 
-    public void StopAnimate()
+    public override void StopAnimation()
     {
-        updating = false;
+        moving = false;
         if (updateFunc != null)
         {
-            StopCoroutine(updateFunc);
-        }
+            caller.StopCoroutine(updateFunc);
+        }    
     }
-    
-    
 }

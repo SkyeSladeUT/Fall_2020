@@ -11,18 +11,19 @@ public class ThirdPersonTranslate : CharacterTranslate
     private bool dodging;
     private float currentTime;
 
-    public override void Init(CharacterController _cc, Transform camera, Targeting target)
+    public override void Init(MonoBehaviour caller, CharacterController _cc, Transform camera, Targeting target, Animator animator)
     {
         dodging = false;
         _moveVec = Vector3.zero;
         currentForwardSpeed = ForwardSpeed;
         currentSideSpeed = SideSpeed;
-        base.Init(_cc, camera, target);
+        base.Init(caller, _cc, camera, target, animator);
     }
 
 
     public override IEnumerator Move()
     {
+        animation.StartAnimation();
         while (canMove)
         {
             Invoke();
@@ -102,7 +103,7 @@ public class ThirdPersonTranslate : CharacterTranslate
 
     public override float getSpeed()
     {
-        return _cc.velocity.magnitude;
+        return ConvertRange(0, ForwardSpeed, 0, 1, _cc.velocity.magnitude);
     }
 
     public virtual void Invoke()

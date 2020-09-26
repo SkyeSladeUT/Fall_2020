@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a022dbd6f63b6341b99d85489157786, type: 3}
   m_Name: ThirdPersonTranslate
   m_EditorClassIdentifier: 
-  ForwardSpeed: 6
-  SideSpeed: 6
-  RunForwardSpeed: 10
-  RunSideSpeed: 10
+  ForwardSpeed: 2
+  SideSpeed: 2
+  RunForwardSpeed: 5
+  RunSideSpeed: 5
   JumpSpeed: 10
   Gravity: 30
   ForwardAxis: Vertical
   SideAxis: Horizontal
   canMove: 1
   canRun: 1
+  animation: {fileID: 11400000, guid: c1dad690abade094ca80e90e1634571b, type: 2}
   canDodge: 1
   dodgeTime: 0.1
   dodgeRecoverTime: 0.1

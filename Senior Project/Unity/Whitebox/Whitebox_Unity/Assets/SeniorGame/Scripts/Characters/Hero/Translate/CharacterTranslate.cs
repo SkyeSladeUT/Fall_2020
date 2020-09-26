@@ -13,13 +13,18 @@ public abstract class CharacterTranslate : ScriptableObject
     public bool canMove, canRun;
     private Coroutine moveFunc, runFunc;
     protected Targeting targetScript;
+    public Animation_Base animation;
+    protected MonoBehaviour caller;
 
 
-    public virtual void Init(CharacterController _cc, Transform camera, Targeting targetScript)
+    public virtual void Init(MonoBehaviour caller, CharacterController _cc, Transform camera, Targeting targetScript, Animator animator)
     {
+        this.caller = caller;
         this._cc = _cc;
         Camera = camera;
         this.targetScript = targetScript;
+        if(animation!= null)
+            animation.Init(caller, animator, _cc.transform);
     }
 
     
@@ -30,6 +35,11 @@ public abstract class CharacterTranslate : ScriptableObject
     public abstract float getMoveAngle();
 
     public abstract float getSpeed();
+    
+    protected float ConvertRange(float origMinRange, float origMaxRange, float newMinRange, float newMaxRange, float value)
+    {
+        return (value - origMinRange) * (newMaxRange - newMinRange) / (origMaxRange - origMinRange) + newMinRange;
+    }
 
 
 }
