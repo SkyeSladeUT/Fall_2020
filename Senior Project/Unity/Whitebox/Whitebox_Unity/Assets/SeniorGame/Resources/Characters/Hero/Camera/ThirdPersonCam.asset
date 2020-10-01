@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ThirdPersonCam
   m_EditorClassIdentifier: 
   canMove: 1
-  rotationSpeed: 50
+  rotationSpeed: 100
   CameraHorizontal: Mouse X
   CameraVertical: Mouse Y
   cameraTransform: {fileID: 0}
