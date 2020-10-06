@@ -19,6 +19,7 @@ public class Enemy_Follow_Basic : Enemy_Follow_Base
     {
         Enemy_Follow_Basic temp = CreateInstance<Enemy_Follow_Basic>();
         temp.Speed = Speed;
+        temp.AngularSpeed = AngularSpeed;
         return temp;
     }
 }

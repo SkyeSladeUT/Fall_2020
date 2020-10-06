@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public abstract class Enemy_Movement : ScriptableObject
 {
     public float Speed;
+    public float AngularSpeed = 120;
     protected bool moving;
     protected NavMeshAgent agent;
     private Coroutine moveFunc;
@@ -23,6 +24,7 @@ public abstract class Enemy_Movement : ScriptableObject
         canMove = true;
         this.agent = agent;
         this.agent.speed = 0;
+        this.agent.angularSpeed = AngularSpeed;
         enemy = agent.transform;
         this.caller = caller;
     }

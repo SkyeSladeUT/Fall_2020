@@ -8,6 +8,7 @@ public class Character_Manager : MonoBehaviour
 {
     public Character_Base Character;
     private Character_Base _characterTemp;
+    public bool MainCharacter = false;
 
     private void Start()
     {
@@ -16,9 +17,12 @@ public class Character_Manager : MonoBehaviour
 
     public void Init()
     {
-        _characterTemp = Character.getClone();
-        Character = _characterTemp;
-        Character.Init(this, transform);
+        if (!MainCharacter)
+        {
+            _characterTemp = Character.getClone();
+            Character = _characterTemp;
+        }
+        Character.Init(this, transform, MainCharacter);
         if (GetComponent<Death_Event_Setup>() != null)
         {
             Death_Event death = Character.Health.Death_Version as Death_Event;

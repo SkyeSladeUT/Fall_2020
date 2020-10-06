@@ -31,23 +31,28 @@ public abstract class Collision_Event_Base : MonoBehaviour
                 if (coll.gameObject.layer == ToLayer(layer.value))
                 {
                     yield return new WaitForSeconds(waitTime);
-                    Event.Invoke();
+                    RunEvent();
                 }
                 break;
             case Check.Name:
                 if (coll.gameObject.name.Contains(objName))
                 {
                     yield return new WaitForSeconds(waitTime);
-                    Event.Invoke();
+                    RunEvent();
                 }
                 break;
             case Check.Tag:
                 if (coll.gameObject.CompareTag(tagName))
                 {
                     yield return new WaitForSeconds(waitTime);
-                    Event.Invoke();
+                    RunEvent();
                 }
                 break;
         }
+    }
+
+    public virtual void RunEvent()
+    {
+        Event.Invoke();
     }
 }

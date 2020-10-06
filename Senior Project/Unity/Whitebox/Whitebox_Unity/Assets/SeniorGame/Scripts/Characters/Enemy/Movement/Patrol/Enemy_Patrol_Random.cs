@@ -112,6 +112,7 @@ public class Enemy_Patrol_Random : Enemy_Patrol
         temp.minChangeDestTime = minChangeDestTime;
         temp.maxChangeDestTime = maxChangeDestTime;
         temp.Speed = Speed;
+        temp.AngularSpeed = AngularSpeed;
         return temp;
     }
 

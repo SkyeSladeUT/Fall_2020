@@ -9,15 +9,16 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     public float CoolDownTime;
     protected bool attacking;
     public float AttackActiveTime;
-    protected GameObject meleeAttackObj;
+    protected GameObject WeaponAttackobj;
     protected Coroutine attackFunc;
     protected MonoBehaviour caller;
     public Animation_Base animations;
 
     public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator)
     {
+        Debug.Log("Initialize");
         this.caller = caller;
-        meleeAttackObj = MeleeAttack;
+        WeaponAttackobj = MeleeAttack;
         if(animations != null)
             animations.Init(caller, animator, player);
     }
@@ -25,6 +26,7 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     public virtual void StartAttack()
     {
         attacking = true;
+        Debug.Log("Run");
         attackFunc = caller.StartCoroutine(Attack());
     }
     
@@ -35,7 +37,7 @@ public abstract class Enemy_Attack_Base : ScriptableObject
         attacking = false;
         if(attackFunc!= null)
             caller.StopCoroutine(attackFunc);
-        meleeAttackObj.SetActive(false);
+        WeaponAttackobj.SetActive(false);
     }
 
     public abstract Enemy_Attack_Base getClone();

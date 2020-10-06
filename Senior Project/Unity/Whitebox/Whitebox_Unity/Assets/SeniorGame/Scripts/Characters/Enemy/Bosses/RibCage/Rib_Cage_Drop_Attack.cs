@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Character/Enemy/Ribs/DropAttack")]
+[CreateAssetMenu(menuName = "Character/Enemy/Boss/Ribs/DropAttack")]
 public class Rib_Cage_Drop_Attack : Enemy_Attack_Base
 {
     private bool currentlyattacking;
@@ -9,7 +9,7 @@ public class Rib_Cage_Drop_Attack : Enemy_Attack_Base
     public override void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator)
     {
         base.Init(caller, MeleeAttack, player, animator);
-        meleeAttackObj.SetActive(false);
+        WeaponAttackobj.SetActive(false);
     }
 
     public override IEnumerator Attack()
@@ -23,9 +23,9 @@ public class Rib_Cage_Drop_Attack : Enemy_Attack_Base
                     animations.StartAnimation();
                 currentlyattacking = true;
                 yield return new WaitForSeconds(AttackStartTime);
-                meleeAttackObj.SetActive(true);
+                WeaponAttackobj.SetActive(true);
                 yield return new WaitForSeconds(AttackActiveTime);
-                meleeAttackObj.SetActive(false);
+                WeaponAttackobj.SetActive(false);
                 yield return new WaitForSeconds(CoolDownTime);
                 currentlyattacking = false;
             }

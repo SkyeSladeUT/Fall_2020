@@ -34,6 +34,7 @@ public class Enemy_Back_Step : Enemy_Movement
     {
         Enemy_Back_Step temp = CreateInstance<Enemy_Back_Step>();
         temp.Speed = Speed;
+        temp.AngularSpeed = AngularSpeed;
         temp.distanceAway = distanceAway;
         temp.turnAway = turnAway;
         return temp;

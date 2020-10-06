@@ -48,6 +48,7 @@ public class Enemy_Patrol_Destination : Enemy_Patrol
         temp.minChangeDestTime = minChangeDestTime;
         temp.maxChangeDestTime = maxChangeDestTime;
         temp.Speed = Speed;
+        temp.AngularSpeed = AngularSpeed;
         return temp;
     }
 

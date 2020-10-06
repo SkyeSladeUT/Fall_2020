@@ -13,7 +13,7 @@ public class Enemy_Manager : MonoBehaviour
     private NavMeshAgent agent;
 
     public bool AttackWhileMoving;
-    public GameObject KnockbackObj;
+    public GameObject WeaponObj;
     public Enemy_Attack_Base Attack;
     private Enemy_Attack_Base _attackTemp;
 
@@ -23,12 +23,16 @@ public class Enemy_Manager : MonoBehaviour
     private bool canAttack;
     private bool canMove;
 
+    public bool AwakeOnStart = true;
+
     private void Start()
     {
         canAttack = true;
         canMove = true;
         agent = GetComponent<NavMeshAgent>();
         Init();
+        if(AwakeOnStart)
+            StartMove();
     }
 
     public void deactivateMove()
@@ -72,9 +76,12 @@ public class Enemy_Manager : MonoBehaviour
 
     public void InitAttack()
     {
-        _attackTemp = Attack.getClone();
-        Attack = _attackTemp;
-        Attack.Init(this, KnockbackObj, Player, animator);
+        if (Attack != null)
+        {
+            _attackTemp = Attack.getClone();
+            Attack = _attackTemp;
+            Attack.Init(this, WeaponObj, Player, animator);
+        }
     }
     #endregion
 

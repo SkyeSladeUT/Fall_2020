@@ -47,6 +47,10 @@
                   <e p="Enemy_Attack_None.cs" t="Include" />
                 </e>
                 <e p="Bosses" t="Include">
+                  <e p="Hand" t="Include">
+                    <e p="Freeze_Magic.cs" t="Include" />
+                    <e p="Hand_Magic_Attack.cs" t="Include" />
+                  </e>
                   <e p="RibCage" t="Include">
                     <e p="Animations" t="Include">
                       <e p="Animation_Base.cs" t="Include" />
@@ -66,6 +70,7 @@
                   <e p="Follow" t="Include">
                     <e p="Enemy_Follow_Base.cs" t="Include" />
                     <e p="Enemy_Follow_Basic.cs" t="Include" />
+                    <e p="Enemy_Look_At_Basic.cs" t="Include" />
                   </e>
                   <e p="Idle" t="Include">
                     <e p="Enemy_Idle.cs" t="Include" />
@@ -132,6 +137,9 @@
             </e>
             <e p="Inventory" t="Include">
               <e p="WeaponSwap.cs" t="Include" />
+            </e>
+            <e p="MasterGameScripts" t="Include">
+              <e p="Game_Manager.cs" t="Include" />
             </e>
             <e p="SimpleGameScripts" t="Include">
               <e p="BoolData.cs" t="Include" />

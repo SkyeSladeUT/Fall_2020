@@ -50,6 +50,7 @@ public class Enemy_Side_Step : Enemy_Movement
         temp.minTimeWait = minTimeWait;
         temp.maxTimeWait = maxTimeWait;
         temp.Speed = Speed;
+        temp.AngularSpeed = AngularSpeed;
         return temp;
     }
     
