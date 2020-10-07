@@ -21,28 +21,42 @@ public abstract class Trigger_Event_Base : MonoBehaviour
     {
         switch (checksFor)
         {
-                case Check.Layer:
-                    if (coll.gameObject.layer == layer)
-                    {
-                        yield return new WaitForSeconds(waitTime);
-                        Event.Invoke();
-                    }
-                    break;
-                case Check.Name:
-                    if (coll.gameObject.name.Contains(objName))
-                    {
-                        yield return new WaitForSeconds(waitTime);
-                        Event.Invoke();
-                    }
-                    break;
-                case Check.Tag:
-                    if (coll.CompareTag(tagName))
-                    {
-                        yield return new WaitForSeconds(waitTime);
-                        Event.Invoke();
-                    }
-                    break;
+            case Check.Layer:
+                if (coll.gameObject.layer == ToLayer(layer.value))
+                {
+                    yield return new WaitForSeconds(waitTime);
+                    RunEvent();
+                }
+                break;
+            case Check.Name:
+                if (coll.gameObject.name.Contains(objName))
+                {
+                    yield return new WaitForSeconds(waitTime);
+                    RunEvent();
+                }
+                break;
+            case Check.Tag:
+                if (coll.gameObject.CompareTag(tagName))
+                {
+                    yield return new WaitForSeconds(waitTime);
+                    RunEvent();
+                }
+                break;
         }
+    }
+
+    public virtual void RunEvent()
+    {
+        Event.Invoke();
+    }
+    
+    public int ToLayer (int bitmask ) {
+        int result = bitmask>0 ? 0 : 31;
+        while( bitmask>1 ) {
+            bitmask = bitmask>>1;
+            result++;
+        }
+        return result;
     }
     
 }

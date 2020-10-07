@@ -16,6 +16,16 @@ public class WeaponManager : MonoBehaviour
         currentWeapon.Initialize();
     }
 
+    public void WeaponFreeze()
+    {
+        currentWeapon.Freeze();
+    }
+
+    public void WeaponUnfreeze()
+    {
+        currentWeapon.Unfreeze();
+    }
+
     public void SwapWeapon(WeaponBase weapon)
     {
         WeaponDisable();

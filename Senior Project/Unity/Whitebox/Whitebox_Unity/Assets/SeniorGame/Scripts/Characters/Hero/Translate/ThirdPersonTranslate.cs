@@ -69,9 +69,15 @@ public class ThirdPersonTranslate : CharacterTranslate
             if (canRun)
             {
                 if (Input.GetButton("Sprint"))
+                {
                     currentForwardSpeed = RunForwardSpeed;
+                    currentSideSpeed = RunSideSpeed;
+                }
                 else
+                {
                     currentForwardSpeed = ForwardSpeed;
+                    currentSideSpeed = SideSpeed;
+                }
             }
             yield return new WaitForFixedUpdate();
         }

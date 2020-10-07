@@ -49,6 +49,8 @@
                 <e p="Bosses" t="Include">
                   <e p="Hand" t="Include">
                     <e p="Freeze_Magic.cs" t="Include" />
+                    <e p="Hand_In_Between.cs" t="Include" />
+                    <e p="Hand_Jump_Attack.cs" t="Include" />
                     <e p="Hand_Magic_Attack.cs" t="Include" />
                   </e>
                   <e p="RibCage" t="Include">
@@ -158,6 +160,7 @@
                 <e p="Timed_Event.cs" t="Include" />
               </e>
               <e p="Follow_Object.cs" t="Include" />
+              <e p="Look_At_Script.cs" t="Include" />
               <e p="PS_Callback.cs" t="Include" />
               <e p="Toggle_Active.cs" t="Include" />
               <e p="TriggerEvents" t="Include">

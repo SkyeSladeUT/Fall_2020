@@ -13,12 +13,14 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     protected Coroutine attackFunc;
     protected MonoBehaviour caller;
     public Animation_Base animations;
+    protected GameObject enemyObj;
 
-    public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator)
+    public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator, GameObject enemy)
     {
         Debug.Log("Initialize");
         this.caller = caller;
         WeaponAttackobj = MeleeAttack;
+        this.enemyObj = enemy;
         if(animations != null)
             animations.Init(caller, animator, player);
     }

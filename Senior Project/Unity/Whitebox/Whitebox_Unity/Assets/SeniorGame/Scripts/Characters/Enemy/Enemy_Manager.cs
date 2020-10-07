@@ -80,7 +80,7 @@ public class Enemy_Manager : MonoBehaviour
         {
             _attackTemp = Attack.getClone();
             Attack = _attackTemp;
-            Attack.Init(this, WeaponObj, Player, animator);
+            Attack.Init(this, WeaponObj, Player, animator, gameObject);
         }
     }
     #endregion
@@ -126,9 +126,12 @@ public class Enemy_Manager : MonoBehaviour
 
     private IEnumerator PauseMove()
     {
-        Movement_Version.StopMove();
-        yield return new WaitForSeconds(Attack.CoolDownTime + Attack.AttackActiveTime + Attack.AttackStartTime);
-        Movement_Version.StartMove();
+        if (Attack != null)
+        {
+            Movement_Version.StopMove();
+            yield return new WaitForSeconds(Attack.CoolDownTime + Attack.AttackActiveTime + Attack.AttackStartTime);
+            Movement_Version.StartMove();
+        }
     }
 
     #endregion

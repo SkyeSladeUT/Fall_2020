@@ -6,8 +6,9 @@ using UnityEngine.AI;
 public class Hand_Magic_Attack : Enemy_Attack_Base
 {
     private GameObject magicObj;
-    public float magicVelocity;
+    public float ForwardVelocity;
     private Rigidbody rigid;
+    private Vector3 forcedirection;
     
     public override IEnumerator Attack()
     {
@@ -20,7 +21,8 @@ public class Hand_Magic_Attack : Enemy_Attack_Base
         rigid.useGravity = false;
         magicObj.transform.parent = null;
         magicObj.transform.localScale = WeaponAttackobj.transform.lossyScale;
-        rigid.AddForce(WeaponAttackobj.transform.forward*magicVelocity, ForceMode.Impulse);
+        forcedirection = WeaponAttackobj.transform.forward * ForwardVelocity;
+        rigid.AddForce(forcedirection, ForceMode.Impulse);
         yield return new WaitForSeconds(AttackActiveTime);
         yield return new WaitForSeconds(CoolDownTime);
     }
@@ -28,7 +30,7 @@ public class Hand_Magic_Attack : Enemy_Attack_Base
     public override Enemy_Attack_Base getClone()
     {
         Hand_Magic_Attack temp = CreateInstance<Hand_Magic_Attack>();
-        temp.magicVelocity = magicVelocity;
+        temp.ForwardVelocity = ForwardVelocity;
         temp.AttackActiveTime = AttackActiveTime;
         temp.CoolDownTime = CoolDownTime;
         temp.DamageAmount = DamageAmount;

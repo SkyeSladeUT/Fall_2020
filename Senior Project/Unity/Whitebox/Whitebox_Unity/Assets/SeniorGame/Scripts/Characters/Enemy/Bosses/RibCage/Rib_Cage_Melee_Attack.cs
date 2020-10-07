@@ -7,9 +7,9 @@ public class Rib_Cage_Melee_Attack : Enemy_Attack_Base
 {
     private bool currentlyattacking;
 
-    public override void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator)
+    public override void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator, GameObject enemy)
     {
-        base.Init(caller, MeleeAttack, player, animator);
+        base.Init(caller, MeleeAttack, player, animator, enemy);
         WeaponAttackobj.SetActive(false);
     }
 

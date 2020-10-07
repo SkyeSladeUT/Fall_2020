@@ -17,4 +17,5 @@ MonoBehaviour:
   CoolDownTime: 0.1
   AttackActiveTime: 0.1
   animations: {fileID: 0}
-  magicVelocity: 10
+  ForwardVelocity: 20
+  UpwardVelocity: 5

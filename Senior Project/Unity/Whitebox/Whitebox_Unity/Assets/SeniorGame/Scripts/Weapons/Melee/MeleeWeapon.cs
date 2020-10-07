@@ -26,10 +26,23 @@ public class MeleeWeapon : WeaponBase
         while (currWeapon)
         {
             yield return waitforbutton;
+            while (frozen)
+            {
+                yield return new WaitForFixedUpdate();
+            }
             knockbackObj.SetActive(true);
             yield return attackActive;
+            while (frozen)
+            {
+                yield return new WaitForFixedUpdate();
+            }
             knockbackObj.SetActive(false);
             yield return attackCool;
+            while (frozen)
+            {
+                yield return new WaitForFixedUpdate();
+            }
+            yield return new WaitForFixedUpdate();
         }
     }
 

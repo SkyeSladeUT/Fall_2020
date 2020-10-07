@@ -48,40 +48,53 @@ public class BowandArrow : WeaponBase
     {
         while (currWeapon)
         {
+            while (frozen)
+            {
+                yield return new WaitForFixedUpdate();
+            }
             rotDirection = initRotation;
             rotDirection.y = transform.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Euler(rotDirection);
             yield return _waitforbutton;
             inUse = true;
-            if (currWeapon)
-            {
-                currPower = 0;
-                currArrow = Instantiate(ArrowPrefab, InitPos);
-                currArrow.SetActive(true);
-                ArrowRB = currArrow.GetComponent<Rigidbody>();
-                while (Input.GetButton(useButton))
+                if (currWeapon)
                 {
-                    if (currentCam.cameraScript != bowCamera)
+                    currPower = 0;
+                    currArrow = Instantiate(ArrowPrefab, InitPos);
+                    currArrow.SetActive(true);
+                    ArrowRB = currArrow.GetComponent<Rigidbody>();
+                    while (Input.GetButton(useButton))
                     {
-                        playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
-                    }
-                    currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
-                    AimScript.StartAim();
-                    currPower += Time.deltaTime * PowerIncreaseScale;
-                    if (currPower >= MaxPower)
-                    {
-                        currPower = MaxPower;
+                        if (currentCam.cameraScript != bowCamera)
+                        {
+                            playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
+                        }
+                        while (frozen)
+                        {
+                            yield return new WaitForFixedUpdate();
+                        }
+                        currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
+                        AimScript.StartAim();
+                        currPower += Time.deltaTime * PowerIncreaseScale;
+                        if (currPower >= MaxPower)
+                        {
+                            currPower = MaxPower;
+                        }
+
+                        yield return _fixedUpdate;
                     }
 
-                    yield return _fixedUpdate;
+                    while (frozen)
+                    {
+                        yield return new WaitForFixedUpdate();
+                    }
+                        ArrowRB.constraints = RigidbodyConstraints.None;
+                        currArrow.transform.parent = null;
+                        ArrowRB.AddForce(transform.forward * currPower, ForceMode.Impulse);
+                        inUse = false;
+                        AimScript.StopAim();
                 }
-                ArrowRB.constraints = RigidbodyConstraints.None;
-                currArrow.transform.parent = null;
-                ArrowRB.AddForce(transform.forward * currPower, ForceMode.Impulse);
-                inUse = false;
-                AimScript.StopAim();
-            }
-
+            yield return new WaitForFixedUpdate();
         }
 
     }
@@ -100,7 +113,7 @@ public class BowandArrow : WeaponBase
         }
         StopCoroutine(attack);
     }
-    
+
     private bool CheckInput()
     {
         if (Input.GetButtonDown(useButton) || !currWeapon)
