@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForwardSpeed: 2
   SideSpeed: 2
-  RunForwardSpeed: 10
-  RunSideSpeed: 10
+  RunForwardSpeed: 5
+  RunSideSpeed: 5
   JumpSpeed: 10
   Gravity: 30
   ForwardAxis: Vertical

@@ -142,6 +142,7 @@
             </e>
             <e p="MasterGameScripts" t="Include">
               <e p="Game_Manager.cs" t="Include" />
+              <e p="GeneralFunctions.cs" t="Include" />
             </e>
             <e p="SimpleGameScripts" t="Include">
               <e p="BoolData.cs" t="Include" />

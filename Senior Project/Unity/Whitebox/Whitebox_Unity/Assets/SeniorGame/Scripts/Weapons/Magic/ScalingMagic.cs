@@ -27,6 +27,7 @@ public class ScalingMagic : MonoBehaviour
     public float decreaseSpeed;
     public ScalingScript scalescript;
     public GameObject VFX;
+    public string ScaleAxis;
 
     private void Start()
     {
@@ -53,38 +54,22 @@ public class ScalingMagic : MonoBehaviour
 
     private IEnumerator Scale()
     {
-        movement.StopAll();
+        //movement.StopAll();
         timeLeft = ScaleTime;
         scaleObj.HighlightObj.SetActive(true);
         scalescript.inUse = true;
         while (MagicAmount.value > 0 && timeLeft > 0)
         {
             newScale = ScalingObj.localScale;
-            if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0)
+            if (Input.GetAxis(ScaleAxis) > 0)
             {
-                if (ScalingObj.transform.localScale.x < scaleObj.MaxScale)
-                {
-                    newScale += scaleIncrease*Time.deltaTime;
-                    MagicAmount.SubFloat(decreaseSpeed*Time.deltaTime);
-                    if (newScale.x > scaleObj.MaxScale)
-                    {
-                        newScale = new Vector3(scaleObj.MaxScale, scaleObj.MaxScale, scaleObj.MaxScale);
-                    }
-                    ScalingObj.transform.localScale = newScale;
-                }
+                MagicAmount.SubFloat(decreaseSpeed*Time.deltaTime);
+                scaleObj.ScaleUp(true);
             }
-            else if (Input.GetAxis("Horizontal") < 0 || Input.GetAxis("Vertical") < 0)
+            else if (Input.GetAxis(ScaleAxis) < 0)
             {
-                if (ScalingObj.transform.localScale.x > scaleObj.MinScale)
-                {
-                    newScale -= scaleIncrease*Time.deltaTime;
-                    MagicAmount.SubFloat(decreaseSpeed*Time.deltaTime);
-                    if (newScale.x < scaleObj.MinScale)
-                    {
-                        newScale = new Vector3(scaleObj.MinScale, scaleObj.MinScale, scaleObj.MinScale);
-                    }
-                    ScalingObj.transform.localScale = newScale;
-                }
+                MagicAmount.SubFloat(decreaseSpeed*Time.deltaTime);
+                scaleObj.ScaleDown(true);
             }
             if (Input.GetButtonDown(stopButton))
             {
@@ -93,11 +78,10 @@ public class ScalingMagic : MonoBehaviour
             timeLeft -= Time.deltaTime;
             yield return _fixedUpdate;
         }
-        Debug.Log("End Scale");
         MagicInUse.value = false;
         scalescript.inUse = false;
         scaleObj.HighlightObj.SetActive(false);
-        movement.StartAll();
+        //movement.StartAll();
         yield return new WaitForSeconds(.1f);
         Destroy(this);
     }

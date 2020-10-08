@@ -425,8 +425,8 @@ InputManager:
     m_Name: Scale
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: ','
-    positiveButton: .
+    negativeButton: r
+    positiveButton: t
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

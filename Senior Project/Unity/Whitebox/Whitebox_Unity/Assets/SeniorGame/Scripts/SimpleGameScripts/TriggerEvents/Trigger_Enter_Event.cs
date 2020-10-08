@@ -6,6 +6,7 @@ public class Trigger_Enter_Event : Trigger_Event_Base
 {
     private void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("Triggered");
         StartCoroutine(CheckTrigger(other));
     }
 }

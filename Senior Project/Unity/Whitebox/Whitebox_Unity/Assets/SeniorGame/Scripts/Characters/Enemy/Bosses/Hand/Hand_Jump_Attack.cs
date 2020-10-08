@@ -24,7 +24,11 @@ public class Hand_Jump_Attack : Enemy_Attack_Base
         enemyObj.GetComponent<NavMeshAgent>().enabled = false;
         jumpdirection = (enemyRigid.transform.up * UpwardForce) + (enemyRigid.transform.forward * ForwardForce);
         enemyRigid.AddForce(jumpdirection, ForceMode.Impulse);
+        if(WeaponAttackobj)
+            WeaponAttackobj.SetActive(true);
         yield return new WaitForSeconds(AttackActiveTime);
+        if(WeaponAttackobj)
+            WeaponAttackobj.SetActive(false);
         yield return new WaitForSeconds(CoolDownTime);
         enemyObj.GetComponent<NavMeshAgent>().enabled = true;
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hand_Jump_Attack
   m_EditorClassIdentifier: 
   DamageAmount: 0
-  AttackStartTime: 0.25
+  AttackStartTime: 0.5
   CoolDownTime: 0
   AttackActiveTime: 1
   animations: {fileID: 0}

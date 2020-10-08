@@ -39,7 +39,8 @@ public abstract class Enemy_Attack_Base : ScriptableObject
         attacking = false;
         if(attackFunc!= null)
             caller.StopCoroutine(attackFunc);
-        WeaponAttackobj.SetActive(false);
+        if(WeaponAttackobj!= null)
+            WeaponAttackobj.SetActive(false);
     }
 
     public abstract Enemy_Attack_Base getClone();

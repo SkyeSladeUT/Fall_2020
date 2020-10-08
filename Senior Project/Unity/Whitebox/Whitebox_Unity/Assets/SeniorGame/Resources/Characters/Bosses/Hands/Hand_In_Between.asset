@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0076c8cce3abab4abb159054d8d18dc, type: 3}
   m_Name: Hand_In_Between
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 2
   AngularSpeed: 120
-  distanceFromFollowObj: 2
+  distanceFromFollowObj: 3
   lookAtFollow: 1

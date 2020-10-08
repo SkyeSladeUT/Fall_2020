@@ -36,8 +36,10 @@ public abstract class Trigger_Event_Base : MonoBehaviour
                 }
                 break;
             case Check.Tag:
+                //Debug.Log(coll.gameObject.tag);
                 if (coll.gameObject.CompareTag(tagName))
                 {
+                    //Debug.Log("Correct Tag");
                     yield return new WaitForSeconds(waitTime);
                     RunEvent();
                 }

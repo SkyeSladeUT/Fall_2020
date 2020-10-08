@@ -9,6 +9,8 @@ TagManager:
   - Approach
   - Alert
   - Cieling
+  - Melee
+  - Arrow
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - PlayerDamage
   - ClimbableWall
   - IgnoreWeapons
-  - 
+  - Stalagtite
   - 
   - 
   - 

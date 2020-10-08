@@ -10,7 +10,7 @@ public class Distance_Event : MonoBehaviour
 {
     public UnityEvent EnterDistanceEvent, ExitDistanceEvent;
     public float minDistance, maxDistance;
-    public float waitTime;
+    public float waitTime, timeInDistance;
     private bool checking;
     private bool inDistance;
     public Transform checkObj;
@@ -62,8 +62,12 @@ public class Distance_Event : MonoBehaviour
 
     private IEnumerator ExitDistance()
     {
-        yield return new WaitForSeconds(waitTime);
-        ExitDistanceEvent.Invoke();
+        yield return new WaitForSeconds(timeInDistance);
+        if (inDistance)
+        {
+            yield return new WaitForSeconds(waitTime);
+            ExitDistanceEvent.Invoke();
+        }
     }
 
     private IEnumerator Check()
