@@ -10,7 +10,8 @@ public class Enemy_Manager : MonoBehaviour
     private Enemy_Movement _movementTemp;
     
     public List<Transform> Destinations;
-    private NavMeshAgent agent;
+    [HideInInspector]
+    public NavMeshAgent agent;
 
     public bool AttackWhileMoving;
     public GameObject WeaponObj;
@@ -129,7 +130,8 @@ public class Enemy_Manager : MonoBehaviour
         if (Attack != null)
         {
             Movement_Version.StopMove();
-            yield return new WaitForSeconds(Attack.CoolDownTime + Attack.AttackActiveTime + Attack.AttackStartTime);
+            yield return new WaitForSeconds(Attack.CoolDownTime + 
+                                            Attack.AttackActiveTime + Attack.AttackStartTime);
             Movement_Version.StartMove();
         }
     }

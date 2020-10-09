@@ -14,6 +14,7 @@ public class CameraSwitch : MonoBehaviour
     private Coroutine tempMoveFunc;
     private float currentTime;
     private Coroutine swapFunc;
+    private Follow_Rotate rotate01, rotate02;
 
     private void Start()
     {
@@ -23,13 +24,30 @@ public class CameraSwitch : MonoBehaviour
 
     public void StartMove()
     {
+        rotate01 = cameraScript.RotateObject.gameObject.GetComponent<Follow_Rotate>();
+        if (rotate01 != null)
+        {
+            rotate01.StopRotate();
+        }
         cameraScript.canMove = true;
         moveFunc = StartCoroutine(cameraScript.Move());
     }
 
     public void SwapCamera(CameraBase newCam)
     {
+        
         newCam.cameraTransform.gameObject.SetActive(true);
+        rotate01 = newCam.RotateObject.gameObject.GetComponent<Follow_Rotate>();
+        rotate02 = cameraScript.RotateObject.gameObject.GetComponent<Follow_Rotate>();
+        if (rotate01 != null)
+        {
+            rotate01.StopRotate();
+        }
+
+        if (rotate02 != null)
+        {
+            rotate02.StartRotate();
+        }
         cameraScript.cameraTransform.gameObject.SetActive(false);
         newCam.canMove = true;
         tempMoveFunc = StartCoroutine(newCam.Move());
@@ -83,6 +101,11 @@ public class CameraSwitch : MonoBehaviour
 
     public void StopMove()
     {
+        rotate01 = cameraScript.RotateObject.gameObject.GetComponent<Follow_Rotate>();
+        if (rotate01 != null)
+        {
+            rotate01.StartRotate();
+        }
         cameraScript.canMove = false;
         if(moveFunc != null)
             StopCoroutine(moveFunc);

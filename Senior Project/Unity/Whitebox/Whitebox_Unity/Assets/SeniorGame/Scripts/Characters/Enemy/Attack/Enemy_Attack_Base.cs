@@ -21,6 +21,7 @@ public abstract class Enemy_Attack_Base : ScriptableObject
         this.caller = caller;
         WeaponAttackobj = MeleeAttack;
         this.enemyObj = enemy;
+        attacking = false;
         if(animations != null)
             animations.Init(caller, animator, player);
     }

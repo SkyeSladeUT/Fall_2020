@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
@@ -25,6 +26,10 @@ public class ScalableObject : MonoBehaviour
 
     private float currentScaleAmount;
 
+    public FixedJoint joint;
+    public float minJointMassMultiplier, maxJointMassMultiplier;
+    private float minJointMass, maxJointMass;
+    
     private void Start()
     {
         minScale = transform.localScale * MinScaleMultiplier;
@@ -39,6 +44,17 @@ public class ScalableObject : MonoBehaviour
 
             minMass = rigid.mass * MinMassMultiplier;
             maxMass = rigid.mass * MaxMassMultiplier;
+            if (joint)
+            {
+
+                minJointMass = joint.massScale * minJointMassMultiplier;
+                /*if (minJointMass <= 0)
+                {
+                    minJointMass = 0;
+                }*/
+
+                maxJointMass = joint.massScale * maxJointMassMultiplier;
+            }
         }
     }
 
@@ -58,6 +74,11 @@ public class ScalableObject : MonoBehaviour
             {
                 rigid.mass = Mathf.Lerp(minMass, maxMass,
                     GeneralFunctions.ConvertRange(minScale.x, maxScale.x, 0, 1, newScale.x));
+                if (joint)
+                {
+                    joint.massScale = Mathf.Lerp(maxJointMass, minJointMass,
+                        GeneralFunctions.ConvertRange(minScale.x, maxScale.x, 0, 1, newScale.x));
+                }
             }
         }
     }
@@ -74,6 +95,17 @@ public class ScalableObject : MonoBehaviour
                 newScale = minScale;
             }
             transform.localScale = newScale;
+            if (UpdateMass)
+            {
+                rigid.mass = Mathf.Lerp(minMass, maxMass,
+                    GeneralFunctions.ConvertRange(minScale.x, maxScale.x, 0, 1, newScale.x));
+                if (joint)
+                {
+                    joint.massScale = Mathf.Lerp(maxJointMass, minJointMass,
+                        GeneralFunctions.ConvertRange(minScale.x, maxScale.x, 0, 1, newScale.x));
+                }
+            }
         }
     }
+    
 }

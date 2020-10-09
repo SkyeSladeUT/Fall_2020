@@ -89,7 +89,7 @@ public abstract class Enemy_Movement : ScriptableObject
         {
             caller.StopCoroutine(moveFunc);
         }
-        Debug.Log("Stop Move Enemy Movement");
+        //Debug.Log("Stop Move Enemy Movement");
     }
 
     public abstract Enemy_Movement GetClone();

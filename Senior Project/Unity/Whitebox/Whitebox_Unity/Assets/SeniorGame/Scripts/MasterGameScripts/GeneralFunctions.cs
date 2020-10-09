@@ -24,9 +24,6 @@ public static class GeneralFunctions
         {
             angle = -angle;
         }
-
-        angle /= 360;
-        angle += .5f;
         return angle;
     }
 }

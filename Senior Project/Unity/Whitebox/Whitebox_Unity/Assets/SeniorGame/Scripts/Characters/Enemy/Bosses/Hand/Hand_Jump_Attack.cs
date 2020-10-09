@@ -9,6 +9,8 @@ public class Hand_Jump_Attack : Enemy_Attack_Base
     public float UpwardForce, ForwardForce;
     private Rigidbody enemyRigid;
     private Vector3 jumpdirection;
+    public float InBetweenAttackTime;
+
 
     public override void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator, GameObject enemy)
     {
@@ -18,19 +20,30 @@ public class Hand_Jump_Attack : Enemy_Attack_Base
             enemyRigid = enemyObj.AddComponent<Rigidbody>();
     }
 
+    public override void StartAttack()
+    {
+        if (!attacking)
+        {
+            attacking = true;
+            caller.StartCoroutine(Attack());
+        }
+    }
+
     public override IEnumerator Attack()
     {
-        yield return new WaitForSeconds(AttackStartTime);
-        enemyObj.GetComponent<NavMeshAgent>().enabled = false;
-        jumpdirection = (enemyRigid.transform.up * UpwardForce) + (enemyRigid.transform.forward * ForwardForce);
-        enemyRigid.AddForce(jumpdirection, ForceMode.Impulse);
-        if(WeaponAttackobj)
-            WeaponAttackobj.SetActive(true);
-        yield return new WaitForSeconds(AttackActiveTime);
-        if(WeaponAttackobj)
-            WeaponAttackobj.SetActive(false);
-        yield return new WaitForSeconds(CoolDownTime);
-        enemyObj.GetComponent<NavMeshAgent>().enabled = true;
+            yield return new WaitForSeconds(AttackStartTime);
+            enemyObj.GetComponent<NavMeshAgent>().enabled = false;
+            jumpdirection = (enemyRigid.transform.up * UpwardForce) + (enemyRigid.transform.forward * ForwardForce);
+            enemyRigid.AddForce(jumpdirection, ForceMode.Impulse);
+            if (WeaponAttackobj)
+                WeaponAttackobj.SetActive(true);
+            yield return new WaitForSeconds(AttackActiveTime);
+            if (WeaponAttackobj)
+                WeaponAttackobj.SetActive(false);
+            yield return new WaitForSeconds(CoolDownTime);
+            enemyObj.GetComponent<NavMeshAgent>().enabled = true;
+            yield return new WaitForSeconds(InBetweenAttackTime);
+            attacking = false;
     }
 
     public override Enemy_Attack_Base getClone()
@@ -43,6 +56,7 @@ public class Hand_Jump_Attack : Enemy_Attack_Base
         temp.animations = animations;
         temp.UpwardForce = UpwardForce;
         temp.ForwardForce = ForwardForce;
+        temp.InBetweenAttackTime = InBetweenAttackTime;
         return temp;
     }
 }
