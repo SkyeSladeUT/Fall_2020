@@ -70,8 +70,8 @@ public class Targeting : MonoBehaviour
             }
         }
 
-        //targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
-        //targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
+        targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
+        targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
         currentTarget = EnemiesInRange[minIndex];
         targetIndicator.SetActive(true);
         objtarget = currentTarget.GetComponentInChildren<TargetObject>().gameObject;
@@ -104,8 +104,8 @@ public class Targeting : MonoBehaviour
             }
         }
 
-        //targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
-        //targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
+        targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
+        targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
         currentTarget = CheckEnemies[minIndex];
         objtarget = currentTarget.GetComponentInChildren<TargetObject>().gameObject;
         targetIndicator.transform.position = objtarget.transform.position;
@@ -137,8 +137,8 @@ public class Targeting : MonoBehaviour
             }
         }
 
-        //targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
-        //targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
+        targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
+        targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
         currentTarget = CheckEnemies[minIndex];
         objtarget = currentTarget.GetComponentInChildren<TargetObject>().gameObject;
         targetIndicator.transform.position = objtarget.transform.position;

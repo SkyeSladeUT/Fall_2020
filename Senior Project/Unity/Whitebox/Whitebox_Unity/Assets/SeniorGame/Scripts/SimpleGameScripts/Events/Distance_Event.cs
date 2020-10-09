@@ -16,7 +16,7 @@ public class Distance_Event : MonoBehaviour
     public Transform checkObj;
     public float offset;
     public bool checkOnAwake;
-
+    public bool RunEventonInit;
     private Coroutine checkFunc;
     
     public bool checkY;
@@ -37,10 +37,14 @@ public class Distance_Event : MonoBehaviour
             if (CheckDistance())
             {
                 inDistance = true;
+                if (RunEventonInit)
+                    StartCoroutine(EnterDistance());
             }
             else
             {
                 inDistance = false;
+                if (RunEventonInit)
+                    StartCoroutine(ExitDistance());
             }
 
             checkFunc = StartCoroutine(Check());

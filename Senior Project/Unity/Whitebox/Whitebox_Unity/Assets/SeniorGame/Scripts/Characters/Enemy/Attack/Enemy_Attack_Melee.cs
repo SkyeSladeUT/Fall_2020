@@ -22,6 +22,7 @@ public class Enemy_Attack_Melee : Enemy_Attack_Base
         temp.DamageAmount = DamageAmount;
         temp.AttackStartTime = AttackStartTime;
         temp.animations = animations;
+        temp.attackWhileMoving = attackWhileMoving;
         return temp;
     }
 }

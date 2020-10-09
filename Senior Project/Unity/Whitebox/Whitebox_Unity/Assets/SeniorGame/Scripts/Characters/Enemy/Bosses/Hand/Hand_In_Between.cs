@@ -8,6 +8,7 @@ public class Hand_In_Between : Enemy_Follow_Base
     public bool lookAtFollow;
     private Quaternion facingDirection;
     private Vector3 followDest;
+    public bool FollowObjMain;
     
     
     public override IEnumerator Move()
@@ -23,8 +24,17 @@ public class Hand_In_Between : Enemy_Follow_Base
                 Quaternion.Lerp(agent.transform.rotation, facingDirection, AngularSpeed * Time.deltaTime);
             }
 
-            followDest = followObj.transform.position;
-            followDest += destinations[0].transform.forward * -distanceFromFollowObj;
+            if (FollowObjMain)
+            {
+                followDest = followObj.transform.position;
+                followDest += destinations[0].transform.forward * -distanceFromFollowObj;
+            }
+            else
+            {
+                followDest = destinations[0].transform.position;
+                followDest += followObj.transform.forward * -distanceFromFollowObj;
+            }
+
             if (agent.enabled)
                 agent.destination = followDest;
             yield return new WaitForFixedUpdate();
@@ -38,6 +48,7 @@ public class Hand_In_Between : Enemy_Follow_Base
         temp.AngularSpeed = AngularSpeed;
         temp.distanceFromFollowObj = distanceFromFollowObj;
         temp.lookAtFollow = lookAtFollow;
+        temp.FollowObjMain = FollowObjMain;
         return temp;
     }
 }

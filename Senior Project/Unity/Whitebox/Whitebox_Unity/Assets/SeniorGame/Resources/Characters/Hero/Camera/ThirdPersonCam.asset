@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f10d253aaae2e44bbc85896c235978, type: 3}
   m_Name: ThirdPersonCam
   m_EditorClassIdentifier: 
-  canMove: 1
+  canMove: 0
   rotationSpeed: 100
   CameraHorizontal: Mouse X
   CameraVertical: Mouse Y
   cameraTransform: {fileID: 0}
+  FollowObj: {fileID: 0}
+  RotateObject: {fileID: 0}
   minCamAngle: -90
   maxCamAngle: 90

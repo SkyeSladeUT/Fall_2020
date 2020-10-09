@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ForwardSpeed: 2
   SideSpeed: 2
-  RunForwardSpeed: 5
-  RunSideSpeed: 5
+  RunForwardSpeed: 4
+  RunSideSpeed: 4
   JumpSpeed: 10
   Gravity: 30
   ForwardAxis: Vertical
@@ -23,7 +23,7 @@ MonoBehaviour:
   canMove: 1
   canRun: 1
   animation: {fileID: 11400000, guid: c1dad690abade094ca80e90e1634571b, type: 2}
-  canDodge: 1
+  canDodge: 0
   dodgeTime: 0.1
   dodgeRecoverTime: 0.1
   dodgeIncrease: 50

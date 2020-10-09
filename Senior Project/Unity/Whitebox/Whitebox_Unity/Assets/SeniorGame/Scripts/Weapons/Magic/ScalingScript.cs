@@ -58,55 +58,61 @@ public class ScalingScript : WeaponBase
                 {
                     yield return new WaitForFixedUpdate();
                 }
+
                 rotDirection = initRotation;
                 rotDirection.y = transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(rotDirection);
                 yield return _waitforbutton;
-                inUse = true;
-                MagicInUse.value = true;
-                if (currWeapon && MagicAmount.value > 0 && !frozen)
+                if (!frozen)
                 {
-                    currPower = 0;
-                    currSpell = Instantiate(MagicPrefab, InitPos);
-                    currSpell.transform.localScale = Vector3.zero;
-                    currSpell.SetActive(true);
-                    SpellBall = currSpell.GetComponent<Rigidbody>();
-                    while (Input.GetButton(useButton) && MagicAmount.value > 0)
+                    inUse = true;
+                    MagicInUse.value = true;
+                    if (currWeapon && MagicAmount.value > 0 && !frozen)
                     {
-                        if (currentCam.cameraScript != bowCamera)
+                        currPower = 0;
+                        currSpell = Instantiate(MagicPrefab, InitPos);
+                        currSpell.transform.localScale = Vector3.zero;
+                        currSpell.SetActive(true);
+                        SpellBall = currSpell.GetComponent<Rigidbody>();
+                        while (Input.GetButton(useButton) && MagicAmount.value > 0)
                         {
-                            playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
+                            if (currentCam.cameraScript != bowCamera)
+                            {
+                                playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
+                            }
+
+                            currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
+                            AimScript.StartAim();
+                            //Debug.Log("Current Power: " + currPower);
+                            while (frozen)
+                            {
+                                yield return new WaitForFixedUpdate();
+                            }
+
+                            if (currPower >= MaxPower)
+                            {
+                                currPower = MaxPower;
+                            }
+                            else
+                            {
+                                currPower += Time.deltaTime * PowerIncreaseScale;
+                                MagicAmount.SubFloat(decreaseSpeed * Time.deltaTime);
+                            }
+
+                            if (currSpell.transform.localScale.x <= finalScale.x)
+                            {
+                                newScale = currSpell.transform.localScale + increaseScale * Time.deltaTime;
+                                currSpell.transform.localScale = newScale;
+                            }
+
+                            yield return _fixedUpdate;
                         }
-                        currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
-                        AimScript.StartAim();
-                        //Debug.Log("Current Power: " + currPower);
+
                         while (frozen)
                         {
                             yield return new WaitForFixedUpdate();
                         }
-                        if (currPower >= MaxPower)
-                        {
-                            currPower = MaxPower;
-                        }
-                        else
-                        {
-                            currPower += Time.deltaTime * PowerIncreaseScale;
-                            MagicAmount.SubFloat(decreaseSpeed * Time.deltaTime);
-                        }
 
-                        if (currSpell.transform.localScale.x <= finalScale.x)
-                        {
-                            newScale = currSpell.transform.localScale + increaseScale * Time.deltaTime;
-                            currSpell.transform.localScale = newScale;
-                        }
-
-                        yield return _fixedUpdate;
-                    }
-
-                    while (frozen)
-                    {
-                        yield return new WaitForFixedUpdate();
-                    }
                         SpellBall.constraints = RigidbodyConstraints.None;
                         currSpell.transform.parent = null;
                         currSpell.GetComponent<ScalingMagic>().VFX.SetActive(true);
@@ -127,9 +133,10 @@ public class ScalingScript : WeaponBase
 
                         AimScript.StopAim();
 
+                    }
                 }
             }
-            
+
             yield return _fixedUpdate;
 
         }

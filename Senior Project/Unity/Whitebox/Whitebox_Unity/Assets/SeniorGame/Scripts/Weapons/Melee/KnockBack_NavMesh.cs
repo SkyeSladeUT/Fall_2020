@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class KnockBack : MonoBehaviour
+public class KnockBack_NavMesh : MonoBehaviour
 {
     public float thrust; //force
     public float knockTime; //time
@@ -33,7 +33,6 @@ public class KnockBack : MonoBehaviour
             difference = enemyRB.transform.position - BaseObj.position;
             difference.y = 0;
             difference = difference.normalized * thrust;
-            Debug.Log(difference);
             enemyRB.AddForce(difference, ForceMode.Impulse);
             StartCoroutine(KnockCo(enemyRB, enemyManager));
         }

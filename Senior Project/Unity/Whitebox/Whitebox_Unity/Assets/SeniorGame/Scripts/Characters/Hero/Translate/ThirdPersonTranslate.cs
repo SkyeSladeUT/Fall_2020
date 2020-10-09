@@ -23,7 +23,7 @@ public class ThirdPersonTranslate : CharacterTranslate
 
     public override IEnumerator Move()
     {
-        animation.StartAnimation();
+            animation.StartAnimation();
         while (canMove)
         {
             Invoke();
@@ -40,7 +40,7 @@ public class ThirdPersonTranslate : CharacterTranslate
                     currentTime -= Time.deltaTime;
                     yield return new WaitForFixedUpdate();
                 }
-        
+
                 yield return new WaitForSeconds(dodgeRecoverTime);
                 dodging = false;
                 canMove = true;
@@ -57,6 +57,7 @@ public class ThirdPersonTranslate : CharacterTranslate
                 _moveVec.y = vSpeed;
                 _cc.Move(_moveVec * Time.deltaTime);
             }
+
             yield return new WaitForFixedUpdate();
         }
 
@@ -119,7 +120,7 @@ public class ThirdPersonTranslate : CharacterTranslate
         _moveVec.y = 0;
         if (_cc.isGrounded) {
             vSpeed = -1;
-            if (!canDodge || (Input.GetButtonDown ("Jump") && !targetScript.targeting)) {
+            if (!canDodge && (Input.GetButtonDown ("Jump") || (canDodge && !targetScript.targeting))) {
                 vSpeed = JumpSpeed;
             }
             else if (canDodge && Input.GetButtonDown ("Jump") && targetScript.targeting && (Input.GetButton("Vertical") || Input.GetButton("Horizontal")))

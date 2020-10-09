@@ -9,6 +9,7 @@ public abstract class CameraBase : ScriptableObject
     protected float mouseX, mouseY;
     public float rotationSpeed;
     public string CameraHorizontal = "Mouse X", CameraVertical = "Mouse Y";
+    public int camNum;
     [HideInInspector]
     public Transform cameraTransform;
     [HideInInspector]

@@ -43,6 +43,8 @@ public class Rib_Cage_Melee_Attack : Enemy_Attack_Base
         temp.AttackStartTime = AttackStartTime;
         temp.CoolDownTime = CoolDownTime;
         temp.animations = animations;
+        temp.attackWhileMoving = attackWhileMoving;
+
         return temp;
     }
 }

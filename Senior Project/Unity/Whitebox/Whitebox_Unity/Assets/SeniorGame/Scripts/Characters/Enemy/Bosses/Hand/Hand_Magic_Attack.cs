@@ -36,6 +36,8 @@ public class Hand_Magic_Attack : Enemy_Attack_Base
         temp.DamageAmount = DamageAmount;
         temp.AttackStartTime = AttackStartTime;
         temp.animations = animations;
+        temp.attackWhileMoving = attackWhileMoving;
+
         return temp;
     }
 }

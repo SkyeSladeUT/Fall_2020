@@ -5,25 +5,22 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
         public CharacterRotate rotate;
-
         public CharacterTranslate translate;
-
         public List<CharacterControlExtraBase> extraControls = new List<CharacterControlExtraBase>();
-
         public Targeting targetScript;
-
         private Coroutine rotateFunc, moveFunc, runFunc;
-
         private CharacterController _cc;
-
         public Transform CharacterScalar;
-
         public Animator anim;
-
         public bool MoveOnStart;
+        private bool moving, rotating, extrarunning;
+        
 
         private void Start()
         {
+                moving = false;
+                rotating = false;
+                extrarunning = false;
                 _cc = GetComponent<CharacterController>();
                 Init();
         }
@@ -77,14 +74,19 @@ public class PlayerMovement : MonoBehaviour
                         StopCoroutine(moveFunc);
                 if(runFunc!= null)
                         StopCoroutine(runFunc);
+                moving = false;
         }
 
         public void StartMove()
         {
                 translate.canMove = true;
                 translate.canRun = true;
-                moveFunc = StartCoroutine(translate.Move());
-                runFunc = StartCoroutine(translate.Run());
+                if (!moving)
+                {
+                        moving = true;
+                        moveFunc = StartCoroutine(translate.Move());
+                        runFunc = StartCoroutine(translate.Run());
+                }
         }
 
         public void StopRotate()
@@ -92,12 +94,17 @@ public class PlayerMovement : MonoBehaviour
                 rotate.canRotate = false;
                 if(rotateFunc != null)
                         StopCoroutine(rotateFunc);
+                rotating = false;
         }
 
         public void StartRotate()
         {
                 rotate.canRotate = true;
-                rotateFunc = StartCoroutine(rotate.Rotate());
+                if (!rotating)
+                {
+                        rotating = true;
+                        rotateFunc = StartCoroutine(rotate.Rotate());
+                }
         }
 
         public void StartExtras()
@@ -107,7 +114,11 @@ public class PlayerMovement : MonoBehaviour
                         foreach (CharacterControlExtraBase extra in extraControls)
                         {
                                 extra.canMove = true;
-                                StartCoroutine(extra.Move());
+                                if (!extrarunning)
+                                {
+                                        extrarunning = true;
+                                        StartCoroutine(extra.Move());
+                                }
                         }
                 }
         }
@@ -120,6 +131,8 @@ public class PlayerMovement : MonoBehaviour
                         {
                                 extra.canMove = false;
                         }
-                }  
+                }
+
+                extrarunning = false;
         }
 }

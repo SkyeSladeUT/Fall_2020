@@ -5,6 +5,7 @@ using Cinemachine;
 using TMPro;
 using UnityEditor.Profiling.Memory.Experimental;
 using UnityEngine;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 public class CameraSwitch : MonoBehaviour
@@ -12,9 +13,12 @@ public class CameraSwitch : MonoBehaviour
     public CameraBase cameraScript;
     private Coroutine moveFunc;
     private Coroutine tempMoveFunc;
-    private float currentTime;
+    private float currentTime, currentTimeCamSwap;
     private Coroutine swapFunc;
-    private Follow_Rotate rotate01, rotate02;
+    private Camera_Manager newManager, oldManager;
+    public CinemachineMixingCamera blendCam;
+    public int currentCamNum;
+    public float CameraSwapTime;
 
     private void Start()
     {
@@ -24,31 +28,15 @@ public class CameraSwitch : MonoBehaviour
 
     public void StartMove()
     {
-        rotate01 = cameraScript.RotateObject.gameObject.GetComponent<Follow_Rotate>();
-        if (rotate01 != null)
-        {
-            rotate01.StopRotate();
-        }
         cameraScript.canMove = true;
         moveFunc = StartCoroutine(cameraScript.Move());
     }
 
     public void SwapCamera(CameraBase newCam)
     {
-        
-        newCam.cameraTransform.gameObject.SetActive(true);
-        rotate01 = newCam.RotateObject.gameObject.GetComponent<Follow_Rotate>();
-        rotate02 = cameraScript.RotateObject.gameObject.GetComponent<Follow_Rotate>();
-        if (rotate01 != null)
-        {
-            rotate01.StopRotate();
-        }
-
-        if (rotate02 != null)
-        {
-            rotate02.StartRotate();
-        }
-        cameraScript.cameraTransform.gameObject.SetActive(false);
+        //newCam.cameraTransform.gameObject.SetActive(true);
+        //cameraScript.cameraTransform.gameObject.SetActive(false);
+        StartCoroutine(SetCameraWeights(cameraScript.camNum, newCam.camNum));
         newCam.canMove = true;
         tempMoveFunc = StartCoroutine(newCam.Move());
         cameraScript.canMove = false;
@@ -101,14 +89,23 @@ public class CameraSwitch : MonoBehaviour
 
     public void StopMove()
     {
-        rotate01 = cameraScript.RotateObject.gameObject.GetComponent<Follow_Rotate>();
-        if (rotate01 != null)
-        {
-            rotate01.StartRotate();
-        }
         cameraScript.canMove = false;
         if(moveFunc != null)
             StopCoroutine(moveFunc);
+    }
+
+    private IEnumerator SetCameraWeights(int OrigCamNum, int NewCamNum)
+    {
+        currentTimeCamSwap = 0;
+        while (currentTimeCamSwap < CameraSwapTime)
+        {
+            blendCam.SetWeight(OrigCamNum, Mathf.Lerp(blendCam.GetWeight(OrigCamNum), 0,
+                GeneralFunctions.ConvertRange(0,CameraSwapTime, 0,1, currentTimeCamSwap)));
+            blendCam.SetWeight(NewCamNum, Mathf.Lerp(blendCam.GetWeight(NewCamNum), 1,
+                GeneralFunctions.ConvertRange(0,CameraSwapTime, 0,1, currentTimeCamSwap)));
+            currentTimeCamSwap += Time.deltaTime;
+            yield return new WaitForFixedUpdate();
+        }
     }
     
 }

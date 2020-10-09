@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Camera_Manager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Camera_Manager : MonoBehaviour
     public Transform followObj;
     public Transform rotateObj;
     public bool active = false;
+    public UnityEvent onActivate, onDeactivate;
+
 
     private Follow_Rotate rotate;
     
@@ -17,28 +20,31 @@ public class Camera_Manager : MonoBehaviour
     {
         cameraScript.Init(transform, followObj, rotateObj);
         gameObject.SetActive(active);
-        rotate = rotateObj.GetComponent<Follow_Rotate>();
     }
 
     public void StartMove()
     {
-        if (rotate)
-        {
-            rotate.StopRotate();
-        }
+        Activate();
         cameraScript.canMove = true;
         moveFunc = StartCoroutine(cameraScript.Move());
     }
     
     public void StopMove()
     {
-        if (rotate)
-        {
-            rotate.StopRotate();
-        }
+        Deactivate();
         cameraScript.canMove = false;
         if(moveFunc != null)
             StopCoroutine(moveFunc);
+    }
+
+    public void Activate()
+    {
+        onActivate.Invoke();
+    }
+
+    public void Deactivate()
+    {
+        onDeactivate.Invoke();
     }
 
     

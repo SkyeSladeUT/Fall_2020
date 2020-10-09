@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class MeleeWeapon : WeaponBase
 {
@@ -8,15 +9,13 @@ public class MeleeWeapon : WeaponBase
     public string useButton;
     private WaitUntil waitforbutton;
     public float attackActiveTime, attackcoolDownTime;
-    private WaitForSeconds attackActive, attackCool;
+    private float currentTime;
     
     public override void Initialize()
     {
         artObj.SetActive(true);
         knockbackObj.SetActive(false);
         waitforbutton = new WaitUntil(CheckInput);
-        attackActive = new WaitForSeconds(attackActiveTime);
-        attackCool = new WaitForSeconds(attackcoolDownTime);
         currWeapon = true;
         StartCoroutine(Attack());
     }
@@ -26,22 +25,24 @@ public class MeleeWeapon : WeaponBase
         while (currWeapon)
         {
             yield return waitforbutton;
-            while (frozen)
+            if (!frozen)
             {
-                yield return new WaitForFixedUpdate();
+                knockbackObj.SetActive(true);
+                currentTime = attackActiveTime;
+                while (currentTime > 0 && !frozen)
+                {
+                    currentTime -= Time.deltaTime;
+                    yield return new WaitForFixedUpdate();
+                }
+                knockbackObj.SetActive(false);
+                while (frozen)
+                {
+                    yield return new WaitForFixedUpdate();
+                }
+
+                yield return new WaitForSeconds(attackcoolDownTime);
             }
-            knockbackObj.SetActive(true);
-            yield return attackActive;
-            while (frozen)
-            {
-                yield return new WaitForFixedUpdate();
-            }
-            knockbackObj.SetActive(false);
-            yield return attackCool;
-            while (frozen)
-            {
-                yield return new WaitForFixedUpdate();
-            }
+
             yield return new WaitForFixedUpdate();
         }
     }

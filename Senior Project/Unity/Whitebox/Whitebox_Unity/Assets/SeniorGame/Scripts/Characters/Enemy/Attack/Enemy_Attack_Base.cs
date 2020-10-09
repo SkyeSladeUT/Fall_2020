@@ -14,10 +14,10 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     protected MonoBehaviour caller;
     public Animation_Base animations;
     protected GameObject enemyObj;
+    public bool attackWhileMoving;
 
     public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator, GameObject enemy)
     {
-        Debug.Log("Initialize");
         this.caller = caller;
         WeaponAttackobj = MeleeAttack;
         this.enemyObj = enemy;
@@ -29,7 +29,6 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     public virtual void StartAttack()
     {
         attacking = true;
-        Debug.Log("Run");
         attackFunc = caller.StartCoroutine(Attack());
     }
     

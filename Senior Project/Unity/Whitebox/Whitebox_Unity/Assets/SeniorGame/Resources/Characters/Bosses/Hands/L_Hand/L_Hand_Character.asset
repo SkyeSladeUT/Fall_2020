@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be02ed51a2cdf9b4089d05f54f7c1381, type: 3}
-  m_Name: Hand_Look_At
+  m_Script: {fileID: 11500000, guid: 865a7f94b021a6c41b0c7fb806479a4c, type: 3}
+  m_Name: L_Hand_Character
   m_EditorClassIdentifier: 
-  Speed: 2
-  AngularSpeed: 10
+  Health: {fileID: 11400000, guid: 949655c90de942b4591b69f6f6d1115e, type: 2}

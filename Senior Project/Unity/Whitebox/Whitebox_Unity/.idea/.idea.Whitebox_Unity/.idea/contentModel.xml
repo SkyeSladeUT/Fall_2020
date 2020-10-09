@@ -49,6 +49,7 @@
                 <e p="Bosses" t="Include">
                   <e p="Hand" t="Include">
                     <e p="Freeze_Magic.cs" t="Include" />
+                    <e p="Hand_Block_Attack.cs" t="Include" />
                     <e p="Hand_In_Between.cs" t="Include" />
                     <e p="Hand_Jump_Attack.cs" t="Include" />
                     <e p="Hand_Magic_Attack.cs" t="Include" />
@@ -156,9 +157,11 @@
               <e p="Destroy_Object_Timed.cs" t="Include" />
               <e p="Events" t="Include">
                 <e p="Distance_Event.cs" t="Include" />
+                <e p="If_Else_Event.cs" t="Include" />
                 <e p="Random_Timed_Event.cs" t="Include" />
                 <e p="Start_Event.cs" t="Include" />
                 <e p="Timed_Event.cs" t="Include" />
+                <e p="Unity_Event_Holder.cs" t="Include" />
               </e>
               <e p="Follow_Object.cs" t="Include" />
               <e p="Follow_Rotate.cs" t="Include" />
@@ -204,7 +207,8 @@
                 <e p="ScalingScript.cs" t="Include" />
               </e>
               <e p="Melee" t="Include">
-                <e p="KnockBack.cs" t="Include" />
+                <e p="Knockback_CC.cs" t="Include" />
+                <e p="KnockBack_NavMesh.cs" t="Include" />
                 <e p="MeleeWeapon.cs" t="Include" />
               </e>
               <e p="Object_Aim_Script.cs" t="Include" />

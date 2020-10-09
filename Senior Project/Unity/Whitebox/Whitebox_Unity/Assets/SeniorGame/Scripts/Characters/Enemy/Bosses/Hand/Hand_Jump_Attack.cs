@@ -57,6 +57,8 @@ public class Hand_Jump_Attack : Enemy_Attack_Base
         temp.UpwardForce = UpwardForce;
         temp.ForwardForce = ForwardForce;
         temp.InBetweenAttackTime = InBetweenAttackTime;
+        temp.attackWhileMoving = attackWhileMoving;
+
         return temp;
     }
 }

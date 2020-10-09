@@ -8,6 +8,7 @@ public class Follow_Rotate : MonoBehaviour
     private Coroutine rotateFunc;
     private bool rotating;
     public bool OnAwake;
+    private Vector3 rotationOffset;
 
     private void Start()
     {
@@ -19,25 +20,28 @@ public class Follow_Rotate : MonoBehaviour
 
     public void StartRotate()
     {
+        Debug.Log(name + ": " + FollowRotateObject);
         rotating = true;
+        rotationOffset = FollowRotateObject.eulerAngles - transform.eulerAngles;
         rotateFunc = StartCoroutine(Rotate());
-        Debug.Log("Start Rotate: " + gameObject.name);
     }
 
     private IEnumerator Rotate()
     {
         while (rotating)
         {
-            transform.rotation = FollowRotateObject.rotation;
+            //transform.rotation = FollowRotateObject.rotation;
+            transform.eulerAngles = FollowRotateObject.eulerAngles + rotationOffset;
             yield return new WaitForFixedUpdate();
         }
     }
 
     public void StopRotate()
     {
-        Debug.Log("Stop Rotate: " + gameObject.name);
         rotating = false;
         if(rotateFunc != null)
             StopCoroutine(Rotate());
     }
+    
+    
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BowandArrow : WeaponBase
 {
@@ -30,10 +31,13 @@ public class BowandArrow : WeaponBase
 
     public Object_Aim_Script AimScript;
     public float CameraSwapTime;
+
+    public UnityEvent BowEquiped, BowPulled, ArrowFired, BowUnequipped;
     
     public override void Initialize()
     {
         //any init stuff needed
+        BowEquiped.Invoke();
         initRotation = transform.rotation.eulerAngles;
         _waitforbutton = new WaitUntil(CheckInput);
         currWeapon = true;
@@ -52,11 +56,15 @@ public class BowandArrow : WeaponBase
             {
                 yield return new WaitForFixedUpdate();
             }
+
             rotDirection = initRotation;
             rotDirection.y = transform.rotation.eulerAngles.y;
             transform.rotation = Quaternion.Euler(rotDirection);
             yield return _waitforbutton;
-            inUse = true;
+            if (!frozen)
+            {
+                BowPulled.Invoke();
+                inUse = true;
                 if (currWeapon)
                 {
                     currPower = 0;
@@ -69,10 +77,12 @@ public class BowandArrow : WeaponBase
                         {
                             playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                         }
+
                         while (frozen)
                         {
                             yield return new WaitForFixedUpdate();
                         }
+
                         currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                         AimScript.StartAim();
                         currPower += Time.deltaTime * PowerIncreaseScale;
@@ -88,13 +98,16 @@ public class BowandArrow : WeaponBase
                     {
                         yield return new WaitForFixedUpdate();
                     }
-                        ArrowRB.constraints = RigidbodyConstraints.None;
-                        currArrow.transform.parent = null;
-                        ArrowRB.AddForce(transform.forward * currPower, ForceMode.Impulse);
-                        inUse = false;
-                        AimScript.StopAim();
+                    ArrowFired.Invoke();
+                    ArrowRB.constraints = RigidbodyConstraints.None;
+                    currArrow.transform.parent = null;
+                    ArrowRB.AddForce(transform.forward * currPower, ForceMode.Impulse);
+                    inUse = false;
+                    AimScript.StopAim();
                 }
-            yield return new WaitForFixedUpdate();
+
+                yield return new WaitForFixedUpdate();
+            }
         }
 
     }
@@ -103,6 +116,7 @@ public class BowandArrow : WeaponBase
     public override void End()
     {
         //and end stuff needed
+        BowUnequipped.Invoke();
         WeaponObj.SetActive(false);
         currWeapon = false;
         inUse = false;

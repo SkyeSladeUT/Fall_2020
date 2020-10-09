@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62ade4d710b5bdf4f95dea09e176b32f, type: 3}
-  m_Name: Hand_Magic
+  m_Script: {fileID: 11500000, guid: c889e7a98d7207e48a5e22ce0d4b1a86, type: 3}
+  m_Name: R_Hand_Health
   m_EditorClassIdentifier: 
-  DamageAmount: 0
-  AttackStartTime: 0.1
-  CoolDownTime: 0.1
-  AttackActiveTime: 0.1
-  animations: {fileID: 0}
-  ForwardVelocity: 20
-  UpwardVelocity: 5
+  TotalHealth: 50
+  ArmorDamageDecrease: 9999
+  Death_Version: {fileID: 11400000, guid: c8b427b833035c840a7b9b577f2d76c5, type: 2}
