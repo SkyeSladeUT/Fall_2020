@@ -15,15 +15,18 @@ public class Camera_Manager : MonoBehaviour
 
 
     private Follow_Rotate rotate;
-    
-    private void Awake()
+
+    private void Start()
     {
-        cameraScript.Init(transform, followObj, rotateObj);
-        gameObject.SetActive(active);
+        if (active)
+        {
+            StartMove();
+        }
     }
 
     public void StartMove()
     {
+        cameraScript.Init(transform, followObj, rotateObj);
         Activate();
         cameraScript.canMove = true;
         moveFunc = StartCoroutine(cameraScript.Move());

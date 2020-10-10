@@ -38,8 +38,12 @@ public class Targeting : MonoBehaviour
         enemyarea = new List<Vector3>();
         running = true;
         targeting = false;
-        targetIndicator.SetActive(false);
-        targetIndicator.transform.parent = null;
+        if (targetIndicator != null)
+        {
+            targetIndicator.SetActive(false);
+            targetIndicator.transform.parent = null;
+        }
+
         subVector = new Vector3(.5f, .5f, 0);
         StartCoroutine(TargetFunction());
     }

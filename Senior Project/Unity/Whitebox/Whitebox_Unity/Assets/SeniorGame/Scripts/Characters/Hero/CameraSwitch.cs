@@ -17,7 +17,6 @@ public class CameraSwitch : MonoBehaviour
     private Coroutine swapFunc;
     private Camera_Manager newManager, oldManager;
     public CinemachineMixingCamera blendCam;
-    public int currentCamNum;
     public float CameraSwapTime;
 
     private void Start()
@@ -37,12 +36,12 @@ public class CameraSwitch : MonoBehaviour
         //newCam.cameraTransform.gameObject.SetActive(true);
         //cameraScript.cameraTransform.gameObject.SetActive(false);
         StartCoroutine(SetCameraWeights(cameraScript.camNum, newCam.camNum));
-        newCam.canMove = true;
+        /*newCam.canMove = true;
         tempMoveFunc = StartCoroutine(newCam.Move());
         cameraScript.canMove = false;
         if (moveFunc != null)
             StopCoroutine(moveFunc);
-        moveFunc = tempMoveFunc;
+        moveFunc = tempMoveFunc;*/
         cameraScript = newCam;
     }
 
