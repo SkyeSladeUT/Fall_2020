@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 131878248}
   - component: {fileID: 131878247}
   m_Layer: 0
-  m_Name: ThirdPersonCamera
+  m_Name: CameraMixer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33419,7 +33419,7 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 9090482979935680847}
   InitPos: {fileID: 9090482980538308917}
   useButton: Weapon
-  MaxPower: 30
+  MaxPower: 45
   PowerIncreaseScale: 120
   WeaponObj: {fileID: 9090482980589129761}
   currentCam: {fileID: 9090482979681828287}
@@ -33996,7 +33996,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090482978764128053}
-  m_LocalRotation: {x: 0.30054894, y: 0.059084103, z: -0.018657876, w: 0.9517517}
+  m_LocalRotation: {x: 0.30054897, y: 0.059084132, z: -0.018657885, w: 0.9517517}
   m_LocalPosition: {x: -2.3178673, y: -0.3383789, z: -5.637182}
   m_LocalScale: {x: 0.6094114, y: 0.6094115, z: 0.6094115}
   m_Children:
@@ -44291,7 +44291,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090482979078877448}
-  m_LocalRotation: {x: -0.12537271, y: 0.000000017070624, z: 0.0000000021572115, w: 0.9921097}
+  m_LocalRotation: {x: -0.12537271, y: 0.00000001699467, z: 0.0000000021476132, w: 0.9921097}
   m_LocalPosition: {x: -2.6530418, y: -0.4632721, z: -6.4172306}
   m_LocalScale: {x: 0.6094115, y: 0.6094116, z: 0.6094116}
   m_Children:
@@ -49462,7 +49462,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090482979317044727}
-  m_LocalRotation: {x: -0.12537271, y: 0.000000017070624, z: 0.0000000021572115, w: 0.9921097}
+  m_LocalRotation: {x: -0.12537271, y: 0.00000001699467, z: 0.0000000021476132, w: 0.9921097}
   m_LocalPosition: {x: -46.581505, y: -87.17, z: -34.502747}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -55130,7 +55130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemiesInRange: []
-  CamTrans: {fileID: 9090482979317044720}
+  CamTrans: {fileID: 9090482979317044723}
   targeting: 0
   targetIndicator: {fileID: 9090482980310936733}
   currTargetObj: {fileID: 11400000, guid: e7f6576794c577a4385af91ca253789c, type: 2}

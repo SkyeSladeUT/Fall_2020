@@ -8,7 +8,7 @@ public class Targeting : MonoBehaviour
 {
     //On Player
     [HideInInspector]public List<GameObject> EnemiesInRange;
-    public Transform CamTrans;
+    public Camera CamTrans;
     private List<GameObject> CheckEnemies;
     private Vector3 CamPos;
     public bool targeting;
@@ -21,22 +21,32 @@ public class Targeting : MonoBehaviour
     private Quaternion quat;
     public TransformData currTargetObj;
     private GameObject objtarget;
+    private List<Vector3> enemyarea;
+    private Vector3 objPosition, subVector;
+
+    private enum Placement
+    {
+        right,
+        center,
+        left
+    };
 
     private void Start()
     {
         currTargetObj.transform = null;
         EnemiesInRange = new List<GameObject>();
+        enemyarea = new List<Vector3>();
         running = true;
         targeting = false;
         targetIndicator.SetActive(false);
         targetIndicator.transform.parent = null;
+        subVector = new Vector3(.5f, .5f, 0);
         StartCoroutine(TargetFunction());
     }
-
-    private void findClosest()
+    
+    private void Closest(List<GameObject> objectsToCheck, Placement placement, GameObject currentDest = null)
     {
-        
-        if (EnemiesInRange.Count <= 0)
+        if (objectsToCheck.Count <= 0)
         {
             currTargetObj.transform = null;
             currentTarget = null;
@@ -45,37 +55,76 @@ public class Targeting : MonoBehaviour
             targetIndicator.SetActive(false);
             return;
         }
-        else if (EnemiesInRange.Count == 1)
+        else if (objectsToCheck.Count == 1)
         {
-            currentTarget = EnemiesInRange[0];
+            currentTarget = objectsToCheck[0];
             targetIndicator.SetActive(true);
-            targetIndicator.transform.parent = EnemiesInRange[0].transform;
-            targetIndicator.transform.position = EnemiesInRange[0].transform.position;
+            targetIndicator.transform.parent = objectsToCheck[0].transform;
+            targetIndicator.transform.position = objectsToCheck[0].transform.position;
             return;
         }
-
-        CamPos = CamTrans.gameObject.GetComponent<Camera>().WorldToViewportPoint(EnemiesInRange[0].transform.position);
-        minIndex = 0;
-        minDistance = Mathf.Sqrt(Mathf.Pow((CamPos.x-.5f)-EnemiesInRange[0].transform.position.x, 2)
-                              + Mathf.Pow((CamPos.y-.5f)-EnemiesInRange[0].transform.position.y, 2));
-        for (int i = 1; i < EnemiesInRange.Count; i++)
-        {
-            CamPos = CamTrans.gameObject.GetComponent<Camera>().WorldToViewportPoint(EnemiesInRange[i].transform.position);
-            distance = Mathf.Sqrt(Mathf.Pow((CamPos.x-.5f)-EnemiesInRange[0].transform.position.x, 2)
-                                  + Mathf.Pow((CamPos.y-.5f)-EnemiesInRange[0].transform.position.y, 2));
-            if (distance < minDistance)
+            enemyarea.Clear();
+            foreach (var enemy in objectsToCheck)
             {
-                minDistance = distance;
-                minIndex = i;
+                objPosition = CamTrans.WorldToViewportPoint(enemy.transform.position);
+                objPosition -= subVector;
+                objPosition.z = 0;
+                enemyarea.Add(objPosition);
+            }
+
+        if (currentDest != null)
+        {
+            objPosition = CamTrans.WorldToViewportPoint(currentDest.transform.position);
+            objPosition -= subVector;
+            objPosition.z = 0;
+        }
+
+        minDistance = enemyarea[0].magnitude;
+        minIndex = 0;
+        for (int i = 1; i < objectsToCheck.Count; i++)
+        {
+            switch (placement)
+            {
+                case Placement.center:
+                    if (enemyarea[i].magnitude < minDistance)
+                    {
+                        minDistance = enemyarea[i].magnitude;
+                        minIndex = i;
+                    }
+
+                    break;
+                case Placement.left:
+                    if (enemyarea[i].magnitude < minDistance && currentDest != null && enemyarea[i].x < objPosition.x)
+                    {
+                        minDistance = enemyarea[i].magnitude;
+                        minIndex = i;
+                    }
+
+                    break;
+                case Placement.right:
+                    if (enemyarea[i].magnitude < minDistance && currentDest != null && enemyarea[i].x > objPosition.x)
+                    {
+                        minDistance = enemyarea[i].magnitude;
+                        minIndex = i;
+                    }
+
+                    break;
+
             }
         }
 
-        targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
-        targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
-        currentTarget = EnemiesInRange[minIndex];
+        targetIndicator.transform.parent = objectsToCheck[minIndex].transform;
+        targetIndicator.transform.position = objectsToCheck[minIndex].transform.position;
+        currentTarget = objectsToCheck[minIndex];
         targetIndicator.SetActive(true);
         objtarget = currentTarget.GetComponentInChildren<TargetObject>().gameObject;
         targetIndicator.transform.position = objtarget.transform.position;
+    }
+    
+
+    private void findClosest()
+    {
+        Closest(EnemiesInRange, Placement.center);
     }
 
     private void findRight(GameObject ignoreObj = null)
@@ -88,27 +137,7 @@ public class Targeting : MonoBehaviour
         CheckEnemies = EnemiesInRange;
         if (ignoreObj != null)
             CheckEnemies.Remove(ignoreObj);
-        CamPos = CamTrans.gameObject.GetComponent<Camera>().WorldToViewportPoint(EnemiesInRange[0].transform.position);
-        minIndex = 0;
-        minDistance = Mathf.Sqrt(Mathf.Pow((CamPos.x-.5f)-CheckEnemies[0].transform.position.x, 2)
-                              + Mathf.Pow((CamPos.y-.5f)-CheckEnemies[0].transform.position.y, 2));
-        for (int i = 1; i < EnemiesInRange.Count; i++)
-        {
-            CamPos = CamTrans.gameObject.GetComponent<Camera>().WorldToViewportPoint(EnemiesInRange[i].transform.position);
-            distance = Mathf.Sqrt(Mathf.Pow((CamPos.x-.5f)-CheckEnemies[0].transform.position.x, 2)
-                                  + Mathf.Pow((CamPos.y-.5f)-CheckEnemies[0].transform.position.y, 2));
-            if ((distance < minDistance) && (((CamPos.x-.5f)- CheckEnemies[i].transform.position.x) < 0))
-            {
-                minDistance = distance;
-                minIndex = i;
-            }
-        }
-
-        targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
-        targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
-        currentTarget = CheckEnemies[minIndex];
-        objtarget = currentTarget.GetComponentInChildren<TargetObject>().gameObject;
-        targetIndicator.transform.position = objtarget.transform.position;
+        Closest(CheckEnemies, Placement.right, ignoreObj);
     }
     
     private void findLeft(GameObject ignoreObj = null)
@@ -121,27 +150,7 @@ public class Targeting : MonoBehaviour
         CheckEnemies = EnemiesInRange;
         if (ignoreObj != null)
             CheckEnemies.Remove(ignoreObj);
-        CamPos = CamTrans.gameObject.GetComponent<Camera>().WorldToViewportPoint(EnemiesInRange[0].transform.position);
-        minIndex = 0;
-        minDistance = Mathf.Sqrt(Mathf.Pow((CamPos.x-.5f)-CheckEnemies[0].transform.position.x, 2)
-                                 + Mathf.Pow((CamPos.y-.5f)-CheckEnemies[0].transform.position.y, 2));
-        for (int i = 1; i < EnemiesInRange.Count; i++)
-        {
-            CamPos = CamTrans.gameObject.GetComponent<Camera>().WorldToViewportPoint(EnemiesInRange[i].transform.position);
-            distance = Mathf.Sqrt(Mathf.Pow((CamPos.x-.5f)-CheckEnemies[0].transform.position.x, 2)
-                                  + Mathf.Pow((CamPos.y-.5f)-CheckEnemies[0].transform.position.y, 2));
-            if ((distance < minDistance) && (((CamPos.x-.5f) - CheckEnemies[i].transform.position.x) > 0))
-            {
-                minDistance = distance;
-                minIndex = i;
-            }
-        }
-
-        targetIndicator.transform.parent = EnemiesInRange[minIndex].transform;
-        targetIndicator.transform.position = EnemiesInRange[minIndex].transform.position;
-        currentTarget = CheckEnemies[minIndex];
-        objtarget = currentTarget.GetComponentInChildren<TargetObject>().gameObject;
-        targetIndicator.transform.position = objtarget.transform.position;
+        Closest(CheckEnemies, Placement.left, ignoreObj);
     }
 
     private IEnumerator TargetFunction()
