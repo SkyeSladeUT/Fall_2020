@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c889e7a98d7207e48a5e22ce0d4b1a86, type: 3}
-  m_Name: L_Hand_Health
+  m_Script: {fileID: 11500000, guid: 8dbd2fc8487b7a347b20c1e03183c8a6, type: 3}
+  m_Name: ThirdPerson
   m_EditorClassIdentifier: 
-  TotalHealth: 50
-  ArmorDamageDecrease: 2.5
-  Death_Version: {fileID: 11400000, guid: eb0b9e1a65c787f45be9850dab47833a, type: 2}
+  minCamAngle: -80
+  maxCamAngle: 80
+  rotationSpeed: 50
+  cameraObject: {fileID: 0}

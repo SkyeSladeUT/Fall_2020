@@ -19,9 +19,9 @@ public class ScalingScript : WeaponBase
     public BoolData MagicInUse;
     public float decreaseSpeed;
     public GameObject MagicObj;
-    public CameraSwitch currentCam;
-    public CameraBase bowCamera;
-    public CameraBase thirdPersonCamera;
+    public CameraRotationManager cameraRotation;
+    public CameraRotationBase bowCamera;
+    public CameraRotationBase thirdPersonCamera;
     public PlayerMovement playermove;
     public CharacterRotate bowRotate;
     private CharacterRotate originalRotate;
@@ -76,12 +76,12 @@ public class ScalingScript : WeaponBase
                         SpellBall = currSpell.GetComponent<Rigidbody>();
                         while (Input.GetButton(useButton) && MagicAmount.value > 0)
                         {
-                            if (currentCam.cameraScript != bowCamera)
+                            if (cameraRotation.cameraRotation != bowCamera)
                             {
                                 playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                             }
 
-                            currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
+                            cameraRotation.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                             AimScript.StartAim();
                             //Debug.Log("Current Power: " + currPower);
                             while (frozen)
@@ -131,6 +131,8 @@ public class ScalingScript : WeaponBase
                             Destroy(currSpell);
                         }
 
+                        inUse = false;
+
                         AimScript.StopAim();
 
                     }
@@ -149,9 +151,9 @@ public class ScalingScript : WeaponBase
         MagicObj.SetActive(false);
         inUse = false;
         currWeapon = false;
-        if (currentCam.cameraScript != thirdPersonCamera)
+        if (cameraRotation.cameraRotation != thirdPersonCamera)
         {
-            currentCam.StopTimeSwap(thirdPersonCamera);
+            cameraRotation.StopTimeSwap(thirdPersonCamera);
             playermove.SwapMovement(originalRotate, playermove.translate);
         }
         StopCoroutine(attack);

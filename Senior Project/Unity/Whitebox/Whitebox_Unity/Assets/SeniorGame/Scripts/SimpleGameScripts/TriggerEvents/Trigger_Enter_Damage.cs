@@ -7,6 +7,7 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
     public float Damage;
     public bool DecreasedByArmor;
     private bool isRunning;
+    private GameObject collider;
 
     private void Start()
     {
@@ -15,50 +16,22 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
 
     private void OnTriggerEnter(Collider other)
     {
+        collider = other.gameObject;
         if(!isRunning)
             StartCoroutine(CheckTrigger(other));
     }
 
-    public override IEnumerator CheckTrigger(Collider coll)
+    public override void RunEvent()
     {
-        isRunning = true;
-        switch (checksFor)
+        if (active)
         {
-            case Check.Layer:
-                
-                if (layer == (layer | (1 << coll.gameObject.layer)))
-                {
-                    Debug.Log("Layer Correct");
-                    yield return new WaitForSeconds(waitTime);
-                    RunDamageScript(coll);
-                }
-                break;
-            case Check.Name:
-                if (coll.gameObject.name.Contains(objName))
-                {
-                    yield return new WaitForSeconds(waitTime);
-                    RunDamageScript(coll);
-                }
-                break;
-            case Check.Tag:
-                if (coll.CompareTag(tagName))
-                {
-                    yield return new WaitForSeconds(waitTime);
-                    RunDamageScript(coll);
-                }
-                break;
-        }
-
-        isRunning = false;
-    }
-
-    public virtual void RunDamageScript(Collider coll)
-    {
-        Character_Manager cm = coll.GetComponent<Character_Manager>();
-        if (cm)
-        {
-            cm.TakeDamage(Damage, DecreasedByArmor);
-            Event.Invoke();
+            Debug.Log("Damage");
+            Character_Manager cm = collider.GetComponent<Character_Manager>();
+            if (cm)
+            {
+                cm.TakeDamage(Damage, DecreasedByArmor);
+                Event.Invoke();
+            }
         }
     }
 }

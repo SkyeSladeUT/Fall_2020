@@ -14,8 +14,8 @@ public abstract class Trigger_Event_Base : MonoBehaviour
     public string objName;
     public LayerMask layer;
     public string tagName;
-    
 
+    public bool active = true;
 
     public virtual IEnumerator CheckTrigger(Collider coll)
     {
@@ -49,7 +49,8 @@ public abstract class Trigger_Event_Base : MonoBehaviour
 
     public virtual void RunEvent()
     {
-        Event.Invoke();
+        if(active)
+            Event.Invoke();
     }
     
     public int ToLayer (int bitmask ) {
@@ -59,6 +60,11 @@ public abstract class Trigger_Event_Base : MonoBehaviour
             result++;
         }
         return result;
+    }
+
+    public void Active(bool value)
+    {
+        active = value;
     }
     
 }

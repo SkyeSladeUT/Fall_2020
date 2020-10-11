@@ -58,7 +58,7 @@ public class ScalingMagic : MonoBehaviour
         timeLeft = ScaleTime;
         scaleObj.HighlightObj.SetActive(true);
         scalescript.inUse = true;
-        while (MagicAmount.value > 0 && timeLeft > 0)
+        while (MagicAmount.value > 0 && timeLeft > 0 && scalescript.currWeapon)
         {
             newScale = ScalingObj.localScale;
             if (Input.GetAxis(ScaleAxis) > 0)
@@ -79,7 +79,7 @@ public class ScalingMagic : MonoBehaviour
             yield return _fixedUpdate;
         }
         MagicInUse.value = false;
-        scalescript.inUse = false;
+        //scalescript.inUse = false;
         scaleObj.HighlightObj.SetActive(false);
         //movement.StartAll();
         yield return new WaitForSeconds(.1f);

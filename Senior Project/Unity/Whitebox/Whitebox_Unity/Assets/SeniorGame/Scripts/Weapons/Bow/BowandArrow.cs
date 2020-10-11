@@ -22,9 +22,9 @@ public class BowandArrow : WeaponBase
     private Vector3 direction;
     private Vector3 rotDirection, initRotation;
     public GameObject WeaponObj;
-    public CameraSwitch currentCam;
-    public CameraBase bowCamera;
-    public CameraBase thirdPersonCamera;
+    public CameraRotationManager cameraRotation;
+    public CameraRotationBase bowCamera;
+    public CameraRotationBase thirdPersonCamera;
     public PlayerMovement playermove;
     public CharacterRotate bowRotate;
     private CharacterRotate originalRotate;
@@ -73,7 +73,7 @@ public class BowandArrow : WeaponBase
                     ArrowRB = currArrow.GetComponent<Rigidbody>();
                     while (Input.GetButton(useButton))
                     {
-                        if (currentCam.cameraScript != bowCamera)
+                        if (cameraRotation.cameraRotation != bowCamera)
                         {
                             playermove.SwapMovement(bowRotate, playermove.translate, playermove.extraControls);
                         }
@@ -83,7 +83,7 @@ public class BowandArrow : WeaponBase
                             yield return new WaitForFixedUpdate();
                         }
 
-                        currentCam.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
+                        cameraRotation.StartTimeSwap(CameraSwapTime, thirdPersonCamera, bowCamera);
                         AimScript.StartAim();
                         currPower += Time.deltaTime * PowerIncreaseScale;
                         if (currPower >= MaxPower)
@@ -120,9 +120,9 @@ public class BowandArrow : WeaponBase
         WeaponObj.SetActive(false);
         currWeapon = false;
         inUse = false;
-        if (currentCam.cameraScript != thirdPersonCamera)
+        if (cameraRotation.cameraRotation != thirdPersonCamera)
         {
-            currentCam.StopTimeSwap(thirdPersonCamera);
+            cameraRotation.StopTimeSwap(thirdPersonCamera);
             playermove.SwapMovement(originalRotate, playermove.translate);
         }
         StopCoroutine(attack);
