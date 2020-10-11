@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public abstract class Enemy_Attack_Base : ScriptableObject
 {
@@ -23,7 +24,7 @@ public abstract class Enemy_Attack_Base : ScriptableObject
         this.enemyObj = enemy;
         attacking = false;
         if(animations != null)
-            animations.Init(caller, animator, player);
+            animations.Init(caller, animator, player, enemy.GetComponent<NavMeshAgent>());
     }
 
     public virtual void StartAttack()

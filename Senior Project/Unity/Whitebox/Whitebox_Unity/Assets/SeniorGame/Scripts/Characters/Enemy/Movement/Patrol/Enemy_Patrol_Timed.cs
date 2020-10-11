@@ -9,9 +9,9 @@ public class Enemy_Patrol_Timed : Enemy_Patrol
     private float timeleft;
     public bool PingPongMovement;
     
-    protected override void Init(NavMeshAgent agent, MonoBehaviour caller, List<Transform> destinations)
+    protected override void Init(NavMeshAgent agent, MonoBehaviour caller, List<Transform> destinations, Animator anim)
     {
-        base.Init(agent, caller, destinations);
+        base.Init(agent, caller, destinations, anim);
         if (destinations.Count > 0)
         {
             agent.destination = destinations[0].position;

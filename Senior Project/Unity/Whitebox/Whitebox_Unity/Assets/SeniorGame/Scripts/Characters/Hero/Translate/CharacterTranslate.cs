@@ -24,7 +24,7 @@ public abstract class CharacterTranslate : ScriptableObject
         Camera = camera;
         this.targetScript = targetScript;
         if(animation!= null)
-            animation.Init(caller, animator, _cc.transform);
+            animation.Init(caller, animator, _cc.transform, null);
     }
 
     

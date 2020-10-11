@@ -29,7 +29,7 @@ public class Health_Base : ScriptableObject
 
     public virtual void Death()
     {
-        caller.StartCoroutine(_death.Death());
+        caller.StartCoroutine(Death_Version.Death());
     }
     
     public virtual void TakeDamage(float amount, bool armor)

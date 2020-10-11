@@ -47,6 +47,7 @@ public class Enemy_Look_At_Basic : Enemy_Follow_Base
         temp.Speed = Speed;
         temp.AngularSpeed = AngularSpeed;
         temp.AlwaysReturn = AlwaysReturn;
+        temp.animation = animation;
         return temp;
     }
 

@@ -55,6 +55,7 @@
                 <e p="Bosses" t="Include">
                   <e p="Hand" t="Include">
                     <e p="Freeze_Magic.cs" t="Include" />
+                    <e p="Hand_Animation.cs" t="Include" />
                     <e p="Hand_Block_Attack.cs" t="Include" />
                     <e p="Hand_In_Between.cs" t="Include" />
                     <e p="Hand_Jump_Attack.cs" t="Include" />
@@ -154,6 +155,7 @@
             <e p="SimpleGameScripts" t="Include">
               <e p="BoolData.cs" t="Include" />
               <e p="Center_Screen.cs" t="Include" />
+              <e p="ChangeTimeScale.cs" t="Include" />
               <e p="CollisionEvents" t="Include">
                 <e p="Collision_Enter_Event.cs" t="Include" />
                 <e p="Collision_Event_Base.cs" t="Include" />

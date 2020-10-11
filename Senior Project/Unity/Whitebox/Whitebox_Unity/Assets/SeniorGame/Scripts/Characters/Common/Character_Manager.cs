@@ -23,7 +23,7 @@ public class Character_Manager : MonoBehaviour
             Character = _characterTemp;
         }
         Character.Init(this, transform, MainCharacter);
-        if (GetComponent<Death_Event_Setup>() != null)
+        if (GetComponent<Death_Event_Setup>() != null && Character.Health.Death_Version is Death_Event)
         {
             Death_Event death = Character.Health.Death_Version as Death_Event;
             if (death != null)

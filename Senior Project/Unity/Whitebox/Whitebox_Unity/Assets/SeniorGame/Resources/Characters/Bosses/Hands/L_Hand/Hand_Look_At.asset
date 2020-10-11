@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2
   AngularSpeed: 10
+  animation: {fileID: 11400000, guid: 7c9f53c45e2626642aba6e392b5d85ab, type: 2}
   AlwaysReturn: 1

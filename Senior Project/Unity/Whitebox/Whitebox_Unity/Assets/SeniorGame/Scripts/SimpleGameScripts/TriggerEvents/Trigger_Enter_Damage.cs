@@ -6,26 +6,31 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
 {
     public float Damage;
     public bool DecreasedByArmor;
-    private bool isRunning;
+    private bool damaged;
     private GameObject collider;
+    public float DamageCoolDown;
 
     private void Start()
     {
         isRunning = false;
+        damaged = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         collider = other.gameObject;
-        if(!isRunning)
+        if (!damaged && !isRunning)
+        {
             StartCoroutine(CheckTrigger(other));
+        }
     }
 
     public override void RunEvent()
     {
         if (active)
         {
-            Debug.Log("Damage");
+            damaged = true;
+            StartCoroutine(damageCooldown());
             Character_Manager cm = collider.GetComponent<Character_Manager>();
             if (cm)
             {
@@ -33,5 +38,11 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
                 Event.Invoke();
             }
         }
+    }
+
+    private IEnumerator damageCooldown()
+    {
+        yield return new WaitForSeconds(DamageCoolDown);
+        damaged = false;
     }
 }

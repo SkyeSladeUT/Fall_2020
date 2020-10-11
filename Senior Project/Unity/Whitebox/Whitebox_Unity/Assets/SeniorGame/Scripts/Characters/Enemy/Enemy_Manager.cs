@@ -71,7 +71,7 @@ public class Enemy_Manager : MonoBehaviour
     {
         _movementTemp = Movement_Version.GetClone();
         Movement_Version = _movementTemp;
-        Movement_Version.Init(agent, this, Player, Destinations);
+        Movement_Version.Init(agent, this, Player, Destinations, animator);
     }
 
     public void InitAttack()

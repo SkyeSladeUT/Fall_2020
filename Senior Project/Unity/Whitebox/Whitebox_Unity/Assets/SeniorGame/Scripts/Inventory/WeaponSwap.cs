@@ -30,7 +30,7 @@ public class WeaponSwap : MonoBehaviour
         
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (!wm.currentWeapon.inUse)
         {

@@ -16,9 +16,16 @@ public abstract class Trigger_Event_Base : MonoBehaviour
     public string tagName;
 
     public bool active = true;
+    protected bool isRunning;
+
+    private void Start()
+    {
+        isRunning = false;
+    }
 
     public virtual IEnumerator CheckTrigger(Collider coll)
     {
+        isRunning = true;
         switch (checksFor)
         {
             case Check.Layer:
@@ -45,6 +52,8 @@ public abstract class Trigger_Event_Base : MonoBehaviour
                 }
                 break;
         }
+
+        isRunning = false;
     }
 
     public virtual void RunEvent()

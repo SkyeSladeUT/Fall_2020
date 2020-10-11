@@ -49,6 +49,7 @@ public class Hand_In_Between : Enemy_Follow_Base
         temp.distanceFromFollowObj = distanceFromFollowObj;
         temp.lookAtFollow = lookAtFollow;
         temp.FollowObjMain = FollowObjMain;
+        temp.animation = animation;
         return temp;
     }
 }

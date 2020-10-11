@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.PlayerLoop;
 
 public class MeleeWeapon : WeaponBase
@@ -10,6 +11,7 @@ public class MeleeWeapon : WeaponBase
     private WaitUntil waitforbutton;
     public float attackActiveTime, attackcoolDownTime;
     private float currentTime;
+    public UnityEvent AxUsedEvent;
     
     public override void Initialize()
     {
@@ -28,6 +30,7 @@ public class MeleeWeapon : WeaponBase
             if (!frozen)
             {
                 knockbackObj.SetActive(true);
+                AxUsedEvent.Invoke();
                 currentTime = attackActiveTime;
                 while (currentTime > 0 && !frozen)
                 {
