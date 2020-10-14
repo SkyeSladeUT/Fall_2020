@@ -16,6 +16,7 @@ public class Hand_In_Between : Enemy_Follow_Base
         agent.updatePosition = true;
         while (moving)
         {
+            agent.updateRotation = true;
             if (lookAtFollow)
             {
                 agent.updateRotation = false;

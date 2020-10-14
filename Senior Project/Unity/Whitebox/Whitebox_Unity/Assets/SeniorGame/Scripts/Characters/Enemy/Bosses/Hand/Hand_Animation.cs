@@ -10,6 +10,8 @@ public class Hand_Animation : Animation_Base
     public string StartTriggerName, EndTriggerName;
     private bool animating;
     private Coroutine animateFunc;
+    public float speedDif;
+    
     
     public override void StartAnimation()
     {
@@ -22,8 +24,9 @@ public class Hand_Animation : Animation_Base
     {
         while (animating)
         {
-            anim.SetFloat(SpeedName, GeneralFunctions.ConvertRange(0, agent.speed, 0, 1, agent.velocity.magnitude));
+            anim.SetFloat(SpeedName, agent.velocity.magnitude);
             anim.SetFloat(DirectionName, GetDirection());
+            anim.speed = agent.velocity.magnitude * speedDif;
             yield return new WaitForFixedUpdate();
         }
     }

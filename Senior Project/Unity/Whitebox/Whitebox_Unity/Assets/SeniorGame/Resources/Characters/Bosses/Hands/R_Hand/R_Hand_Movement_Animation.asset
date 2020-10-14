@@ -16,3 +16,4 @@ MonoBehaviour:
   SpeedName: Speed
   StartTriggerName: Walk
   EndTriggerName: Idle
+  speedDif: 1

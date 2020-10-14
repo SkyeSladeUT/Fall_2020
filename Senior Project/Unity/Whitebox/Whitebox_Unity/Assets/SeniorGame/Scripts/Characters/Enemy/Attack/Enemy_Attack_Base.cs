@@ -16,9 +16,11 @@ public abstract class Enemy_Attack_Base : ScriptableObject
     public Animation_Base animations;
     protected GameObject enemyObj;
     public bool attackWhileMoving;
+    protected Transform player;
 
     public virtual void Init(MonoBehaviour caller, GameObject MeleeAttack, Transform player, Animator animator, GameObject enemy)
     {
+        this.player = player;
         this.caller = caller;
         WeaponAttackobj = MeleeAttack;
         this.enemyObj = enemy;

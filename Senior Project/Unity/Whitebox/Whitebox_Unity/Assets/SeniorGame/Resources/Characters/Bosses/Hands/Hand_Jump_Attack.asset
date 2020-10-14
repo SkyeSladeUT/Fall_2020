@@ -17,6 +17,7 @@ MonoBehaviour:
   CoolDownTime: 0
   AttackActiveTime: 1
   animations: {fileID: 0}
+  attackWhileMoving: 0
   UpwardForce: 30
   ForwardForce: 60
   InBetweenAttackTime: 1
