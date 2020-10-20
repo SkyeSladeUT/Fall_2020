@@ -18,7 +18,6 @@ public class Trigger_Enter_Damage : Trigger_Event_Base
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.layer);
         collider = other.gameObject;
         if (!damaged && !isRunning)
         {

@@ -127,6 +127,35 @@
                   <e p="ThirdPersonTranslate.cs" t="Include" />
                 </e>
               </e>
+              <e p="Weapons" t="Include">
+                <e p="Aim_Camera_Switch.cs" t="Include" />
+                <e p="Bow" t="Include">
+                  <e p="Arrow.cs" t="Include" />
+                  <e p="BowandArrow.cs" t="Include" />
+                  <e p="Stickable.cs" t="Include" />
+                </e>
+                <e p="Magic" t="Include">
+                  <e p="MagicBar.cs" t="Include" />
+                  <e p="ScalableObject.cs" t="Include" />
+                  <e p="ScalingMagic.cs" t="Include" />
+                  <e p="ScalingScript.cs" t="Include" />
+                </e>
+                <e p="Melee" t="Include">
+                  <e p="Knockback_CC.cs" t="Include" />
+                  <e p="KnockBack_NavMesh.cs" t="Include" />
+                  <e p="MeleeWeapon.cs" t="Include" />
+                </e>
+                <e p="Object_Aim_Script.cs" t="Include" />
+                <e p="WeaponBase.cs" t="Include" />
+                <e p="WeaponImage.cs" t="Include" />
+                <e p="WeaponManager.cs" t="Include" />
+              </e>
+              <e p="ZTargeting" t="Include">
+                <e p="Enemy_Visible.cs" t="Include" />
+                <e p="In_Camera_View.cs" t="Include" />
+                <e p="Targeting.cs" t="Include" />
+                <e p="TargetObject.cs" t="Include" />
+              </e>
             </e>
             <e p="Data" t="Include">
               <e p="DebugObject.cs" t="Include" />
@@ -202,35 +231,6 @@
               <e p="Magic" t="Include">
                 <e p="Magic_Burst.cs" t="Include" />
               </e>
-            </e>
-            <e p="Weapons" t="Include">
-              <e p="Aim_Camera_Switch.cs" t="Include" />
-              <e p="Bow" t="Include">
-                <e p="Arrow.cs" t="Include" />
-                <e p="BowandArrow.cs" t="Include" />
-                <e p="Stickable.cs" t="Include" />
-              </e>
-              <e p="Magic" t="Include">
-                <e p="MagicBar.cs" t="Include" />
-                <e p="ScalableObject.cs" t="Include" />
-                <e p="ScalingMagic.cs" t="Include" />
-                <e p="ScalingScript.cs" t="Include" />
-              </e>
-              <e p="Melee" t="Include">
-                <e p="Knockback_CC.cs" t="Include" />
-                <e p="KnockBack_NavMesh.cs" t="Include" />
-                <e p="MeleeWeapon.cs" t="Include" />
-              </e>
-              <e p="Object_Aim_Script.cs" t="Include" />
-              <e p="WeaponBase.cs" t="Include" />
-              <e p="WeaponImage.cs" t="Include" />
-              <e p="WeaponManager.cs" t="Include" />
-            </e>
-            <e p="ZTargeting" t="Include">
-              <e p="Enemy_Visible.cs" t="Include" />
-              <e p="In_Camera_View.cs" t="Include" />
-              <e p="Targeting.cs" t="Include" />
-              <e p="TargetObject.cs" t="Include" />
             </e>
           </e>
         </e>
