@@ -233,6 +233,9 @@
               </e>
             </e>
           </e>
+          <e p="TestFolder" t="Include">
+            <e p="SkyBoxShader.shader" t="Include" />
+          </e>
         </e>
         <e p="TextMesh Pro" t="Include">
           <e p="Fonts" t="Include">
