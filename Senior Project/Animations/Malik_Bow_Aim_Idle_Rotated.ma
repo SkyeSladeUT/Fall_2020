@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Malik_Bow_Aim_Idle_Rotated.ma
-//Last modified: Thu, Dec 10, 2020 11:28:25 PM
+//Last modified: Fri, Dec 11, 2020 10:58:44 AM
 //Codeset: 1252
 file -rdi 1 -ns "Malik_Rig" -rfn "Malik_Rig_v2RN" -op "v=0;" -typ "mayaAscii"
 		 "D:/UVU/UVU_FALL_2020/Senior Project/Brodinjer/Maya Projects/Character Projects/CharacterMalik/Malik_Rig_v2.1.ma";
@@ -21,13 +21,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "ECDEE149-46E6-0E1E-A2E8-87B42AD029BE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1250.6148181801752 25.149958530666346 229.85496569701405 ;
-	setAttr ".r" -type "double3" 5.0616475230454414 -1158.5999999931632 0 ;
+	setAttr ".t" -type "double3" -619.89785697112325 155.17675703248051 -110.52470261894283 ;
+	setAttr ".r" -type "double3" -2.1383524769114692 -1179.7999999931187 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BFFB1DB7-495F-CAB4-FB74-FEB410FCF44C";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 1229.1759617606976;
+	setAttr ".coi" 578.34615441952349;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -1080,7 +1080,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		"Malik_Rig_v2RN.placeHolderList[15]" ""
 		5 4 "Malik_Rig_v2RN" "|Malik_Rig_v2:Malik_Rig|Malik_Rig_v2:Geo|Malik_Rig_v2:Cape.scaleZ" 
 		"Malik_Rig_v2RN.placeHolderList[16]" ""
-		"Malik_Rig_v2RN" 3155
+		"Malik_Rig_v2RN" 3159
 		1 |Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Controls|Malik_Rig:Switches|Malik_Rig:L_Arm_01_Switch 
 		"blendParentTranslate" "blendParentTranslate" " -ci 1 -k 1 -dv 1 -smn 0 -smx 1 -at \"double\""
 		
@@ -1094,6 +1094,14 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig:left|Malik_Rig:leftShape" "tumblePivot" " -type \"double3\" -6.0458846565821176 98.78665566694847655 -24.13168489162137575"
 		
 		2 "|Malik_Rig:back|Malik_Rig:backShape" "tumblePivot" " -type \"double3\" -6.0458846565821176 98.78665566694847655 -24.13168489162137575"
+		
+		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Geo|Malik_Rig:Malik_geo" "visibility" " 1"
+		
+		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Geo|Malik_Rig:Malik_geo" "translate" " -type \"double3\" 0 0 0"
+		
+		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Geo|Malik_Rig:Malik_geo" "rotate" " -type \"double3\" 0 0 0"
+		
+		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Geo|Malik_Rig:Malik_geo" "scale" " -type \"double3\" 1 1 1"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Geo|Malik_Rig:Malik_geo|Malik_Rig:Malik|Malik_Rig:Malik|Malik_Rig:MalikShape" 
 		"visibility" " -k 0 1"
@@ -3862,7 +3870,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translate" " -type \"double3\" -28.76681756981214733 2.33964612037008379 -0.00060513153738384062"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Arm_01_IK_Jnt|Malik_Rig:R_Arm_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -6.6464849913768385e-05 -0.00051847192519718715 3.6805363363313245e-05"
+		"rotate" " -type \"double3\" -6.6464605748798539e-05 -0.00051847002054108472 5.5173205377404009e-05"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Arm_01_IK_Jnt|Malik_Rig:R_Arm_02_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -3884,7 +3892,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Arm_01_IK_Jnt|Malik_Rig:L_Arm_02_IK_Jnt" 
 		"translate" " -type \"double3\" 28.76620589255433202 -2.33949184728199011 0"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Arm_01_IK_Jnt|Malik_Rig:L_Arm_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0 0 3.6744375141534332e-05"
+		"rotate" " -type \"double3\" 0 0 5.5115642728709708e-05"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Arm_01_IK_Jnt|Malik_Rig:L_Arm_02_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Arm_01_IK_Jnt|Malik_Rig:L_Arm_02_IK_Jnt|Malik_Rig:L_Arm_03_IK_Jnt" 
@@ -3905,7 +3913,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translate" " -type \"double3\" -49.0363907963241914 -1.7608568452232021e-06 -1.98506850637159e-05"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Leg_01_IK_Jnt|Malik_Rig:R_Leg_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -3.9252311812860799e-05 -0.0002807015562319153 46.02602770652172381"
+		"rotate" " -type \"double3\" -3.9252343858280726e-05 -0.00028070178539546845 46.02606119999574474"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Leg_01_IK_Jnt|Malik_Rig:R_Leg_02_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -3924,7 +3932,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translate" " -type \"double3\" 7.1607608731483197e-10 -1.0348835477458351e-07 9.5906230512809998e-08"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Leg_01_IK_Jnt|Malik_Rig:R_Leg_02_IK_Jnt|Malik_Rig:R_Leg_03_IK_Jnt|Malik_Rig:R_Foot_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -15.6690418770841049 -3.80970477377410299 -31.6841884123266091"
+		"rotate" " -type \"double3\" -15.66904431643801665 -3.80970726293284301 -31.68416025505512224"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Leg_01_IK_Jnt|Malik_Rig:R_Leg_02_IK_Jnt|Malik_Rig:R_Leg_03_IK_Jnt|Malik_Rig:R_Foot_01_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -3934,7 +3942,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translate" " -type \"double3\" -14.45330700531453516 2.169415720132406e-05 4.6424287660329355e-05"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Leg_01_IK_Jnt|Malik_Rig:R_Leg_02_IK_Jnt|Malik_Rig:R_Leg_03_IK_Jnt|Malik_Rig:R_Foot_01_IK_Jnt|Malik_Rig:R_Foot_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -4.0133528706675957e-06 1.5150460673225531e-05 -4.143314122412525e-05"
+		"rotate" " -type \"double3\" -7.9826958161386321e-06 3.0106329401545268e-05 -8.286243860395301e-05"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:R_Leg_01_IK_Jnt|Malik_Rig:R_Leg_02_IK_Jnt|Malik_Rig:R_Leg_03_IK_Jnt|Malik_Rig:R_Foot_01_IK_Jnt|Malik_Rig:R_Foot_02_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -3956,7 +3964,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt" 
 		"translate" " -type \"double3\" 49.03640867526200253 0 0"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt" 
-		"rotate" " -type \"double3\" 0 0 52.21827184282220458"
+		"rotate" " -type \"double3\" 0 0 52.21827532966806018"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt|Malik_Rig:L_Leg_03_IK_Jnt" 
@@ -3973,7 +3981,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		"translate" " -type \"double3\" 2.0541635947779469e-08 -2.9602457543020932e-06 0"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt|Malik_Rig:L_Leg_03_IK_Jnt|Malik_Rig:L_Foot_01_IK_Jnt" 
-		"rotate" " -type \"double3\" -18.73498119983155519 -5.72117136064336318 -5.42376283115687574"
+		"rotate" " -type \"double3\" -18.73498152346433443 -5.72117145765670365 -5.4237601135321567"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt|Malik_Rig:L_Leg_03_IK_Jnt|Malik_Rig:L_Foot_01_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -3982,7 +3990,7 @@ createNode reference -n "Malik_Rig_v2RN";
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt|Malik_Rig:L_Leg_03_IK_Jnt|Malik_Rig:L_Foot_01_IK_Jnt|Malik_Rig:L_Foot_02_IK_Jnt" 
 		"translate" " -type \"double3\" 14.45330547607854399 0 0"
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt|Malik_Rig:L_Leg_03_IK_Jnt|Malik_Rig:L_Foot_01_IK_Jnt|Malik_Rig:L_Foot_02_IK_Jnt" 
-		"rotate" " -type \"double3\" -6.2378080039183996e-07 2.3620415443592385e-06 -6.632342089866561e-06"
+		"rotate" " -type \"double3\" -4.0368721229650598e-07 3.9285728243281207e-06 -1.0131775988809525e-05"
 		
 		2 "|Malik_Rig:Malik_Rig|Malik_Rig:Scalar|Malik_Rig:Joints|Malik_Rig:IK_Joints|Malik_Rig:L_Leg_01_IK_Jnt|Malik_Rig:L_Leg_02_IK_Jnt|Malik_Rig:L_Leg_03_IK_Jnt|Malik_Rig:L_Foot_01_IK_Jnt|Malik_Rig:L_Foot_02_IK_Jnt" 
 		"scale" " -type \"double3\" 1 1 1"
@@ -18407,8 +18415,8 @@ createNode animCurveTA -n "R_Leg_01_IK_Handle_Ctrl_rotateZ";
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 0 29 0 156 0 159 0;
 select -ne :time1;
-	setAttr ".o" 362;
-	setAttr ".unw" 362;
+	setAttr ".o" 499;
+	setAttr ".unw" 499;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
